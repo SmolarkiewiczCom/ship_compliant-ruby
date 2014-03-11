@@ -1,3 +1,16 @@
+# === ShipCompliant::OrderSearch
+#
+# Acts as a hash for adding search criteria to the +SearchSalesOrders+
+# API endpoint. It removes invalid keys when converting to a Hash.
+#
+#   query = ShipCompliant::OrderSearch({
+#     invalid: 'lolz',
+#     requested_ship_date_max: DateTime.new(2014, 1, 1)
+#   })
+#
+#   query.to_h #=> {
+#     'RequestedShipDateMax' => DateTime
+#   }
 module ShipCompliant
   class OrderSearch < Struct.new(:details)
     KEYS = [
@@ -37,7 +50,7 @@ module ShipCompliant
       :tracking_existence,
     ]
 
-    # Returns product details hash with Pascal case keys.
+    # Converts hash keys to Pascal case and rejects invalid keys.
     def to_h
       hash = {}
       details.each do |key, value|
