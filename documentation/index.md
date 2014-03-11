@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-documentation
 title: ShipCompliant - Ruby API Client
 ---
 
