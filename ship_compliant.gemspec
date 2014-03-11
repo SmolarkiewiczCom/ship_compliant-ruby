@@ -27,4 +27,6 @@ Gem::Specification.new do |s|
 
   # TESTING
   s.add_development_dependency "rspec", "~> 2.14.1"
+  s.add_development_dependency "cucumber", "~> 1.3.11"
+  s.add_development_dependency "savon_spec"
 end
