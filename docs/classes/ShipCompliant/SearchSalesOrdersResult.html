@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::SearchSalesOrdersResult</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::SearchSalesOrdersResult 
+            
+                <span class="parent">&lt; 
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/search_sales_orders_result_rb.html">lib/ship_compliant/search_sales_orders_result.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h3 id="class-ShipCompliant::SearchSalesOrdersResult-label-An+API+wrapper+for+SearchSalesOrders+response.">An API wrapper for SearchSalesOrders response.</h3>
+
+<p>Converts fields into integers and ensures <code>order_summaries</code> is
+an array.</p>
+
+<pre><code>orders = ShipCompliant::SearchSalesOrders.find_by({
+  purchase_date_min: DateTime.new(2014, 3, 10),
+  purchase_date_max: DateTime.new(2014, 3, 12)
+})
+
+puts orders.length #=&gt; 2
+
+orders.summaries.each do |summary|
+  puts summary.purchase_date #=&gt; DateTime
+end
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-length">length</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-remaining_orders_length">remaining_orders_length</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-summaries">summaries</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>raw</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(data)
+            
+            <a href="../../classes/ShipCompliant/SearchSalesOrdersResult.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/search_sales_orders_result.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-ivar">@raw</span> = <span class="ruby-identifier">data</span>
+  <span class="ruby-identifier">parse!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-length">
+            
+              <b>length</b>()
+            
+            <a href="../../classes/ShipCompliant/SearchSalesOrdersResult.html#method-i-length" name="method-i-length" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The number of orders returned the current response.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-length_source')" id="l_method-i-length_source">show</a>
+                
+              </p>
+              <div id="method-i-length_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/search_sales_orders_result.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">length</span>
+  <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:count_sales_orders_returned</span>, <span class="ruby-number">0</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remaining_orders_length">
+            
+              <b>remaining_orders_length</b>()
+            
+            <a href="../../classes/ShipCompliant/SearchSalesOrdersResult.html#method-i-remaining_orders_length" name="method-i-remaining_orders_length" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The number of orders waiting to be returned. Use this for paging results.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-remaining_orders_length_source')" id="l_method-i-remaining_orders_length_source">show</a>
+                
+              </p>
+              <div id="method-i-remaining_orders_length_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/search_sales_orders_result.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">remaining_orders_length</span>
+  <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:count_more_sales_orders_available</span>, <span class="ruby-number">0</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-summaries">
+            
+              <b>summaries</b>()
+            
+            <a href="../../classes/ShipCompliant/SearchSalesOrdersResult.html#method-i-summaries" name="method-i-summaries" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns an array of <a
+href="SearchSalesOrderSummary.html">ShipCompliant::SearchSalesOrderSummary</a>.
+Use this to get information about each order.</p>
+
+<pre><code>orders.summaries.each do |summary|
+  puts summary.purchase_date #=&gt; DateTime
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-summaries_source')" id="l_method-i-summaries_source">show</a>
+                
+              </p>
+              <div id="method-i-summaries_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/search_sales_orders_result.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">summaries</span>
+  <span class="ruby-identifier">raw</span>[<span class="ruby-value">:sales_orders</span>][<span class="ruby-value">:sales_order_summary</span>].<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">summary</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">SearchSalesOrderSummary</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">summary</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

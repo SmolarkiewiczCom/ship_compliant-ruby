@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::OrderSearch</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::OrderSearch 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:details)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/order_search_rb.html">lib/ship_compliant/order_search.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h3 id="class-ShipCompliant::OrderSearch-label-ShipCompliant%3A%3AOrderSearch"><a href="OrderSearch.html">ShipCompliant::OrderSearch</a></h3>
+
+<p>Acts as a hash for adding search criteria to the
+<code>SearchSalesOrders</code> API endpoint. It removes invalid keys when
+converting to a Hash.</p>
+
+<pre><code>query = ShipCompliant::OrderSearch({
+  invalid: &#39;lolz&#39;,
+  requested_ship_date_max: DateTime.new(2014, 1, 1)
+})
+
+query.to_h #=&gt; {
+  &#39;RequestedShipDateMax&#39; =&gt; DateTime
+}
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_h">to_h</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">KEYS</td>
+            <td>=</td>
+            <td class="attr-value">[
+:channel,
+:compliance_status,
+
+:external_club_key,
+:external_offer_key,
+:external_sales_order_key_max,
+:external_sales_order_keys,
+
+:fulfillment_house,
+:fulfillment_status,
+:fulfillment_account,
+:fulfillment_exception_type,
+
+:license_relationship_type,
+:not_tag,
+:purchase_date_max,
+:purchase_date_min,
+
+:requested_ship_date_max,
+:requested_ship_date_min,
+
+:sale_type,
+:sales_order_keys,
+:sales_order_key_min,
+:sales_order_key_max,
+
+:settlement_batch_number,
+:shipment_status,
+:ship_date_max,
+:ship_date_min,
+:ship_to_state,
+
+:tag,
+:tracking_existence,
+]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><h2 id="label-Available+Search+Methods">Available Search Methods</h2>
+<ul><li>
+<p><code>channel</code></p>
+</li><li>
+<p><code>compliance_status</code></p>
+</li><li>
+<p><code>external_club_key</code></p>
+</li><li>
+<p><code>external_offer_key</code></p>
+</li><li>
+<p><code>external_sales_order_key_max</code></p>
+</li><li>
+<p><code>external_sales_order_keys</code></p>
+</li><li>
+<p><code>fulfillment_house</code></p>
+</li><li>
+<p><code>fulfillment_status</code></p>
+</li><li>
+<p><code>fulfillment_account</code></p>
+</li><li>
+<p><code>fulfillment_exception_type</code></p>
+</li><li>
+<p><code>license_relationship_type</code></p>
+</li><li>
+<p><code>not_tag</code></p>
+</li><li>
+<p><code>purchase_date_max</code></p>
+</li><li>
+<p><code>purchase_date_min</code></p>
+</li><li>
+<p><code>requested_ship_date_max</code></p>
+</li><li>
+<p><code>requested_ship_date_min</code></p>
+</li><li>
+<p><code>sale_type</code></p>
+</li><li>
+<p><code>sales_order_keys</code></p>
+</li><li>
+<p><code>sales_order_key_min</code></p>
+</li><li>
+<p><code>sales_order_key_max</code></p>
+</li><li>
+<p><code>settlement_batch_number</code></p>
+</li><li>
+<p><code>shipment_status</code></p>
+</li><li>
+<p><code>ship_date_max</code></p>
+</li><li>
+<p><code>ship_date_min</code></p>
+</li><li>
+<p><code>ship_to_state</code></p>
+</li><li>
+<p><code>tag</code></p>
+</li><li>
+<p><code>tracking_existence</code></p>
+</li></ul></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-to_h">
+            
+              <b>to_h</b>()
+            
+            <a href="../../classes/ShipCompliant/OrderSearch.html#method-i-to_h" name="method-i-to_h" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Converts hash keys to Pascal case and rejects invalid keys.</p>
+
+<pre><code>:sales_order_keys #=&gt; &#39;SalesOrderKeys&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_h_source')" id="l_method-i-to_h_source">show</a>
+                
+              </p>
+              <div id="method-i-to_h_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/order_search.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_h</span>
+  <span class="ruby-identifier">hash</span> = {}
+  <span class="ruby-identifier">details</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">KEYS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">classify</span>] = <span class="ruby-identifier">value</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    
