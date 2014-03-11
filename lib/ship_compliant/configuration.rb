@@ -3,14 +3,6 @@ module ShipCompliant
     attr_accessor :configuration
   end
 
-  # Stores runtime configuration to authenticate user.
-  #
-  #   ShipCompliant.configure do |c|
-  #     c.partner_key = 'XXXX-XX-XXXXX'
-  #     c.username = 'bob@example.com'
-  #     c.password = 'secret'
-  #     c.log = true # savon log
-  #   end
   def self.configure
     yield(configuration)
   end
@@ -19,6 +11,14 @@ module ShipCompliant
     @configuration ||= Configuration.new
   end
 
+  # Stores runtime configuration to authenticate user.
+  #
+  #   ShipCompliant.configure do |c|
+  #     c.partner_key = 'XXXX-XX-XXXXX'
+  #     c.username = 'bob@example.com'
+  #     c.password = 'secret'
+  #     c.log = true # savon log
+  #   end
   class Configuration
     attr_accessor :partner_key, :username, :password
     attr_accessor :log

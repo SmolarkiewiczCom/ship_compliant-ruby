@@ -1,19 +1,19 @@
-# === An API wrapper for +SearchSalesOrders+ response.
-#
-# Converts fields into integers and ensures +order_summaries+
-# is an array.
-#
-#   sales = ShipCompliant::SearchOrderSteps({
-#     purchase_date_min: DateTime.new(2014, 3, 10),
-#     purchase_date_max: DateTime.new(2014, 3, 12)
-#   })
-#
-#   puts sales.length #=> 2
-#
-#   sales.summaries.each do |summary|
-#     puts summary.purchase_date #=> DateTime
-#   end
 module ShipCompliant
+  # === An API wrapper for +SearchSalesOrders+ response.
+  #
+  # Converts fields into integers and ensures +order_summaries+
+  # is an array.
+  #
+  #   sales = ShipCompliant::SearchSalesOrders({
+  #     purchase_date_min: DateTime.new(2014, 3, 10),
+  #     purchase_date_max: DateTime.new(2014, 3, 12)
+  #   })
+  #
+  #   puts sales.length #=> 2
+  #
+  #   sales.summaries.each do |summary|
+  #     puts summary.purchase_date #=> DateTime
+  #   end
   class SearchSalesOrdersResult
     attr_reader :raw
 

@@ -1,17 +1,17 @@
-# === ShipCompliant::OrderSearch
-#
-# Acts as a hash for adding search criteria to the +SearchSalesOrders+
-# API endpoint. It removes invalid keys when converting to a Hash.
-#
-#   query = ShipCompliant::OrderSearch({
-#     invalid: 'lolz',
-#     requested_ship_date_max: DateTime.new(2014, 1, 1)
-#   })
-#
-#   query.to_h #=> {
-#     'RequestedShipDateMax' => DateTime
-#   }
 module ShipCompliant
+  # === ShipCompliant::OrderSearch
+  #
+  # Acts as a hash for adding search criteria to the +SearchSalesOrders+
+  # API endpoint. It removes invalid keys when converting to a Hash.
+  #
+  #   query = ShipCompliant::OrderSearch({
+  #     invalid: 'lolz',
+  #     requested_ship_date_max: DateTime.new(2014, 1, 1)
+  #   })
+  #
+  #   query.to_h #=> {
+  #     'RequestedShipDateMax' => DateTime
+  #   }
   class OrderSearch < Struct.new(:details)
     KEYS = [
       :channel,
