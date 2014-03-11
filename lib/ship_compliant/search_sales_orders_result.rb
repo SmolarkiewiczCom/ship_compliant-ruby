@@ -4,14 +4,14 @@ module ShipCompliant
   # Converts fields into integers and ensures +order_summaries+
   # is an array.
   #
-  #   sales = ShipCompliant::SearchSalesOrders({
+  #   orders = ShipCompliant::SearchSalesOrders({
   #     purchase_date_min: DateTime.new(2014, 3, 10),
   #     purchase_date_max: DateTime.new(2014, 3, 12)
   #   })
   #
-  #   puts sales.length #=> 2
+  #   puts orders.length #=> 2
   #
-  #   sales.summaries.each do |summary|
+  #   orders.summaries.each do |summary|
   #     puts summary.purchase_date #=> DateTime
   #   end
   class SearchSalesOrdersResult
@@ -33,6 +33,12 @@ module ShipCompliant
       raw.fetch(:count_more_sales_orders_available, 0)
     end
 
+    # Returns an array of +SearchSalesOrderSummary+. Use this
+    # to get information about each order.
+    #
+    #   orders.summaries.each do |summary|
+    #     puts summary.purchase_date #=> DateTime
+    #   end
     def summaries
       raw[:sales_orders][:sales_order_summary].map do |summary|
         SearchSalesOrderSummary.new(summary)
