@@ -1,9 +1,10 @@
 require "spec_helper"
 
 module ShipCompliant
-  describe Configuration, skip_config: true do
+  describe Configuration do
 
     before do
+      ShipCompliant.configuration = nil
       ShipCompliant.configure do |c|
         c.partner_key = 'abc-123'
         c.username = 'bob@example.com'
