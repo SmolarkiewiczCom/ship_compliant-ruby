@@ -1,0 +1,13 @@
+module ShipCompliant
+  class << self
+    attr_accessor :ship_compliant_client
+  end
+
+  # Returns an instance of +Client+.
+  def self.client
+    self.ship_compliant_client ||= Client.new(wsdl: 'https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL')
+  end
+
+  class Client < Savon::Client
+  end
+end
