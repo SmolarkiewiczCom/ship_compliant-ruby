@@ -33,8 +33,8 @@ module ShipCompliant
       raw.fetch(:count_more_sales_orders_available, 0)
     end
 
-    # Returns an array of +SearchSalesOrderSummary+. Use this
-    # to get information about each order.
+    # Returns an array of ShipCompliant::SearchSalesOrderSummary.
+    # Use this to get information about each order.
     #
     #   orders.summaries.each do |summary|
     #     puts summary.purchase_date #=> DateTime
