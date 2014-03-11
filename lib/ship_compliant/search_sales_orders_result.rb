@@ -4,7 +4,7 @@ module ShipCompliant
   # Converts fields into integers and ensures +order_summaries+
   # is an array.
   #
-  #   orders = ShipCompliant::SearchSalesOrders({
+  #   orders = ShipCompliant::SearchSalesOrders.find_by({
   #     purchase_date_min: DateTime.new(2014, 3, 10),
   #     purchase_date_max: DateTime.new(2014, 3, 12)
   #   })
