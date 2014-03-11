@@ -9,14 +9,23 @@ module ShipCompliant
   #     c.partner_key = 'XXXX-XX-XXXXX'
   #     c.username = 'bob@example.com'
   #     c.password = 'secret'
+  #     c.log = true # savon log
   #   end
   def self.configure
-    self.configuration ||= Configuration.new
     yield(configuration)
+  end
+
+  def self.configuration
+    @configuration ||= Configuration.new
   end
 
   class Configuration
     attr_accessor :partner_key, :username, :password
+    attr_accessor :log
+
+    def initialize
+      @log = true
+    end
 
     # Returns a +Hash+ for authenticating each API request.
     #
