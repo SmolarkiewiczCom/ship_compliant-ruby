@@ -1,3 +1,5 @@
+require 'bundler/gem_tasks'
+
 # SDoc command
 # sdoc --main README.md lib README.md -o pages/rdoc --template=ship_complaint
 
