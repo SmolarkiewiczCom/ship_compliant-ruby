@@ -14,9 +14,10 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 1. [Installation](./installation.html)
 2. [Getting Started](./getting-started.html)
 
-### Core Services
+### Core Service Guides
 
 1. [Search for Orders](./search_sales_orders.html)
+1. [Voiding Orders](./void_sales_order.html)
 
 ## APIS
 [Browse all classes and methods.][rdoc]
