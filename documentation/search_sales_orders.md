@@ -41,7 +41,7 @@ orders.each do |order|
 end
 ```
 
-## 2. Orders by `compliance_status`
+## 2. Find Non-Compliant Orders
 
 ```ruby
 # possible statuses are "Compliant", "NotCompliant", or "Any". Any is default.
