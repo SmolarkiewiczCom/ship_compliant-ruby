@@ -1,4 +1,9 @@
 module ShipCompliant
+  # == ShipCompliant::BaseResult
+  #
+  # This class provides methods to are relevant to every
+  # API request. All requests made through the
+  # ShipCompliant API client include these methods.
   module BaseResult
 
     # Returns boolean whether order was successfully voided.
