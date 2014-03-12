@@ -40,4 +40,11 @@ ShipCompliant::SearchSalesOrders.find_by({
 })
 ```
 
+You can view the list of available API methods in the [RDoc
+documentation][rdocs].
+
+Next Step. Learn how to make [Custom Requests][custom_requests].
+
 [core_service]: https://shipcompliant.desk.com/customer/portal/articles/1451976-api-coreservice-v1-2?b_id=2759
+[rdocs]: ../rdoc
+[custom_requests]: custom-requests.html
