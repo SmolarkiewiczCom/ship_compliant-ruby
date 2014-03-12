@@ -4,6 +4,8 @@ The ShipCompliant gem is a API Client for the [SOAP][soap_wiki] API provided by
 ShipCompliant. This gem has been created for fast implementation and supports
 the 9 main API calls.
 
+[Guides][guides_path] | [RDoc][rdoc_path] | [CoreService V1.2][core_service_path]
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -41,3 +43,6 @@ TODO: Coming soon...
 5. Create new Pull Request
 
 [soap_wiki]: http://en.wikipedia.org/wiki/SOAP
+[guides_path]: http://baylorrae.github.io/ship_compliant-ruby/documentation/
+[rdoc_path]: http://baylorrae.github.io/ship_compliant-ruby/rdoc/
+[core_service_path]: https://shipcompliant.desk.com/customer/portal/articles/1451976-api-coreservice-v1-2?b_id=2759
