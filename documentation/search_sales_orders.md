@@ -27,6 +27,11 @@ orders = ShipCompliant::SearchSalesOrders.find_by({
   purchase_date_max: DateTime.new(2014, 3, 12)
 })
 
+if orders.failure?
+  puts "ERROR: #{orders.error_message}"
+  exit(1)
+end
+
 puts "#{orders.length} orders found"
 
 orders.each do |order|
