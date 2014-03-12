@@ -1,8 +1,10 @@
 When(/^I search for orders by purchase date$/) do
-  @search_results = ShipCompliant::SearchSalesOrders.find_by({
-    purchase_date_min: DateTime.new(2014, 3, 10),
-    purchase_date_max: DateTime.new(2014, 3, 12)
-  })
+  VCR.use_cassette('search_sales_orders') do
+    @search_results = ShipCompliant::SearchSalesOrders.find_by({
+      purchase_date_min: DateTime.new(2014, 3, 10),
+      purchase_date_max: DateTime.new(2014, 3, 12)
+    })
+  end
 end
 
 Then(/^I should find two orders$/) do
@@ -17,7 +19,7 @@ Then(/^I should find two orders$/) do
 
   # Sales Order Keys
   order_1.order_key.should == 'ONL-1'
-  order_2.order_key.should == 'ONS-1'
+  order_2.order_key.should == 'ONS-45'
 
   # Order 1 Shipments
   order_1.shipment_summary.should == {
