@@ -17,8 +17,9 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 
 ### Core Service Guides
 
-1. [Search for Orders](./search_sales_orders.html)
-1. [Voiding Orders](./void_sales_order.html)
+1. [Search for Orders](./search_sales_orders.html) <small>API:
+   SearchSalesOrders</small>
+1. [Voiding Orders](./void_sales_order.html) <small>API: VoidSalesOrder</small>
 
 ## APIS
 [Browse all classes and methods.][rdoc]
