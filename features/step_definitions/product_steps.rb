@@ -1,24 +1,21 @@
 When(/^I add a new product with invalid brand$/) do
   VCR.use_cassette('product_invalid_brand') do
-    @product_response = ShipCompliant.client.call(:add_update_product, {
-      'Product' => {
-        'BottleSizeMS' => 750,
-        'BrandKey' => 'DENSNW',
-        'DefaultCase' => 12,
-        'DefaultWholesaleCasePrice' => 270,
-        'Description' => 'Denver Snow Flake Cab 2013',
-        'PercentAlcohol' => 14.1,
-        'ProductDistribution' => 'Both',
-        'ProductKey' => 'SNFL13',
-        'ProductType' => 'Wine',
-        'UnitPrice' => 49.99,
-        'Varietal' => 'Cabernet Sauvignon',
-        'Vintage' => 2013,
-        'VolumeAmount' => 750,
-        'VolumeUnit' => 'milliliter'
-      },
-      'UpdateMode' => 'ErrorOnExisting'
-    })
+    @product_response = ShipCompliant::AddUpdateProduct.product({
+      bottle_size_ms: 750,
+      brand_key: 'DENSNW',
+      default_case: 12,
+      default_wholesale_case_price: 270,
+      description: 'Denver Snow Flake Cab 2013',
+      percent_alcohol: 14.1,
+      product_distribution: 'Both',
+      product_key: 'SNFL13',
+      product_type: 'Wine',
+      unit_price: 49.99,
+      varietal: 'Cabernet Sauvignon',
+      vintage: 2013,
+      volume_amount: 750,
+      volume_unit: 'milliliter'
+    }, update_mode: 'ErrorOnExisting')
   end
 end
 
