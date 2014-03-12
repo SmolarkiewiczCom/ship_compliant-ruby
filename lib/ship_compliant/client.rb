@@ -8,6 +8,13 @@ module ShipCompliant
     self.ship_compliant_client ||= Client.new(wsdl: 'https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL', log: configuration.log)
   end
 
+  # Replaces #client with custom WSDL
+  #
+  #   ShipCompliant.wsdl = 'https://ws-dev.shipcompliant.com/Services/1.2/ProductService.asmx?WSDL'
+  def self.wsdl=(wsdl)
+    self.ship_compliant_client = Client.new(wsdl: wsdl, log: configuration.log)
+  end
+
   class Client < Savon::Client
 
     def call(operation, locals = {})
