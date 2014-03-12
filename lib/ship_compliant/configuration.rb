@@ -21,10 +21,11 @@ module ShipCompliant
   #   end
   class Configuration
     attr_accessor :partner_key, :username, :password
-    attr_accessor :log
+    attr_accessor :wsdl, :log
 
     def initialize
       @log = true
+      @wsdl = 'https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL'
     end
 
     # Returns a +Hash+ for authenticating each API request.

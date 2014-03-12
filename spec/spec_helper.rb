@@ -14,6 +14,8 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before(:each) do
+    ShipCompliant.configuration = nil
+    ShipCompliant.ship_compliant_client = nil
     ShipCompliant.configure do |c|
       c.partner_key = 'abc-123'
       c.username = 'bob@example.com'

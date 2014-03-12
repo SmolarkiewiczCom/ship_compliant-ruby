@@ -7,6 +7,14 @@ module ShipCompliant
       ShipCompliant.client.should be_kind_of(Savon::Client)
     end
 
+    it "uses wsdl from configuration" do
+      ShipCompliant.configure do |c|
+        c.wsdl = 'http://example.com'
+      end
+
+      ShipCompliant.client.globals[:wsdl].should == 'http://example.com'
+    end
+
     it "uses log value from configuration" do
       # configuration is defined in spec_helper.rb
       ShipCompliant.client.globals[:log].should == false

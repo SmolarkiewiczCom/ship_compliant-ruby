@@ -30,5 +30,18 @@ module ShipCompliant
       ShipCompliant.configuration.log.should == true
     end
 
+    context "wsdl" do
+      it "defaults to core services" do
+        ShipCompliant.configuration.wsdl.should == 'https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL'
+      end
+
+      it "can be changed" do
+        ShipCompliant.configure do |c|
+          c.wsdl = 'http://example.com'
+        end
+        ShipCompliant.configuration.wsdl.should == 'http://example.com'
+      end
+    end
+
   end
 end
