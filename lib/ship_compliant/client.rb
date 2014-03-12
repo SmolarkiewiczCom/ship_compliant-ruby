@@ -17,6 +17,12 @@ module ShipCompliant
 
   class Client < Savon::Client
 
+    # Adds the required security credentials and formats
+    # the message to match the ShipCompliant structure.
+    #
+    #   ShipCompliant.client.call(:some_operation, {
+    #     'SomeKey' => 'SomeValue'
+    #   })
     def call(operation, locals = {})
       locals['Security'] = ShipCompliant.configuration.credentials
 
