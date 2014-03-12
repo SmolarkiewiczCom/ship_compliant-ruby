@@ -1,0 +1,41 @@
+body {
+  background: url(../../images/body-background.png) #EAE6D1;
+}
+
+#bodyContent {
+  background: #FFF;
+  border: 1px solid #CBCBCB;
+  margin: 40px;
+}
+
+.banner {
+  background: url(../../images/background.png) #4276B6;
+  color: #F3F3F3;
+  text-shadow: 0px 2px 0px #235796;
+}
+
+.banner h1 .type,
+.banner h1 .parent {
+  color: #CACACA;
+  text-shadow: 0px 2px 0px #2E619E;
+}
+
+.banner .files li,
+.banner .files a {
+  color: #E4E4E4;
+  text-shadow: none;
+}
+
+.banner .files a:hover {
+  background: #305A8F;
+}
+
+a {
+  color: #39C;
+}
+
+pre {
+  padding: 0.9em;
+  font-size: 1.3em;
+  line-height: 1.65em;
+}
