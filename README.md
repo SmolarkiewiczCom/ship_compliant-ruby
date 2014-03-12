@@ -1,6 +1,6 @@
 # ShipCompliant - Ruby API Client
 
-The ShipCompliant gem is a API Client for the [SOAP][soap_wiki] API provided by
+The ShipCompliant gem is an API Client for the [SOAP][soap_wiki] API provided by
 ShipCompliant. This gem has been created for fast implementation and supports
 the 9 main API calls.
 
