@@ -7,8 +7,8 @@ title: ShipCompliant - Ruby API Client
 
 ## Guides
 
-1. [Getting Started](./getting-started.html)
-2. [Installation](./installation.html)
+1. [Installation](./installation.html)
+2. [Getting Started](./getting-started.html)
 
 ### Core Services
 
