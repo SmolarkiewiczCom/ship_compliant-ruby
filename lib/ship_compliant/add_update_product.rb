@@ -43,12 +43,21 @@ module ShipCompliant
     #
     #     ShipCompliant::AddUpdateProduct.product({
     #       # product attributes
-    #     }, { update_mode: 'UpdateExisting' })
+    #     }, update_mode: 'UpdateExisting')
     def self.product(product, options = {})
-      ShipCompliant.client.call(:add_update_product, {
+      details = {
         'Product' => ProductAttributes.new(product).to_h,
         'UpdateMode' => options.fetch(:update_mode, 'ErrorOnExisting')
-      })
+      }
+
+      result = add_update_product(details)
+      AddUpdateProductResult.new(result.to_hash[:add_update_product_response][:add_update_product_result])
+    end
+
+    private
+
+    def self.add_update_product(request)
+      ShipCompliant.client.call(:add_update_product, request)
     end
 
   end

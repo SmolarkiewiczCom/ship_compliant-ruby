@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/03/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>http://ws.shipcompliant.com/AddUpdateProductResponse</wsa:Action>
+    <wsa:MessageID>uuid:c825bc9f-4744-4f6f-81d8-53c7b72c84d3</wsa:MessageID>
+    <wsa:RelatesTo>uuid:acba4d69-e91a-42c5-a54b-25b3bd582f31</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-22345155-658f-4a02-a00a-e0914caf484a">
+        <wsu:Created>2014-03-12T18:39:36Z</wsu:Created>
+        <wsu:Expires>2014-03-12T18:44:36Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <AddUpdateProductResponse xmlns="http://ws.shipcompliant.com/">
+      <AddUpdateProductResult>
+        <ResponseStatus>Success</ResponseStatus>
+      </AddUpdateProductResult>
+    </AddUpdateProductResponse>
+  </soap:Body>
+</soap:Envelope>

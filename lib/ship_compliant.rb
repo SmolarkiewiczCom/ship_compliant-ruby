@@ -19,6 +19,7 @@ require "ship_compliant/void_sales_order_result"
 # ADD UPDATE PRODUCT
 require "ship_compliant/product_attributes"
 require "ship_compliant/add_update_product"
+require "ship_compliant/add_update_product_result"
 
 module ShipCompliant
   # Your code goes here...
