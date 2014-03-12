@@ -20,7 +20,7 @@ page through the result set.
 
 # Examples
 
-## 1. Orders with date range
+## 1. Orders Within Date Range
 ```ruby
 orders = ShipCompliant::SearchSalesOrders.find_by({
   purchase_date_min: DateTime.new(2014, 3, 10),
