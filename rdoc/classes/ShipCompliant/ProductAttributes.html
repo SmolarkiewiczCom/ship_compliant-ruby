@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::ProductAttributes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/ship_compliant.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::ProductAttributes 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:details)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/product_attributes_rb.html">lib/ship_compliant/product_attributes.rb</a></li>
+            
+        </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h3 id="class-ShipCompliant::ProductAttributes-label-ShipCompliant%3A%3AProductAttributes"><a href="ProductAttributes.html">ShipCompliant::ProductAttributes</a></h3>
+
+<p>Acts as a hash for working with the <code>AddUpdateProduct</code> API
+endpoint.</p>
+
+<pre><code>attributes = ShipCompliant::ProductAttributes({
+  bottle_size_ml: 750,
+  gtin: &#39;value&#39;,
+  product_description: &#39;It&#39;s great!&#39;
+})
+
+attributes.to_h #=&gt; {
+  &#39;BottleSizeML&#39; =&gt; 750,
+  &#39;GTIN&#39; =&gt; &#39;value&#39;,
+  &#39;ProductDescription&#39; =&gt; &#39;It&#39;s great!&#39;
+}
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_h">to_h</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">KEYS</td>
+            <td>=</td>
+            <td class="attr-value">[
+:age,
+:bottle_size_ml,
+:brand_key,
+
+:default_case,
+:default_retail_unit_price,
+:default_retail_case_price,
+:description,
+
+:flavor,
+:gtin,
+:label,
+
+:percent_alcohol,
+:product_key,
+:product_type,
+:product_description,
+
+:nabca,
+:scc,
+:upc,
+:unimerc,
+:unit_price,
+
+:varietal,
+:vintage,
+:volume_amount,
+:volume_unit
+]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><ul><li>
+<p><code>age</code></p>
+</li><li>
+<p><code>bottle_size_ml</code></p>
+</li><li>
+<p><code>brand_key</code></p>
+</li><li>
+<p><code>default_case</code></p>
+</li><li>
+<p><code>default_retail_unit_price</code></p>
+</li><li>
+<p><code>default_retail_case_price</code></p>
+</li><li>
+<p><code>description</code></p>
+</li><li>
+<p><code>flavor</code></p>
+</li><li>
+<p><code>gtin</code></p>
+</li><li>
+<p><code>label</code></p>
+</li><li>
+<p><code>percent_alcohol</code></p>
+</li><li>
+<p><code>product_key</code></p>
+</li><li>
+<p><code>product_type</code></p>
+</li><li>
+<p><code>product_description</code></p>
+</li><li>
+<p><code>nabca</code></p>
+</li><li>
+<p><code>scc</code></p>
+</li><li>
+<p><code>upc</code></p>
+</li><li>
+<p><code>unimerc</code></p>
+</li><li>
+<p><code>unit_price</code></p>
+</li><li>
+<p><code>varietal</code></p>
+</li><li>
+<p><code>vintage</code></p>
+</li><li>
+<p><code>volume_amount</code></p>
+</li><li>
+<p><code>volume_unit</code></p>
+</li></ul></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SPECIAL_CASES</td>
+            <td>=</td>
+            <td class="attr-value">{
+gtin: &#39;GTIN&#39;,
+nabca: &#39;NABCA&#39;,
+scc: &#39;SCC&#39;,
+unimerc: &#39;UNIMERC&#39;,
+upc: &#39;UPC&#39;,
+bottle_size_ml: &#39;BottleSizeML&#39;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-to_h">
+            
+              <b>to_h</b>()
+            
+            <a href="../../classes/ShipCompliant/ProductAttributes.html#method-i-to_h" name="method-i-to_h" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Converts hash keys to Pascal case and handles special cases.</p>
+
+<pre><code>:bottle_size_ml #=&gt; &#39;BottleSizeML&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_h_source')" id="l_method-i-to_h_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/0624ec8ce760646e1fff6e03881a68ecf2070295/lib/ship_compliant/product_attributes.rb#L86" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-to_h_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/product_attributes.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_h</span>
+  <span class="ruby-identifier">hash</span> = {}
+  <span class="ruby-identifier">details</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># handle special cases</span>
+    <span class="ruby-identifier">pascal_key</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">classify</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">SPECIAL_CASES</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
+      <span class="ruby-identifier">pascal_key</span> = <span class="ruby-constant">SPECIAL_CASES</span>[<span class="ruby-identifier">key</span>]
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">pascal_key</span>] = <span class="ruby-identifier">value</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,9 +1,12 @@
-Wed, 12 Mar 2014 11:17:36 -0500
-lib/ship_compliant.rb	Wed, 12 Mar 2014 09:05:33 -0500
+Wed, 12 Mar 2014 13:51:26 -0500
+lib/ship_compliant.rb	Wed, 12 Mar 2014 13:28:30 -0500
+lib/ship_compliant/add_update_product.rb	Wed, 12 Mar 2014 13:50:04 -0500
+lib/ship_compliant/add_update_product_result.rb	Wed, 12 Mar 2014 13:35:26 -0500
 lib/ship_compliant/base_result.rb	Wed, 12 Mar 2014 10:18:58 -0500
 lib/ship_compliant/client.rb	Wed, 12 Mar 2014 11:15:51 -0500
 lib/ship_compliant/configuration.rb	Wed, 12 Mar 2014 11:08:38 -0500
-lib/ship_compliant/order_search.rb	Wed, 12 Mar 2014 10:18:58 -0500
+lib/ship_compliant/order_search.rb	Wed, 12 Mar 2014 12:44:21 -0500
+lib/ship_compliant/product_attributes.rb	Wed, 12 Mar 2014 13:16:14 -0500
 lib/ship_compliant/search_sales_order_summary.rb	Tue, 11 Mar 2014 23:27:28 -0500
 lib/ship_compliant/search_sales_orders.rb	Wed, 12 Mar 2014 10:18:58 -0500
 lib/ship_compliant/search_sales_orders_result.rb	Wed, 12 Mar 2014 09:16:06 -0500
