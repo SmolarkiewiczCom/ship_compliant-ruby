@@ -23,7 +23,7 @@ And then execute:
 $ bundle install
 ```
 
-Add this to `config/initializers/ship_compliant.rb`
+Finally, add this to `config/initializers/ship_compliant.rb`
 
 ```ruby
 ShipCompliant.configure do |c|

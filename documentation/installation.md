@@ -19,7 +19,7 @@ Then execute:
 $ bundle install
 ```
 
-Add your credentials to `config/initializers/ship_compliant.rb`
+Finally, add your credentials to `config/initializers/ship_compliant.rb`
 
 ```ruby
 ShipCompliant.configure do |c|
