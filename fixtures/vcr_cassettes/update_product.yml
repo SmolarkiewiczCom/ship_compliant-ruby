@@ -31,7 +31,7 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 12 Mar 2014 05:51:38 GMT
+      - Wed, 12 Mar 2014 13:39:15 GMT
       Content-Length:
       - '10776'
     body:
@@ -977,7 +977,7 @@ http_interactions:
         \     <soap12:address location=\"https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx\"
         />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
     http_version: 
-  recorded_at: Wed, 12 Mar 2014 05:51:38 GMT
+  recorded_at: Wed, 12 Mar 2014 13:39:15 GMT
 - request:
     method: post
     uri: https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx
@@ -985,9 +985,9 @@ http_interactions:
       encoding: UTF-8
       string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?><env:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:tns=\"http://ws.shipcompliant.com/\"
-        xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\"><env:Body><tns:AddUpdateProduct><tns:Request><tns:Security><tns:PartnerKey><PARTNER_KEY></tns:PartnerKey><tns:Username><USERNAME></tns:Username><tns:Password><PASSWORD></tns:Password></tns:Security><tns:Product><tns:BottleSizeMS>750</tns:BottleSizeMS><tns:BrandKey>DEN</tns:BrandKey><tns:DefaultCase>12</tns:DefaultCase><tns:DefaultWholesaleCasePrice>270</tns:DefaultWholesaleCasePrice><tns:Description>Denver
+        xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\"><env:Body><tns:AddUpdateProduct><tns:Request><tns:Product><tns:BottleSizeMS>750</tns:BottleSizeMS><tns:BrandKey>DEN</tns:BrandKey><tns:DefaultCase>12</tns:DefaultCase><tns:DefaultWholesaleCasePrice>270</tns:DefaultWholesaleCasePrice><tns:Description>Denver
         Snow Flake Cab 2012</tns:Description><tns:PercentAlcohol>14.1</tns:PercentAlcohol><tns:ProductDistribution>Both</tns:ProductDistribution><tns:ProductKey>SNFL13</tns:ProductKey><tns:ProductType>Wine</tns:ProductType><tns:UnitPrice>49.99</tns:UnitPrice><tns:Varietal>Cabernet
-        Sauvignon</tns:Varietal><tns:Vintage>2012</tns:Vintage><tns:VolumeAmount>750</tns:VolumeAmount><tns:VolumeUnit>milliliter</tns:VolumeUnit></tns:Product><tns:UpdateMode>UpdateExisting</tns:UpdateMode></tns:Request></tns:AddUpdateProduct></env:Body></env:Envelope>"
+        Sauvignon</tns:Varietal><tns:Vintage>2012</tns:Vintage><tns:VolumeAmount>750</tns:VolumeAmount><tns:VolumeUnit>milliliter</tns:VolumeUnit></tns:Product><tns:UpdateMode>UpdateExisting</tns:UpdateMode><tns:Security><tns:PartnerKey><PARTNER_KEY></tns:PartnerKey><tns:Username><USERNAME></tns:Username><tns:Password><PASSWORD></tns:Password></tns:Security></tns:Request></tns:AddUpdateProduct></env:Body></env:Envelope>"
     headers:
       Soapaction:
       - "\"http://ws.shipcompliant.com/AddUpdateProduct\""
@@ -1019,7 +1019,7 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 12 Mar 2014 05:51:38 GMT
+      - Wed, 12 Mar 2014 13:39:15 GMT
       Content-Length:
       - '699'
     body:
@@ -1027,9 +1027,9 @@ http_interactions:
       string: "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"
         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
         xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\"
-        xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\"><soap:Header><wsa:Action>http://ws.shipcompliant.com/AddUpdateProductResponse</wsa:Action><wsa:MessageID>uuid:4c8ebc1f-da6b-435d-875e-ed4e204da0aa</wsa:MessageID><wsa:RelatesTo>uuid:afe9dc51-f0e4-42a6-864e-d4311d13cc90</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
-        wsu:Id=\"Timestamp-682874f8-3d1c-4186-8215-4ec51f233793\"><wsu:Created>2014-03-12T05:51:38Z</wsu:Created><wsu:Expires>2014-03-12T05:56:38Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><AddUpdateProductResponse
+        xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\"><soap:Header><wsa:Action>http://ws.shipcompliant.com/AddUpdateProductResponse</wsa:Action><wsa:MessageID>uuid:0604bbbe-f51e-48d4-954d-9bb20b5eb8fc</wsa:MessageID><wsa:RelatesTo>uuid:8806c7b9-2d3e-4d22-b1b4-806df2caa329</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
+        wsu:Id=\"Timestamp-f681d788-914e-42cf-b9a5-5496e3281e62\"><wsu:Created>2014-03-12T13:39:15Z</wsu:Created><wsu:Expires>2014-03-12T13:44:15Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><AddUpdateProductResponse
         xmlns=\"http://ws.shipcompliant.com/\"><AddUpdateProductResult><ResponseStatus>Success</ResponseStatus></AddUpdateProductResult></AddUpdateProductResponse></soap:Body></soap:Envelope>"
     http_version: 
-  recorded_at: Wed, 12 Mar 2014 05:51:38 GMT
+  recorded_at: Wed, 12 Mar 2014 13:39:16 GMT
 recorded_with: VCR 2.5.0
