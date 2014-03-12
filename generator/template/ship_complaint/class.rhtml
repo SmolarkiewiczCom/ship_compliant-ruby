@@ -31,6 +31,8 @@
             <li><a href="<%= "#{rel_prefix}/#{h file.path}" %>"><%= h file.absolute_name %></a></li>
             <% end  %>
         </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
     </div>
     <div id="bodyContent">
         <%= include_template '_context.rhtml', {:context => klass, :rel_prefix => rel_prefix} %>
