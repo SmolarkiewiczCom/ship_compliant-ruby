@@ -19,7 +19,9 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 
 1. [Search for Orders](./search_sales_orders.html) <small>API:
    SearchSalesOrders</small>
-1. [Voiding Orders](./void_sales_order.html) <small>API: VoidSalesOrder</small>
+2. [Voiding Orders](./void_sales_order.html) <small>API: VoidSalesOrder</small>
+3. [Managing Products](./add_update_product.html) <small>API:
+   AddUpdateProduct</small>
 
 ## APIS
 [Browse all classes and methods.][rdoc]
