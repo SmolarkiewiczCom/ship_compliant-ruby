@@ -29,4 +29,6 @@ ShipCompliant.configure do |c|
 end
 ```
 
+Congratulations! You can now use ShipCompliant in your Ruby application.
+
 Next step. View the [Getting Started Guide](./getting-started.html).
