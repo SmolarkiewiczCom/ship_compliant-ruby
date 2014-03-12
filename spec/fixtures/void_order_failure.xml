@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/03/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>http://ws.shipcompliant.com/VoidSalesOrderResponse</wsa:Action>
+    <wsa:MessageID>uuid:ebdc1f5c-5f39-44b3-92c9-a9986b18fd06</wsa:MessageID>
+    <wsa:RelatesTo>uuid:2859b2a3-d425-46ab-befd-10db2cad7b79</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-0b819aaf-491d-475b-846a-81de016274e9">
+        <wsu:Created>2014-03-12T01:19:43Z</wsu:Created>
+        <wsu:Expires>2014-03-12T01:24:43Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <VoidSalesOrderResponse xmlns="http://ws.shipcompliant.com/">
+      <VoidSalesOrderResult>
+        <Errors>
+          <Error>
+            <Code>200</Code>
+            <Key>ONS-1</Key>
+            <Message>SalesOrder does not exist [ONS-1].</Message>
+            <Target>SalesOrder</Target>
+            <Type>Validation</Type>
+          </Error>
+        </Errors>
+        <ResponseStatus>Failure</ResponseStatus>
+      </VoidSalesOrderResult>
+    </VoidSalesOrderResponse>
+  </soap:Body>
+</soap:Envelope>

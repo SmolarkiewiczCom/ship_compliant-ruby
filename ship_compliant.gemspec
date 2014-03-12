@@ -29,4 +29,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec", "~> 2.14.1"
   s.add_development_dependency "cucumber", "~> 1.3.11"
   s.add_development_dependency "savon_spec"
+  s.add_development_dependency "webmock"
+  s.add_development_dependency "vcr"
 end
