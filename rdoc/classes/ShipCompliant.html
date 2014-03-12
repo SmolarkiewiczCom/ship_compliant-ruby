@@ -140,6 +140,18 @@
           </ul>
         </dd>
       
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-wsdl-3D">wsdl=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
     </dl>
   
 
@@ -229,13 +241,13 @@
                 Source: 
                 <a href="javascript:toggleSource('method-c-client_source')" id="l_method-c-client_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/d7ce5b383463d79d38c052009d32bbc6ac1e04b3/lib/ship_compliant/client.rb#L7" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/eb7e670c74e855cf9ff8544039d5583ddc627609/lib/ship_compliant/client.rb#L7" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-c-client_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/ship_compliant/client.rb, line 7</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">client</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ship_compliant_client</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">wsdl</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL&#39;</span>, <span class="ruby-identifier">log</span><span class="ruby-operator">:</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">log</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ship_compliant_client</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">new_client_from_wsdl</span>(<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">wsdl</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -268,13 +280,54 @@
                 Source: 
                 <a href="javascript:toggleSource('method-c-configure_source')" id="l_method-c-configure_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/79a37115e8488e3f1043f270fb6c979de51cbb67/lib/ship_compliant/configuration.rb#L6" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/eb7e670c74e855cf9ff8544039d5583ddc627609/lib/ship_compliant/configuration.rb#L6" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-c-configure_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/ship_compliant/configuration.rb, line 6</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">configure</span>
   <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">configuration</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-wsdl-3D">
+            
+              <b>wsdl=</b>(wsdl)
+            
+            <a href="../classes/ShipCompliant.html#method-c-wsdl-3D" name="method-c-wsdl-3D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Replaces client with custom WSDL</p>
+
+<pre><code>ShipCompliant.wsdl = &#39;https://ws-dev.shipcompliant.com/Services/1.2/ProductService.asmx?WSDL&#39;</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-wsdl-3D_source')" id="l_method-c-wsdl-3D_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/eb7e670c74e855cf9ff8544039d5583ddc627609/lib/ship_compliant/client.rb#L14" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-wsdl-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/client.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">wsdl=</span>(<span class="ruby-identifier">wsdl</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ship_compliant_client</span> = <span class="ruby-identifier">new_client_from_wsdl</span>(<span class="ruby-identifier">wsdl</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

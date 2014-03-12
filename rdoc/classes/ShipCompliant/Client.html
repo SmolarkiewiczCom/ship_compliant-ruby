@@ -103,7 +103,13 @@
           
           
             <div class="description">
-              
+              <p>Adds the required security credentials and formats the message to match the
+<a href="../ShipCompliant.html">ShipCompliant</a> structure.</p>
+
+<pre><code>ShipCompliant.client.call(:some_operation, {
+  &#39;SomeKey&#39; =&gt; &#39;SomeValue&#39;
+})
+</code></pre>
             </div>
           
           
@@ -119,11 +125,11 @@
                 Source: 
                 <a href="javascript:toggleSource('method-i-call_source')" id="l_method-i-call_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/d7ce5b383463d79d38c052009d32bbc6ac1e04b3/lib/ship_compliant/client.rb#L13" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/eb7e670c74e855cf9ff8544039d5583ddc627609/lib/ship_compliant/client.rb#L33" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-call_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/client.rb, line 13</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/client.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">call</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">locals</span> = {})
   <span class="ruby-identifier">locals</span>[<span class="ruby-string">&#39;Security&#39;</span>] = <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">credentials</span>
 
