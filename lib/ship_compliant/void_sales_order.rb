@@ -25,21 +25,14 @@ module ShipCompliant
     #
     #   result = ShipCompliant::VoidSalesOrder.by_order_key('OrderKey')
     def self.by_order_key(order_key)
-      request = {
-        'SalesOrderKey' => order_key,
-        'Security' => ShipCompliant.configuration.credentials
-      }
-
-      result = void_order(request)
+      result = void_order({ 'SalesOrderKey' => order_key })
       VoidSalesOrderResult.new(result.to_hash[:void_sales_order_response][:void_sales_order_result])
     end
 
     private
 
     def self.void_order(request)
-      ShipCompliant.client.call(:void_sales_order, message: {
-        'Request' => request
-      })
+      ShipCompliant.client.call(:void_sales_order, request)
     end
 
   end

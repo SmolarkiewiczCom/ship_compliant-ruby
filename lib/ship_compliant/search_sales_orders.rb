@@ -37,19 +37,16 @@ module ShipCompliant
     #     compliance_status: 'NotCompliant' # possible values are "Compliant", "NotCompliant", or "Any". Any is default.
     #   })
     def self.find_by(query)
-      request = OrderSearch.new(query).to_h
-      request['Security'] = ShipCompliant.configuration.credentials
+      order_query = OrderSearch.new(query).to_h
 
-      sales = search_sales(request)
+      sales = search_sales(order_query)
       parse_response(sales)
     end
 
     private
     
-    def self.search_sales(request)
-      ShipCompliant.client.call(:search_sales_orders, message: {
-        'Request' => request
-      })
+    def self.search_sales(order_query)
+      ShipCompliant.client.call(:search_sales_orders, order_query)
     end
 
     def self.parse_response(response)
