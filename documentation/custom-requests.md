@@ -24,6 +24,8 @@ results = ShipCompliant.client.call(:get_inventory_details, {
 puts results.inspect
 ```
 
+**Note:** Making a direct call returns a [Savon::Response][savon_response].
+
 ## Change WSDL
 
 If you need to use another Service, you can specify the WSDL you need
@@ -41,3 +43,4 @@ ShipCompliant.wsdl = 'https://ws-dev.shipcompliant.com/Services/1.2/ProductServi
 
 [call_service_api]: https://shipcompliant.desk.com/customer/portal/articles/1451976-api-coreservice-v1-2?b_id=2759
 [get_inventory_details]: https://shipcompliant.desk.com/customer/portal/articles/1455805-api-getinventorydetails-?b_id=2759
+[savon_response]: http://rubydoc.info/gems/savon/Savon/Response
