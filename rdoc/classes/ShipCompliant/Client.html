@@ -54,6 +54,24 @@
 
 
   
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-call">call</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
 
   
 
@@ -72,7 +90,50 @@
 
 
     <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-call">
+            
+              <b>call</b>(operation, locals = {})
+            
+            <a href="../../classes/ShipCompliant/Client.html#method-i-call" name="method-i-call" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-call_source')" id="l_method-i-call_source">show</a>
+                
+              </p>
+              <div id="method-i-call_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/client.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">call</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">locals</span> = {})
+  <span class="ruby-identifier">locals</span>[<span class="ruby-string">&#39;Security&#39;</span>] = <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">credentials</span>
+
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">message</span><span class="ruby-operator">:</span> {
+    <span class="ruby-string">&#39;Request&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">locals</span>
+  })
+<span class="ruby-keyword">end</span></pre>
               </div>
+            </div>
+            
+          </div>
+                    </div>
 
     </div>
   </body>

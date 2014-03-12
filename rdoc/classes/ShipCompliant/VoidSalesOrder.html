@@ -151,12 +151,7 @@ href="VoidSalesOrderResult.html">ShipCompliant::VoidSalesOrderResult</a></p>
               <div id="method-c-by_order_key_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/ship_compliant/void_sales_order.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">by_order_key</span>(<span class="ruby-identifier">order_key</span>)
-  <span class="ruby-identifier">request</span> = {
-    <span class="ruby-string">&#39;SalesOrderKey&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">order_key</span>,
-    <span class="ruby-string">&#39;Security&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">credentials</span>
-  }
-
-  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">void_order</span>(<span class="ruby-identifier">request</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">void_order</span>({ <span class="ruby-string">&#39;SalesOrderKey&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">order_key</span> })
   <span class="ruby-constant">VoidSalesOrderResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_hash</span>[<span class="ruby-value">:void_sales_order_response</span>][<span class="ruby-value">:void_sales_order_result</span>])
 <span class="ruby-keyword">end</span></pre>
               </div>

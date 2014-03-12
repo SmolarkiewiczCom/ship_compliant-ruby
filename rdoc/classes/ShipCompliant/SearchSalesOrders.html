@@ -166,10 +166,9 @@ orders = ShipCompliant::SearchSalesOrders.find_by({
               <div id="method-c-find_by_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/ship_compliant/search_sales_orders.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">query</span>)
-  <span class="ruby-identifier">request</span> = <span class="ruby-constant">OrderSearch</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">query</span>).<span class="ruby-identifier">to_h</span>
-  <span class="ruby-identifier">request</span>[<span class="ruby-string">&#39;Security&#39;</span>] = <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">credentials</span>
+  <span class="ruby-identifier">order_query</span> = <span class="ruby-constant">OrderSearch</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">query</span>).<span class="ruby-identifier">to_h</span>
 
-  <span class="ruby-identifier">sales</span> = <span class="ruby-identifier">search_sales</span>(<span class="ruby-identifier">request</span>)
+  <span class="ruby-identifier">sales</span> = <span class="ruby-identifier">search_sales</span>(<span class="ruby-identifier">order_query</span>)
   <span class="ruby-identifier">parse_response</span>(<span class="ruby-identifier">sales</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
