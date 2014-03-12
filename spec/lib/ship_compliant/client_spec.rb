@@ -12,5 +12,28 @@ module ShipCompliant
       ShipCompliant.client.globals[:log].should == false
     end
 
+    context "call" do
+      before { savon.mock! }
+      after { savon.unmock! }
+
+      it "simplifies the actual api" do
+        message = {
+          'Request' =>  {
+            'Security' => ShipCompliant.configuration.credentials,
+            'InventoryType' => 'All',
+            'FulfillmentLocation' => 'WineShipping'
+          }
+        }
+        savon.expects(:get_inventory_details)
+          .with(message: message)
+          .returns('')
+
+        ShipCompliant.client.call(:get_inventory_details, {
+            'InventoryType' => 'All',
+            'FulfillmentLocation' => 'WineShipping'
+        })
+      end
+    end
+
   end
 end

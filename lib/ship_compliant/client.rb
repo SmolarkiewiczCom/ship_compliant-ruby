@@ -9,5 +9,13 @@ module ShipCompliant
   end
 
   class Client < Savon::Client
+
+    def call(operation, locals = {})
+      locals['Security'] = ShipCompliant.configuration.credentials
+
+      super(operation, message: {
+        'Request' => locals
+      })
+    end
   end
 end
