@@ -7,6 +7,22 @@ When(/^I search for orders by purchase date$/) do
   end
 end
 
+When(/^I search with invalid criteria$/) do
+  VCR.use_cassette('invalid_search_sales_orders') do
+    @search_results = ShipCompliant::SearchSalesOrders.find_by({})
+  end
+end
+
+Then(/^I should receive a success status for search$/) do
+  @search_results.success?.should be_true
+end
+
+Then(/^I should get an error status for search$/) do
+  @search_results.failure?.should be_true
+  @search_results.error_message.should == "SalesOrder search must include at least one of the following criteria: SalesOrderKeys array, SalesOrderKeyMin/SalesOrderKeyMax, ShipDateMin/ShipDateMax, PurchaseDateMin/PurchaseDateMax, RequestedShipDateMin/RequestedShipDateMax, ExternalSalesOrderKeys array, ExternalSalesOrderKeyMin/ExternalSalesOrderKeyMax, ExternalClubKey, ExternalOfferKey, SettlementBatchNumber."
+  @search_results.error_code.should == 238
+end
+
 Then(/^I should find two orders$/) do
   @search_results.length.should == 2
 

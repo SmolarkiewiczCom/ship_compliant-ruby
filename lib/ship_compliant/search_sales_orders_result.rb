@@ -15,7 +15,9 @@ module ShipCompliant
   #     puts summary.purchase_date #=> DateTime
   #   end
   class SearchSalesOrdersResult
+    include BaseResult
     attr_reader :raw
+    alias_method :data, :raw # for BaseResult
 
     def initialize(data)
       @raw = data
@@ -40,7 +42,7 @@ module ShipCompliant
     #     puts summary.purchase_date #=> DateTime
     #   end
     def summaries
-      raw[:sales_orders][:sales_order_summary].map do |summary|
+      raw[:sales_orders][:sales_order_summary].reject(&:blank?).map do |summary|
         SearchSalesOrderSummary.new(summary)
       end
     end
@@ -50,8 +52,12 @@ module ShipCompliant
     # Standardizes the XML response by converting fields to integers
     # and forcing the order summaries into an array.
     def parse!
+      unless raw.has_key?(:sales_orders)
+        raw[:sales_orders] = {}
+      end
+
       # force orders to be an array
-      orders = raw[:sales_orders][:sales_order_summary]
+      orders = raw[:sales_orders].fetch(:sales_order_summary, {})
       unless orders.kind_of?(Array)
         raw[:sales_orders][:sales_order_summary] = [orders]
       end

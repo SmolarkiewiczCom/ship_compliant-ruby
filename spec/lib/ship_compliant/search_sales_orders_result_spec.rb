@@ -13,6 +13,22 @@ module ShipCompliant
       }
     end
 
+    context "success?" do
+      it "returns true when the response was successful" do
+        response[:response_status] = 'Success'
+        result = SearchSalesOrdersResult.new(response)
+        result.success?.should be_true
+      end
+    end
+
+    context "failure?" do
+      it "returns the opposite of success?" do
+        result = SearchSalesOrdersResult.new(response)
+        result.stub(:success?) { false }
+        result.failure?.should be_true
+      end
+    end
+
     context "length" do
       it "returns the number of returned orders" do
         response[:count_sales_orders_returned] = '5'
@@ -36,9 +52,23 @@ module ShipCompliant
         result = SearchSalesOrdersResult.new(response)
         result.summaries[0].should be_kind_of(SearchSalesOrderSummary)
       end
+
+      it "returns empty array when blank" do
+        result = SearchSalesOrdersResult.new({})
+        result.summaries.should == []
+      end
     end
 
     context "parse!" do
+      it "adds missing sales_orders summaries" do
+        result = SearchSalesOrdersResult.new({})
+        result.raw.should == {
+          sales_orders: {
+            sales_order_summary: [{}]
+          }
+        }
+      end
+
       it "converts single order summary to an array" do
         result = SearchSalesOrdersResult.new(response)
 
