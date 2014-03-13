@@ -14,7 +14,7 @@ module ShipCompliant
   #     puts "Failed to void order"
   #     puts "[%d] %s" % [result.error_code, result.error_message]
   #   end
-  class VoidSalesOrderResult < Struct.new(:data)
-    # include BaseResult
+  class VoidSalesOrderResult < Struct.new(:response)
+    include BaseResult
   end
 end

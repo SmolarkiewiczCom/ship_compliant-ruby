@@ -30,8 +30,7 @@ module ShipCompliant
       end
 
       it "returns a VoidSalesOrderResult" do
-        savon.expects(:void_sales_order)
-          .with(message: message).returns(success_response)
+        VoidSalesOrder.stub(:void_order) { {} }
         
         result = VoidSalesOrder.by_order_key('SomeOrderId')
         result.should be_kind_of(VoidSalesOrderResult)

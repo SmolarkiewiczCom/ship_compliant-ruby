@@ -1,7 +1,8 @@
 require "spec_helper"
 
 module ShipCompliant
-  class FauxResult < BaseResult
+  class FauxResult < Struct.new(:response)
+    include BaseResult
   end
 end
 

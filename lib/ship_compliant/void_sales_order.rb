@@ -26,7 +26,7 @@ module ShipCompliant
     #   result = ShipCompliant::VoidSalesOrder.by_order_key('OrderKey')
     def self.by_order_key(order_key)
       result = void_order({ 'SalesOrderKey' => order_key })
-      result
+      VoidSalesOrderResult.new(result)
     end
 
     private
