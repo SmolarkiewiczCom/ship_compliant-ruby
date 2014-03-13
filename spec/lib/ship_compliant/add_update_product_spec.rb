@@ -26,15 +26,14 @@ module ShipCompliant
 
     context "product" do
       it "queries the client with product and update mode" do
-        savon.expects(:add_update_product)
-          .with(message: message).returns(response)
+        AddUpdateProduct.stub(:add_update_product) { {} }
         
         result = AddUpdateProduct.product({
           bottle_size_ml: 123,
           default_wholesale_case_price: 150
         }, update_mode: 'DoWackaDo')
 
-        result.should be_kind_of(Savon::Response)
+        result.should be_kind_of(AddUpdateProductResult)
       end
 
       it "update mode defaults to ErrorOnExisting" do

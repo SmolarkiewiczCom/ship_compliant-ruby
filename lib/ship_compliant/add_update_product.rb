@@ -51,7 +51,7 @@ module ShipCompliant
       }
 
       result = add_update_product(details)
-      BaseResult.new(result)
+      AddUpdateProductResult.new(result)
     end
 
     private
