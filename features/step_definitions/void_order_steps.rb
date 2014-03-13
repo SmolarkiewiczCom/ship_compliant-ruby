@@ -15,16 +15,13 @@ Then(/^I should get a successful response$/) do
 end
 
 Then(/^I should get an error message$/) do
-  @voided_order.should == {
-    response_status: 'Failure',
-    errors: {
-      error: {
-        code: '200',
-        key: 'ONS-1',
-        message: 'SalesOrder does not exist [ONS-1].',
-        target: 'SalesOrder',
-        type: 'Validation'
-      }
-    }
-  }
+  @voided_order.failure?.should be_true
+  @voided_order.error_count.should == 1
+
+  error = @voided_order.errors[0]
+  error.code.should == 200
+  error.key.should == 'ONS-1'
+  error.message.should == 'SalesOrder does not exist [ONS-1].'
+  error.target.should == 'SalesOrder'
+  error.type.should == 'Validation'
 end
