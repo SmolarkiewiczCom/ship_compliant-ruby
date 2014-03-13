@@ -23,6 +23,8 @@ module ShipCompliant
   end
 
   class Client < Savon::Client
+    # "Backup" original #call from Savon::Client
+    alias_method :savon_call, :call
 
     # Adds the required security credentials and formats
     # the message to match the ShipCompliant structure.
@@ -33,9 +35,20 @@ module ShipCompliant
     def call(operation, locals = {})
       locals['Security'] = ShipCompliant.configuration.credentials
 
-      super(operation, message: {
+      response = savon_call(operation, message: {
         'Request' => locals
       })
+
+      get_result_from_response(operation, response)
+    end
+
+    private
+
+    def get_result_from_response(operation, response)
+      key = operation.to_s
+      resp_key = (key + '_response').to_sym
+      result_key = (key + '_result').to_sym
+      response.to_hash.fetch(resp_key, {}).fetch(result_key, {})
     end
   end
 end

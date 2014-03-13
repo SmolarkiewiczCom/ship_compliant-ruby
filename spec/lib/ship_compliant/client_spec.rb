@@ -41,6 +41,23 @@ module ShipCompliant
             'FulfillmentLocation' => 'WineShipping'
         })
       end
+
+      it "the response's result directly" do
+        ShipCompliant.client.stub(:savon_call) do
+          stub(to_hash: {
+            a_method_response: {
+              a_method_result: {
+                response_status: 'Success'
+              }
+            }
+          })
+        end
+
+        result = ShipCompliant.client.call(:a_method, {})
+        result.should == {
+          response_status: 'Success'
+        }
+      end
     end
 
     context "wsdl=" do
