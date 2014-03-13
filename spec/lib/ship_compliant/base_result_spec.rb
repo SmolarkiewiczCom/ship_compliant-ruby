@@ -1,8 +1,7 @@
 require "spec_helper"
 
 module ShipCompliant
-  class FauxResult < Struct.new(:data)
-    include BaseResult
+  class FauxResult < BaseResult
   end
 end
 
@@ -14,7 +13,7 @@ module ShipCompliant
       {
         errors: {
           error: {
-            code: "200",
+            code: "404",
             key: "OrderId",
             message: "I'm smarter than the average bear, Boo Boo",
             target: "SalesOrder",
@@ -45,40 +44,68 @@ module ShipCompliant
       end
     end
 
-    context "error_message" do
-      it "gets the error message" do
+    context "errors" do
+      it "returns an array of errors" do
         result = FauxResult.new(failure_message)
-        result.error_message.should == "I'm smarter than the average bear, Boo Boo"
+        result.errors.should == [
+          ErrorResult.new({
+              code: "404",
+              key: "OrderId",
+              message: "I'm smarter than the average bear, Boo Boo",
+              target: "SalesOrder",
+              type: "Validation"
+          })
+        ]
       end
 
-      it "returns nil when successful" do
+      it "returns an empty array for successful response" do
         result = FauxResult.new(success_message)
-        result.error_message.should be_nil
+        result.errors.should == []
       end
     end
 
-    context "error_code" do
-      it "gets the error code" do
-        result = FauxResult.new(failure_message)
-        result.error_code.should == 200
-      end
-
-      it "returns 0 when successful" do
-        result = FauxResult.new(success_message)
-        result.error_code.should == 0
+    context "error_count" do
+      it "counts the number of errors" do
+        result = FauxResult.new({})
+        result.stub(:errors) { [1, 2, 3 ] }
+        result.error_count.should == 3
       end
     end
 
-    context "error_key" do
-      it "gets the error key" do
-        result = FauxResult.new(failure_message)
-        result.error_key.should == "OrderId"
-      end
+    # context "error_message" do
+    #   it "gets the error message" do
+    #     result = FauxResult.new(failure_message)
+    #     result.error_message.should == "I'm smarter than the average bear, Boo Boo"
+    #   end
 
-      it "returns nil when successful" do
-        result = FauxResult.new(success_message)
-        result.error_key.should be_nil
-      end
-    end
+    #   it "returns nil when successful" do
+    #     result = FauxResult.new(success_message)
+    #     result.error_message.should be_nil
+    #   end
+    # end
+
+    # context "error_code" do
+    #   it "gets the error code" do
+    #     result = FauxResult.new(failure_message)
+    #     result.error_code.should == 200
+    #   end
+
+    #   it "returns 0 when successful" do
+    #     result = FauxResult.new(success_message)
+    #     result.error_code.should == 0
+    #   end
+    # end
+
+    # context "error_key" do
+    #   it "gets the error key" do
+    #     result = FauxResult.new(failure_message)
+    #     result.error_key.should == "OrderId"
+    #   end
+
+    #   it "returns nil when successful" do
+    #     result = FauxResult.new(success_message)
+    #     result.error_key.should be_nil
+    #   end
+    # end
   end
 end

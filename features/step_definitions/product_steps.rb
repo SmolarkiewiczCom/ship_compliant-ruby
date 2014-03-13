@@ -103,18 +103,38 @@ When(/^I ignore existing product on update$/) do
   end
 end
 
-Then(/^I should get an error message for the missing brand$/) do
-  @product_response.error_message.should == "Brand does not exist [DENSNW]."
-end
-
 Then(/^the product should have been created$/) do
   @product_response.success?.should be_true
 end
 
-Then(/^I should get an error for already defined product$/) do
-  @product_response.error_message.should == "Product already exists."
-end
-
 Then(/^I should get a message that the product was updated$/) do
   @product_response.success?.should be_true
+end
+
+Then(/^I should get an error message for the missing brand$/) do
+  product_response.failure?.should be_true
+  product_response.error_count.should == 1
+  
+  error = product_response.errors[0]
+  error.code.should == 100
+  error.key.should == 'SNFL13'
+  error.message.should == 'Brand does not exist [DENSNW].'
+  error.target.should == 'Product'
+  error.type.should == 'Validation'
+end
+
+Then(/^I should get an error for already defined product$/) do
+  product_response.failure?.should be_true
+  product_response.error_count.should == 1
+  
+  error = product_response.errors[0]
+  error.code.should == 2707
+  error.key.should == 'SNFL13'
+  error.message.should == 'Product already exists.'
+  error.target.should == 'Product'
+  error.type.should == 'Validation'
+end
+
+def product_response
+  @product_response #.to_hash[:add_update_product_response][:add_update_product_result]
 end

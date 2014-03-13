@@ -15,7 +15,7 @@ module ShipCompliant
   #     puts summary.purchase_date #=> DateTime
   #   end
   class SearchSalesOrdersResult
-    include BaseResult
+    # include BaseResult
     attr_reader :raw
     alias_method :data, :raw # for BaseResult
 

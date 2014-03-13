@@ -51,7 +51,7 @@ module ShipCompliant
       }
 
       result = add_update_product(details)
-      AddUpdateProductResult.new(result.to_hash[:add_update_product_response][:add_update_product_result])
+      BaseResult.new(result)
     end
 
     private

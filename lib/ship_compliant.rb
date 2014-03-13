@@ -5,6 +5,7 @@ require "ship_compliant/version"
 require "ship_compliant/configuration"
 require "ship_compliant/client"
 require "ship_compliant/base_result"
+require "ship_compliant/error_result"
 
 # SEARCH SALES ORDERS
 require "ship_compliant/order_search"

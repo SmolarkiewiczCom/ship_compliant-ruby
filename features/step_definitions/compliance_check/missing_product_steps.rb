@@ -105,5 +105,5 @@ Then(/^I should receive a product key error$/) do
 end
 
 def compliance_status
-  @compliance_status.to_hash[:check_compliance_of_sales_order_with_address_validation_response][:check_compliance_of_sales_order_with_address_validation_result]
+  @compliance_status
 end

@@ -34,7 +34,7 @@ module ShipCompliant
           default_wholesale_case_price: 150
         }, update_mode: 'DoWackaDo')
 
-        result.should be_kind_of(AddUpdateProductResult)
+        result.should be_kind_of(Savon::Response)
       end
 
       it "update mode defaults to ErrorOnExisting" do
