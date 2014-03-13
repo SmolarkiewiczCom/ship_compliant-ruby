@@ -16,7 +16,7 @@ end
 
 Then(/^I should get an error message$/) do
   @voided_order.failure?.should be_true
-  @voided_order.error_count.should == 1
+  @voided_order.errors_count.should == 1
 
   error = @voided_order.errors[0]
   error.code.should == 200

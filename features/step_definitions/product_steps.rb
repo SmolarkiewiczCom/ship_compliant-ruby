@@ -113,7 +113,7 @@ end
 
 Then(/^I should get an error message for the missing brand$/) do
   product_response.failure?.should be_true
-  product_response.error_count.should == 1
+  product_response.errors_count.should == 1
   
   error = product_response.errors[0]
   error.code.should == 100
@@ -125,7 +125,7 @@ end
 
 Then(/^I should get an error for already defined product$/) do
   product_response.failure?.should be_true
-  product_response.error_count.should == 1
+  product_response.errors_count.should == 1
   
   error = product_response.errors[0]
   error.code.should == 2707

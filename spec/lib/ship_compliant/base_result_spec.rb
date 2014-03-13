@@ -65,11 +65,11 @@ module ShipCompliant
       end
     end
 
-    context "error_count" do
+    context "errors_count" do
       it "counts the number of errors" do
         result = FauxResult.new({})
         result.stub(:errors) { [1, 2, 3 ] }
-        result.error_count.should == 3
+        result.errors_count.should == 3
       end
     end
 

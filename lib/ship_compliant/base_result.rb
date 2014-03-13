@@ -34,9 +34,10 @@ module ShipCompliant
     end
 
     # The number of errors in the response.
-    def error_count
+    def errors_count
       errors.length
     end
+    alias_method :error_count, :errors_count
 
   end
 end
