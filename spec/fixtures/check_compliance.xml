@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/03/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>http://ws.shipcompliant.com/CheckComplianceOfSalesOrderWithAddressValidationResponse</wsa:Action>
+    <wsa:MessageID>uuid:3cb20151-7acd-4708-ac09-92ea6c9f7c79</wsa:MessageID>
+    <wsa:RelatesTo>uuid:8a66b3d7-c72b-4d0c-8e07-f2eb803626ef</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-7d7c444e-56d1-4100-be35-a98969f8a510">
+        <wsu:Created>2014-03-13T11:59:22Z</wsu:Created>
+        <wsu:Expires>2014-03-13T12:04:22Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <CheckComplianceOfSalesOrderWithAddressValidationResponse xmlns="http://ws.shipcompliant.com/">
+      <CheckComplianceOfSalesOrderWithAddressValidationResult>
+        <ResponseStatus>Success</ResponseStatus>
+        <SalesOrder>
+          <IsCompliant>true</IsCompliant>
+          <Key>1006891</Key>
+          <SalesTaxRates>
+            <RecommendedSalesTaxDue>44.1</RecommendedSalesTaxDue>
+            <ShipmentSalesTaxRates>
+              <ShipmentSalesTaxRate ShipmentKey="1">
+                <FreightSalesTaxRate SalesTaxDue="1.33125" SalesTaxRate="8.875"/>
+                <ProductSalesTaxRates>
+                  <ProductSalesTaxRate BrandKey="DEN" ProductKey="04CHRCAB75" SalesTaxDue="40.47000" SalesTaxRate="8.875"/>
+                  <ProductSalesTaxRate BrandKey="DEN" ProductKey="TShirt" SalesTaxDue="2.30661" SalesTaxRate="8.875"/>
+                </ProductSalesTaxRates>
+              </ShipmentSalesTaxRate>
+            </ShipmentSalesTaxRates>
+          </SalesTaxRates>
+          <Shipments>
+            <ShipmentComplianceResponse>
+              <IsCompliant>true</IsCompliant>
+              <Key>1</Key>
+              <Rules>
+                <RuleComplianceResponse>
+                  <ComplianceDescription>No prohibited products in shipment.</ComplianceDescription>
+                  <IsCompliant>true</IsCompliant>
+                  <LicenseRelationship>SupplierToConsumer</LicenseRelationship>
+                  <RuleDescription>Some Products are always non-compliant.</RuleDescription>
+                  <RuleType>ValidProductsRequired</RuleType>
+                </RuleComplianceResponse>
+                <RuleComplianceResponse>
+                  <ComplianceDescription>You have 1 current license in this region for the time of this shipment.</ComplianceDescription>
+                  <IsCompliant>true</IsCompliant>
+                  <LicenseRelationship>SupplierToConsumer</LicenseRelationship>
+                  <RuleDescription>A license is required for shipping offsite sales and must be renewed every 1 year. The cost of this license is $125.00.</RuleDescription>
+                  <RuleType>DirectShippingLicenseRequired</RuleType>
+                </RuleComplianceResponse>
+                <RuleComplianceResponse>
+                  <ComplianceDescription>Rule has been acknowledged.</ComplianceDescription>
+                  <IsCompliant>true</IsCompliant>
+                  <LicenseRelationship>SupplierToConsumer</LicenseRelationship>
+                  <RuleDescription>Shipments to this region require an excise tax of $.30 per 1 gallon on offsite sales of wine less than or equal to 24% alcohol due within 20 days after every month. For a summary of the taxes in the state, click here.</RuleDescription>
+                  <RuleType>TaxRequired</RuleType>
+                </RuleComplianceResponse>
+                <RuleComplianceResponse>
+                  <ComplianceDescription>Rule has been acknowledged.</ComplianceDescription>
+                  <IsCompliant>true</IsCompliant>
+                  <LicenseRelationship>SupplierToConsumer</LicenseRelationship>
+                  <RuleDescription>Shipments to this region require sales tax for offsite sales shipments. For a summary of the taxes in the state, click here.</RuleDescription>
+                  <RuleType>TaxRequired</RuleType>
+                </RuleComplianceResponse>
+                <RuleComplianceResponse>
+                  <ComplianceDescription>All products within this shipment belong to self-produced brands.</ComplianceDescription>
+                  <IsCompliant>true</IsCompliant>
+                  <LicenseRelationship>SupplierToConsumer</LicenseRelationship>
+                  <RuleDescription>Only wines of your own production are allowed to be shipped to this region. Note: The license holder must produce the wine being shipped..</RuleDescription>
+                  <RuleType>WinesNotOfOwnProductionProhibited</RuleType>
+                </RuleComplianceResponse>
+                <RuleComplianceResponse>
+                  <ComplianceDescription>You have shipped 1.00 cases to this individual between 1/1/2014 and 12/31/2014 and thus are under the customer aggregate volume limit of 36 cases per calendar year.</ComplianceDescription>
+                  <IsCompliant>true</IsCompliant>
+                  <LicenseRelationship>SupplierToConsumer</LicenseRelationship>
+                  <RuleDescription>Shipments to this region have a per customer volume limit of 36 cases per individual per calendar year. The volume will be calculated from combined onsite and offsite sales.</RuleDescription>
+                  <RuleType>CustomerAggregateVolumeLimit</RuleType>
+                  <CustomerAggregateVolumeLimitDetail>
+                    <CustomerType>Individual</CustomerType>
+                    <TimeFrameCount>1</TimeFrameCount>
+                    <TimeFrameType>Calendar</TimeFrameType>
+                    <TimeFrameUnit>Years</TimeFrameUnit>
+                    <UnitOfMeasure>Case</UnitOfMeasure>
+                    <VolumeCount>36</VolumeCount>
+                  </CustomerAggregateVolumeLimitDetail>
+                </RuleComplianceResponse>
+              </Rules>
+            </ShipmentComplianceResponse>
+          </Shipments>
+        </SalesOrder>
+        <AddressValidationResult>ValidatedWithStreetLevelNormalization</AddressValidationResult>
+        <SuggestedAddress>
+          <City>New York</City>
+          <County>New York</County>
+          <Details>
+            <CityAbbreviation>New York</CityAbbreviation>
+            <CongressionalDistrict>10</CongressionalDistrict>
+            <CountyFips>36061</CountyFips>
+            <TimeZone>Eastern Time</TimeZone>
+            <TimeZoneCode>05</TimeZoneCode>
+          </Details>
+          <Parts>
+            <Company/>
+            <MailBoxName/>
+            <MailBoxNumber/>
+            <PostDirection/>
+            <PreDirection/>
+            <StreetName>Broadway</StreetName>
+            <StreetNumber>253</StreetNumber>
+            <StreetSuffix/>
+            <SuiteName>Fl</SuiteName>
+            <SuiteNumber>9</SuiteNumber>
+          </Parts>
+          <State>NY</State>
+          <Street1>253 Broadway</Street1>
+          <Street2>Fl 9</Street2>
+          <Zip1>10007</Zip1>
+          <Zip2>2326</Zip2>
+        </SuggestedAddress>
+      </CheckComplianceOfSalesOrderWithAddressValidationResult>
+    </CheckComplianceOfSalesOrderWithAddressValidationResponse>
+  </soap:Body>
+</soap:Envelope>

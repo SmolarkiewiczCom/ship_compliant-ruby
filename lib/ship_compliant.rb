@@ -22,6 +22,9 @@ require "ship_compliant/product_attributes"
 require "ship_compliant/add_update_product"
 require "ship_compliant/add_update_product_result"
 
+# CHECK COMPLIANCE OF SALES ORDER WITH ADDRESS VALIDATION
+require "ship_compliant/check_compliance"
+
 module ShipCompliant
   # Your code goes here...
 end

@@ -1,6 +1,7 @@
 When(/^I check compliance with a missing product$/) do
   VCR.use_cassette('compliance_missing_product') do
     @compliance_status = ShipCompliant.client.call(:check_compliance_of_sales_order_with_address_validation, {
+      #@compliace_status = ShipCompliant::CheckCompliance.of_sales_order({
       'AddressOption' => {
         'IgnoreStreetLevelErrors' => true,
         'RejectIfAddressSuggested' => 'false'
