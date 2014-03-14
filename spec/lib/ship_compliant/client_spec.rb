@@ -32,11 +32,11 @@ module ShipCompliant
             'FulfillmentLocation' => 'WineShipping'
           }
         }
-        savon.expects(:get_inventory_details)
+        savon.expects(:search_sales_orders)
           .with(message: message)
-          .returns('')
+          .returns(File.read('spec/fixtures/search_sales_orders.xml'))
 
-        ShipCompliant.client.call(:get_inventory_details, {
+        ShipCompliant.client.call(:search_sales_orders, {
             'InventoryType' => 'All',
             'FulfillmentLocation' => 'WineShipping'
         })
