@@ -40,17 +40,13 @@ module ShipCompliant
       order_query = OrderSearch.new(query).to_h
 
       sales = search_sales(order_query)
-      parse_response(sales)
+      SearchSalesOrdersResult.new(sales.to_hash)
     end
 
     private
     
     def self.search_sales(order_query)
       ShipCompliant.client.call(:search_sales_orders, order_query)
-    end
-
-    def self.parse_response(response)
-      SearchSalesOrdersResult.new(response.to_hash[:search_sales_orders_response][:search_sales_orders_result])
     end
 
   end

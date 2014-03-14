@@ -30,6 +30,13 @@ module ShipCompliant
           compliance_status: 45
         })
       end
+      
+      it "returns a SearchSalesOrdersResult" do
+        SearchSalesOrders.stub(:search_sales) { {} }
+
+        result = SearchSalesOrders.find_by({})
+        result.should be_kind_of(SearchSalesOrdersResult)
+      end
     end
   end
 end
