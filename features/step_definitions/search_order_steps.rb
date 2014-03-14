@@ -19,8 +19,11 @@ end
 
 Then(/^I should get an error status for search$/) do
   @search_results.failure?.should be_true
-  @search_results.error_message.should == "SalesOrder search must include at least one of the following criteria: SalesOrderKeys array, SalesOrderKeyMin/SalesOrderKeyMax, ShipDateMin/ShipDateMax, PurchaseDateMin/PurchaseDateMax, RequestedShipDateMin/RequestedShipDateMax, ExternalSalesOrderKeys array, ExternalSalesOrderKeyMin/ExternalSalesOrderKeyMax, ExternalClubKey, ExternalOfferKey, SettlementBatchNumber."
-  @search_results.error_code.should == 238
+  @search_results.error_count.should == 1
+  
+  error = @search_results.errors.first
+  error.message.should == "SalesOrder search must include at least one of the following criteria: SalesOrderKeys array, SalesOrderKeyMin/SalesOrderKeyMax, ShipDateMin/ShipDateMax, PurchaseDateMin/PurchaseDateMax, RequestedShipDateMin/RequestedShipDateMax, ExternalSalesOrderKeys array, ExternalSalesOrderKeyMin/ExternalSalesOrderKeyMax, ExternalClubKey, ExternalOfferKey, SettlementBatchNumber."
+  error.code.should == 238
 end
 
 Then(/^I should find two orders$/) do
