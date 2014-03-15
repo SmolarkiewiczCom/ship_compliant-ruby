@@ -62,6 +62,7 @@ module ShipCompliant
 
     context "wsdl=" do
       it "changes the default wsdl" do
+        ShipCompliant.configuration = nil
         ShipCompliant.client.globals[:wsdl].should == 'https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL'
         ShipCompliant.wsdl = 'http://ws.example.com?WSDL'
         ShipCompliant.client.globals[:wsdl].should == 'http://ws.example.com?WSDL'

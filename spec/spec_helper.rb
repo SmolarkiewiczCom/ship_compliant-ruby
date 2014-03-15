@@ -21,6 +21,7 @@ RSpec.configure do |config|
       c.username = 'bob@example.com'
       c.password = 'secret'
       c.log = false
+      c.wsdl = 'spec/fixtures/coreservice.wsdl'
     end
   end
 
