@@ -13,21 +13,7 @@ module ShipCompliant
       }
     end
 
-    context "success?" do
-      it "returns true when the response was successful" do
-        response[:response_status] = 'Success'
-        result = SearchSalesOrdersResult.new(response)
-        result.success?.should be_true
-      end
-    end
-
-    context "failure?" do
-      it "returns the opposite of success?" do
-        result = SearchSalesOrdersResult.new(response)
-        result.stub(:success?) { false }
-        result.failure?.should be_true
-      end
-    end
+    it_behaves_like "BaseResult"
 
     context "length" do
       it "returns the number of returned orders" do

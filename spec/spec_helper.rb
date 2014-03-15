@@ -1,6 +1,7 @@
 require 'bundler/setup'
 Bundler.setup
 
+require "set"
 require 'ship_compliant'
 require "savon/mock/spec_helper"
 
@@ -25,4 +26,21 @@ RSpec.configure do |config|
     end
   end
 
+end
+
+shared_examples_for "BaseResult" do
+  context "success?" do
+    it "returns true when the response was successful" do
+      result = described_class.new({ response_status: 'Success' })
+      result.success?.should be_true
+    end
+  end
+
+  context "failure?" do
+    it "returns the opposite of success?" do
+      result = described_class.new({})
+      result.stub(:success?) { false }
+      result.failure?.should be_true
+    end
+  end
 end
