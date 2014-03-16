@@ -12,7 +12,7 @@ module ShipCompliant
             recommended_sales_tax_due: '1372.34',
             shipment_sales_tax_rates: {
               shipment_sales_tax_rate: {
-                :@shipment_key => 'SOME-KEY',
+                :@shipment_key => 'ORDER-KEY',
                 freight_sales_tax_rate: {
                   :@sales_tax_due => 100.5,
                   :@sales_tax_rate => 10.34
@@ -26,6 +26,12 @@ module ShipCompliant
                   }
                 }
               }
+            }
+          },
+          shipments: {
+            shipment_compliance_response: {
+              is_compliant: true,
+              key: 'ORDER-KEY'
             }
           }
         }
@@ -56,7 +62,7 @@ module ShipCompliant
       it "returns an array of sales tax rates" do
         subject.shipment_sales_tax_rates.should == [
           {
-            :@shipment_key => 'SOME-KEY',
+            :@shipment_key => 'ORDER-KEY',
             freight_sales_tax_rate: {
               :@sales_tax_due => 100.5,
               :@sales_tax_rate => 10.34
@@ -76,13 +82,33 @@ module ShipCompliant
 
     context "taxes_for_shipment" do
       it "finds taxes from shipment_key" do
-        subject.taxes_for_shipment('SOME-KEY').should == ShipmentSalesTaxRate.new(
-          shipment_key = 'SOME-KEY',
+        subject.taxes_for_shipment('ORDER-KEY').should == ShipmentSalesTaxRate.new(
+          shipment_key = 'ORDER-KEY',
           freight = FreightSalesTaxRate.new({ sales_tax_due: 100.5, sales_tax_rate: 10.34 }),
           products = [
             ProductSalesTaxRate.new({ brand_key: 'ABC', product_key: '123', sales_tax_due: 12.332, sales_tax_rate: 0.844 })
           ]
         )
+      end
+    end
+
+    context "shipment_compliance_rules" do
+      it "returns compliance rules as an array" do
+        subject.shipment_compliance_rules.should == [
+          {
+            is_compliant: true,
+            key: 'ORDER-KEY'
+          }
+        ]
+      end
+    end
+
+    context "compliance_rules_for_shipment" do
+      it "finds compliance rules for shipment" do
+        subject.compliance_rules_for_shipment('ORDER-KEY').should == ShipmentCompliance.new({
+          is_compliant: true,
+          key: 'ORDER-KEY'
+        })
       end
     end
   end

@@ -15,7 +15,7 @@ module ShipCompliant
   class CheckComplianceResult < Struct.new(:response)
     include BaseResult
 
-    # Returns the compliance status of a SalesOrder.
+    # Returns true if all shipments of a SalesOrder are compliant.
     def compliant?
       response[:sales_order][:is_compliant] == true
     end
@@ -39,10 +39,29 @@ module ShipCompliant
       ShipmentSalesTaxRate.new(shipment_key, FreightSalesTaxRate.new(freight), products)
     end
 
-    # This method returns a Hash containing information about each shipment fo a
+    # This method returns an Array containing information about each shipment of a
     # SalesOrder.
     def shipment_sales_tax_rates
       Array.wrap(response[:sales_order][:sales_tax_rates][:shipment_sales_tax_rates][:shipment_sales_tax_rate])
+    end
+
+    # Returns an array of the +ShipmentComplianceResponse+ node as a Hash.
+    #
+    #   compliance_result.shipment_compliance_rules.each do |shipment|
+    #     puts "SHIPMENT '#{shipment[:key]}' IS NOT COMPLIANT" unless shipment[:is_compliant]
+    #   end
+    def shipment_compliance_rules
+      Array.wrap(response[:sales_order][:shipments][:shipment_compliance_response])
+    end
+
+    # Finds all the compliance rules for a shipment.
+    # Returns an instance of ShipmentCompliance.
+    #
+    #  shipment_compliance = compliance_result.compliance_rules_for_shipment('SHIPMENT-KEY')
+    #  puts shipment_compliance.compliant? #=> false
+    def compliance_rules_for_shipment(shipment_key)
+      shipment = shipment_compliance_rules.select { |s| s[:key] == shipment_key }.first
+      ShipmentCompliance.new(shipment)
     end
 
     private

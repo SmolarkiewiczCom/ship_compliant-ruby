@@ -10,7 +10,8 @@ Feature: Check Compliance Of SalesOrder With Address Validation
   Scenario: Check compliance with available product
     When I check compliance with an available product
     Then I should receive the sales tax rates
-    And I should receive the shipment compliance
+    And I should receive the shipment compliance results
+    And I should receive the suggested address
 
   Scenario: Check compliance with non-compliant product
     When I check compliance with a non-compliant product

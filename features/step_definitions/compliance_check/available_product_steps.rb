@@ -110,6 +110,32 @@ Then(/^I should receive the sales tax rates$/) do
   shipment_taxes.taxes_for_product('TShirt').sales_tax_rate.should == 8.875
 end
 
-Then(/^I should receive the shipment compliance$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should receive the shipment compliance results$/) do
+  shipment_compliance = @compliance_status.compliance_rules_for_shipment('1')
+  shipment_compliance.compliant?.should be_true
+  shipment_compliance.shipment_key.should == '1'
+
+  shipment_compliance.rules.length.should == 6
+
+  # Compliance Descriptions
+  compliance_descriptions = shipment_compliance.rules.map { |c| c.compliance_description }
+  compliance_descriptions.should == [
+    'No prohibited products in shipment.',
+    'You have 1 current license in this region for the time of this shipment.',
+    'Rule has been acknowledged.',
+    'Rule has been acknowledged.',
+    'All products within this shipment belong to self-produced brands.',
+    'You have shipped 1.00 cases to this individual between 1/1/2014 and 12/31/2014 and thus are under the customer aggregate volume limit of 36 cases per calendar year.'
+  ]
+
+  # Rule Descriptions
+  rule_descriptions = shipment_compliance.rules.map { |c| c.rule_description }
+  rule_descriptions.should == [
+    'Some Products are always non-compliant.',
+    'A license is required for shipping offsite sales and must be renewed every 1 year. The cost of this license is $125.00.',
+    'Shipments to this region require an excise tax of $.30 per 1 gallon on offsite sales of wine less than or equal to 24% alcohol due within 20 days after every month. For a summary of the taxes in the state, click here.',
+    'Shipments to this region require sales tax for offsite sales shipments. For a summary of the taxes in the state, click here.',
+    'Only wines of your own production are allowed to be shipped to this region. Note: The license holder must produce the wine being shipped..',
+    'Shipments to this region have a per customer volume limit of 36 cases per individual per calendar year. The volume will be calculated from combined onsite and offsite sales.'
+  ]
 end
