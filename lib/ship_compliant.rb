@@ -22,8 +22,15 @@ require "ship_compliant/product_attributes"
 require "ship_compliant/add_update_product"
 require "ship_compliant/add_update_product_result"
 
+# SALES TAX
+require "ship_compliant/shipment_sales_tax_rate"
+require "ship_compliant/sales_tax_rate"
+require "ship_compliant/product_sales_tax_rate"
+require "ship_compliant/freight_sales_tax_rate"
+
 # CHECK COMPLIANCE OF SALES ORDER WITH ADDRESS VALIDATION
 require "ship_compliant/check_compliance"
+require "ship_compliant/check_compliance_result"
 
 module ShipCompliant
   # Your code goes here...

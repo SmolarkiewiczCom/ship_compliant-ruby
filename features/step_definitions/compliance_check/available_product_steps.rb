@@ -3,7 +3,7 @@ When(/^I check compliance with an available product$/) do
     @compliance_status = ShipCompliant::CheckCompliance.of_sales_order({
       address_option: {
         ignore_street_level_errors: true,
-        reject_if_address_suggested: false
+        reject_if_address_suggested: 'false'
       },
       include_sales_tax_rates: true,
       persist_option: 'Null',
@@ -90,7 +90,24 @@ When(/^I check compliance with an available product$/) do
 end
 
 Then(/^I should receive the sales tax rates$/) do
-  pending
+  @compliance_status.success?.should be_true
+  @compliance_status.compliant?.should be_true
+
+  # Tax Rates
+  @compliance_status.recommended_tax_due.should == 44.1
+  @compliance_status.shipment_sales_tax_rates.should be_kind_of(Array)
+  shipment_taxes = @compliance_status.taxes_for_shipment('1')
+
+  # Freight Taxes
+  shipment_taxes.freight.sales_tax_due.should == 1.33125
+  shipment_taxes.freight.sales_tax_rate.should == 8.875
+
+  # Product Taxes
+  shipment_taxes.taxes_for_product('04CHRCAB75').sales_tax_due.should == 40.47
+  shipment_taxes.taxes_for_product('04CHRCAB75').sales_tax_rate.should == 8.875
+
+  shipment_taxes.taxes_for_product('TShirt').sales_tax_due.should == 2.30661
+  shipment_taxes.taxes_for_product('TShirt').sales_tax_rate.should == 8.875
 end
 
 Then(/^I should receive the shipment compliance$/) do

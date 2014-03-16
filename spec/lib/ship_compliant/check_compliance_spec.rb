@@ -29,11 +29,13 @@ module ShipCompliant
         savon.expects(:check_compliance_of_sales_order_with_address_validation)
           .with(message: message).returns(response)
 
-        CheckCompliance.of_sales_order({
+        result = CheckCompliance.of_sales_order({
           include_sales_tax: true,
           customer_key: 'CUST-1',
           foo_bar: { baz: false }
         })
+
+        result.should be_kind_of(CheckComplianceResult)
       end
     end
 
