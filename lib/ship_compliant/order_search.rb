@@ -84,12 +84,9 @@ module ShipCompliant
     #
     #   :sales_order_keys #=> 'SalesOrderKeys'
     def to_h
-      hash = {}
-      details.each do |key, value|
-        next unless KEYS.include?(key)
-        hash[key.to_s.classify] = value unless value.nil?
-      end
-      hash
+      details.reject do |key|
+        !KEYS.include?(key)
+      end.deep_transform_keys { |key| key.to_s.camelize }
     end
   end
 end

@@ -84,17 +84,15 @@ module ShipCompliant
     #
     #   :bottle_size_ml #=> 'BottleSizeML'
     def to_h
-      hash = {}
-      details.each do |key, value|
+      details.deep_transform_keys do |key|
         # handle special cases
-        pascal_key = key.to_s.classify
+        pascal_key = key.to_s.camelize
         if SPECIAL_CASES.has_key?(key)
           pascal_key = SPECIAL_CASES[key]
         end
-
-        hash[pascal_key] = value unless value.nil?
+        
+        pascal_key
       end
-      hash
     end
   end
 end
