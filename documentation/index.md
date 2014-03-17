@@ -17,10 +17,11 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 
 ### Core Service Guides
 
-1. [Search for Orders](./search_sales_orders.html) <small>API:
+1. [SalesOrder Compliance Check](./sales_orders_compliance_check.html)
+2. [Search for Orders](./search_sales_orders.html) <small>API:
    SearchSalesOrders</small>
-2. [Voiding Orders](./void_sales_order.html) <small>API: VoidSalesOrder</small>
-3. [Managing Products](./add_update_product.html) <small>API:
+3. [Voiding Orders](./void_sales_order.html) <small>API: VoidSalesOrder</small>
+4. [Managing Products](./add_update_product.html) <small>API:
    AddUpdateProduct</small>
 
 ## APIS
