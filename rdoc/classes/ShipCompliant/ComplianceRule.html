@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::ComplianceRule</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/ship_compliant.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::ComplianceRule 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:response)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/compliance_rule_rb.html">lib/ship_compliant/compliance_rule.rb</a></li>
+            
+        </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-compliance_description">compliance_description</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-compliant-3F">compliant?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-license_relationship">license_relationship</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rule_description">rule_description</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rule_type">rule_type</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-compliance_description">
+            
+              <b>compliance_description</b>()
+            
+            <a href="../../classes/ShipCompliant/ComplianceRule.html#method-i-compliance_description" name="method-i-compliance_description" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>ComplianceDescription</code>.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-compliance_description_source')" id="l_method-i-compliance_description_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1ae3f6d589540ba1384f1da3ae4b485be11de77b/lib/ship_compliant/compliance_rule.rb#L5" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-compliance_description_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/compliance_rule.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">compliance_description</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:compliance_description</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-compliant-3F">
+            
+              <b>compliant?</b>()
+            
+            <a href="../../classes/ShipCompliant/ComplianceRule.html#method-i-compliant-3F" name="method-i-compliant-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Checks if the current compliance rule was met.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-compliant-3F_source')" id="l_method-i-compliant-3F_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1ae3f6d589540ba1384f1da3ae4b485be11de77b/lib/ship_compliant/compliance_rule.rb#L10" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-compliant-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/compliance_rule.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">compliant?</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:is_compliant</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-license_relationship">
+            
+              <b>license_relationship</b>()
+            
+            <a href="../../classes/ShipCompliant/ComplianceRule.html#method-i-license_relationship" name="method-i-license_relationship" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>LicenseRelationship</code>.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-license_relationship_source')" id="l_method-i-license_relationship_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1ae3f6d589540ba1384f1da3ae4b485be11de77b/lib/ship_compliant/compliance_rule.rb#L20" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-license_relationship_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/compliance_rule.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">license_relationship</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:license_relationship</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rule_description">
+            
+              <b>rule_description</b>()
+            
+            <a href="../../classes/ShipCompliant/ComplianceRule.html#method-i-rule_description" name="method-i-rule_description" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>RuleDescription</code>.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rule_description_source')" id="l_method-i-rule_description_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1ae3f6d589540ba1384f1da3ae4b485be11de77b/lib/ship_compliant/compliance_rule.rb#L15" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-rule_description_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/compliance_rule.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rule_description</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:rule_description</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rule_type">
+            
+              <b>rule_type</b>()
+            
+            <a href="../../classes/ShipCompliant/ComplianceRule.html#method-i-rule_type" name="method-i-rule_type" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>RuleType</code>.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rule_type_source')" id="l_method-i-rule_type_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1ae3f6d589540ba1384f1da3ae4b485be11de77b/lib/ship_compliant/compliance_rule.rb#L25" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-rule_type_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/compliance_rule.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rule_type</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:rule_type</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -3,7 +3,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <title>ShipCompliant::VoidSalesOrderResult</title>
+    <title>ShipCompliant::FreightSalesTaxRate</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
@@ -21,18 +21,18 @@
         
         <h1>
             <span class="type">Class</span> 
-            ShipCompliant::VoidSalesOrderResult 
+            ShipCompliant::FreightSalesTaxRate 
             
                 <span class="parent">&lt; 
                     
-                    Struct.new(:response)
+                    SalesTaxRate
                     
                 </span>
             
         </h1>
         <ul class="files">
             
-            <li><a href="../../files/lib/ship_compliant/void_sales_order_result_rb.html">lib/ship_compliant/void_sales_order_result.rb</a></li>
+            <li><a href="../../files/lib/ship_compliant/freight_sales_tax_rate_rb.html">lib/ship_compliant/freight_sales_tax_rate.rb</a></li>
             
         </ul>
 
@@ -43,20 +43,11 @@
   
     <div class="description">
       
-<h2 id="class-ShipCompliant::VoidSalesOrderResult-label-ShipCompliant%3A%3AVoidSalesOrderResult"><a href="VoidSalesOrderResult.html">ShipCompliant::VoidSalesOrderResult</a></h2>
+<h2 id="class-ShipCompliant::FreightSalesTaxRate-label-ShipCompliant%3A%3AFreightSalesTaxRate"><a href="FreightSalesTaxRate.html">ShipCompliant::FreightSalesTaxRate</a></h2>
 
-<p>This class provides methods to easily get the result of voiding a sales
-order. You can quickly check if voiding the order was a success or not. As
-well as get the error message.</p>
-
-<pre><code>result = ShipCompliant::VoidSalesOrder.by_order_key(&#39;OrderKey&#39;)
-
-if result.success?
-  puts &quot;Order Voided&quot;
-else
-  puts &quot;Failed to void order&quot;
-  puts &quot;[%d] %s&quot; % [result.error_code, result.error_message]
-end</code></pre>
+<p><a href="FreightSalesTaxRate.html">FreightSalesTaxRate</a> wraps the <a
+href="SalesTaxRate.html">SalesTaxRate</a> value object. It currently
+doesn&#39;t do anything special.</p>
 
     </div>
   
@@ -74,20 +65,6 @@ end</code></pre>
 
   
 
-  
-    <!-- Includes -->
-    <div class="sectiontitle">Included Modules</div>
-    <ul>
-      
-        <li>
-          
-            <a href="BaseResult.html">
-              ShipCompliant::BaseResult
-            </a>
-          
-        </li>
-      
-    </ul>
   
 
 

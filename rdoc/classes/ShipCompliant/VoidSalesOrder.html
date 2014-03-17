@@ -147,14 +147,14 @@ href="VoidSalesOrderResult.html">ShipCompliant::VoidSalesOrderResult</a></p>
                 Source: 
                 <a href="javascript:toggleSource('method-c-by_order_key_source')" id="l_method-c-by_order_key_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/8570b2ece0c8d677754d1e068554b653a2f17850/lib/ship_compliant/void_sales_order.rb#L27" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/5edd39abd88ac7a4aceb15ecce33cbb6bcbba04d/lib/ship_compliant/void_sales_order.rb#L27" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-c-by_order_key_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/ship_compliant/void_sales_order.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">by_order_key</span>(<span class="ruby-identifier">order_key</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-identifier">void_order</span>({ <span class="ruby-string">&#39;SalesOrderKey&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">order_key</span> })
-  <span class="ruby-constant">VoidSalesOrderResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_hash</span>[<span class="ruby-value">:void_sales_order_response</span>][<span class="ruby-value">:void_sales_order_result</span>])
+  <span class="ruby-constant">VoidSalesOrderResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

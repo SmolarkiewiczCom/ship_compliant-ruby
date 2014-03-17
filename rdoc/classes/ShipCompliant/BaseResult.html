@@ -68,17 +68,17 @@ API client include these methods.</p>
             
               
               <li>
-                <a href="#method-i-error_code">error_code</a>,
+                <a href="#method-i-error_count">error_count</a>,
               </li>
             
               
               <li>
-                <a href="#method-i-error_key">error_key</a>,
+                <a href="#method-i-errors">errors</a>,
               </li>
             
               
               <li>
-                <a href="#method-i-error_message">error_message</a>
+                <a href="#method-i-errors_count">errors_count</a>
               </li>
             
           </ul>
@@ -132,20 +132,47 @@ API client include these methods.</p>
       <div class="sectiontitle">Instance Public methods</div>
       
         <div class="method">
-          <div class="title method-title" id="method-i-error_code">
+          <div class="title method-title" id="method-i-error_count">
             
-              <b>error_code</b>()
+              <b>error_count</b>()
             
-            <a href="../../classes/ShipCompliant/BaseResult.html#method-i-error_code" name="method-i-error_code" class="permalink">Link</a>
+            <a href="../../classes/ShipCompliant/BaseResult.html#method-i-error_count" name="method-i-error_count" class="permalink">Link</a>
           </div>
           
           
             <div class="description">
-              <p>Gets the error code from the request.</p>
+              
+            </div>
+          
+          
+          
 
-<p>Returns <code>0</code> when empty.</p>
+          
+            <div class="aka">
+              Alias for: <a href="BaseResult.html#method-i-errors_count">errors_count</a>
+            </div>
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-errors">
+            
+              <b>errors</b>()
+            
+            <a href="../../classes/ShipCompliant/BaseResult.html#method-i-errors" name="method-i-errors" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>An array of <code>ErrorResult</code> items or an empty array if the
+response was successful.</p>
 
-<pre><code>puts &quot;ERROR ##{result.error_code}&quot; unless result.success?</code></pre>
+<pre><code>result.errors.each do |error|
+  puts &quot;#{error.message} [#error.key]&quot;
+end
+</code></pre>
             </div>
           
           
@@ -159,101 +186,61 @@ API client include these methods.</p>
               
               <p class="source-link">
                 Source: 
-                <a href="javascript:toggleSource('method-i-error_code_source')" id="l_method-i-error_code_source">show</a>
+                <a href="javascript:toggleSource('method-i-errors_source')" id="l_method-i-errors_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/0e8026f11cd15044ee4f4ff492d950007f0486dd/lib/ship_compliant/base_result.rb#L37" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/9192ea1e3475a76aac93bf9aeaba4dc658ca4f31/lib/ship_compliant/base_result.rb#L29" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
-              <div id="method-i-error_code_source" class="dyn-source">
+              <div id="method-i-errors_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/base_result.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">errors</span>
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">success?</span>
+  <span class="ruby-ivar">@errors</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">response</span>[<span class="ruby-value">:errors</span>][<span class="ruby-value">:error</span>]).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">error</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">ErrorResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">error</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-errors_count">
+            
+              <b>errors_count</b>()
+            
+            <a href="../../classes/ShipCompliant/BaseResult.html#method-i-errors_count" name="method-i-errors_count" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>The number of errors in the response.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="BaseResult.html#method-i-error_count">error_count</a>
+            </div>
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-errors_count_source')" id="l_method-i-errors_count_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/9192ea1e3475a76aac93bf9aeaba4dc658ca4f31/lib/ship_compliant/base_result.rb#L37" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-errors_count_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/ship_compliant/base_result.rb, line 37</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">error_code</span>
-  <span class="ruby-identifier">error_item</span>(<span class="ruby-value">:code</span>).<span class="ruby-identifier">to_i</span>
-<span class="ruby-keyword">end</span></pre>
-              </div>
-            </div>
-            
-          </div>
-        
-        <div class="method">
-          <div class="title method-title" id="method-i-error_key">
-            
-              <b>error_key</b>()
-            
-            <a href="../../classes/ShipCompliant/BaseResult.html#method-i-error_key" name="method-i-error_key" class="permalink">Link</a>
-          </div>
-          
-          
-            <div class="description">
-              <p>Gets the key that failed.</p>
-
-<p>Returns <code>nil</code> when empty.</p>
-
-<pre><code>puts &quot;OrderKey: #{result.error_key}&quot; unless result.success?</code></pre>
-            </div>
-          
-          
-          
-
-          
-          
-          
-            
-            <div class="sourcecode">
-              
-              <p class="source-link">
-                Source: 
-                <a href="javascript:toggleSource('method-i-error_key_source')" id="l_method-i-error_key_source">show</a>
-                
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/0e8026f11cd15044ee4f4ff492d950007f0486dd/lib/ship_compliant/base_result.rb#L46" target="_blank" class="github_url">on GitHub</a>
-                
-              </p>
-              <div id="method-i-error_key_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/base_result.rb, line 46</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">error_key</span>
-  <span class="ruby-identifier">error_item</span>(<span class="ruby-value">:key</span>)
-<span class="ruby-keyword">end</span></pre>
-              </div>
-            </div>
-            
-          </div>
-        
-        <div class="method">
-          <div class="title method-title" id="method-i-error_message">
-            
-              <b>error_message</b>()
-            
-            <a href="../../classes/ShipCompliant/BaseResult.html#method-i-error_message" name="method-i-error_message" class="permalink">Link</a>
-          </div>
-          
-          
-            <div class="description">
-              <p>Gets the error message from the request.</p>
-
-<p>Returns <code>nil</code> when empty.</p>
-
-<pre><code>puts &quot;ERROR: #{result.error_message}&quot; unless result.success?</code></pre>
-            </div>
-          
-          
-          
-
-          
-          
-          
-            
-            <div class="sourcecode">
-              
-              <p class="source-link">
-                Source: 
-                <a href="javascript:toggleSource('method-i-error_message_source')" id="l_method-i-error_message_source">show</a>
-                
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/0e8026f11cd15044ee4f4ff492d950007f0486dd/lib/ship_compliant/base_result.rb#L28" target="_blank" class="github_url">on GitHub</a>
-                
-              </p>
-              <div id="method-i-error_message_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/base_result.rb, line 28</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">error_message</span>
-  <span class="ruby-identifier">error_item</span>(<span class="ruby-value">:message</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">errors_count</span>
+  <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">length</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -288,7 +275,7 @@ API client include these methods.</p>
                 Source: 
                 <a href="javascript:toggleSource('method-i-failure-3F_source')" id="l_method-i-failure-3F_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/0e8026f11cd15044ee4f4ff492d950007f0486dd/lib/ship_compliant/base_result.rb#L19" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/9192ea1e3475a76aac93bf9aeaba4dc658ca4f31/lib/ship_compliant/base_result.rb#L19" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-failure-3F_source" class="dyn-source">
@@ -329,13 +316,13 @@ API client include these methods.</p>
                 Source: 
                 <a href="javascript:toggleSource('method-i-success-3F_source')" id="l_method-i-success-3F_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/0e8026f11cd15044ee4f4ff492d950007f0486dd/lib/ship_compliant/base_result.rb#L12" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/9192ea1e3475a76aac93bf9aeaba4dc658ca4f31/lib/ship_compliant/base_result.rb#L12" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-success-3F_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/ship_compliant/base_result.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">success?</span>
-  <span class="ruby-identifier">data</span>[<span class="ruby-value">:response_status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Success&quot;</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:response_status</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Success&quot;</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

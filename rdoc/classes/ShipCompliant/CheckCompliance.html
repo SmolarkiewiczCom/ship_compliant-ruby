@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::CheckCompliance</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/ship_compliant.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::CheckCompliance 
+            
+                <span class="parent">&lt; 
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/check_compliance_rb.html">lib/ship_compliant/check_compliance.rb</a></li>
+            
+        </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ShipCompliant::CheckCompliance-label-ShipCompliant%3A%3ACheckCompliance"><a href="CheckCompliance.html">ShipCompliant::CheckCompliance</a></h2>
+
+<p>The CheckComplianceOfSalesOrderWithAddressValidation API method is used for
+real time compliance checks from the order point of entry (eCommerce, POS).</p>
+
+<p>The method can do three things in one call:</p>
+<ul><li>
+<p>Calculate Sales Tax Due for order and return product level tax rates
+(IncludeSalesTaxRates = true)</p>
+</li><li>
+<p>Validate the ShipTo address and get normalized address result</p>
+</li><li>
+<p>Check compliance of the order</p>
+</li></ul>
+
+<p>This method takes requires specific order information from the order point
+of entry for <a href="../ShipCompliant.html">ShipCompliant</a> to check the
+order for compliance.  The sales order will not be committed via this
+method.  This API call is usually paired with CommitSalesOrder() to save
+the sales order to <a href="../ShipCompliant.html">ShipCompliant</a>.</p>
+
+<p>Look at the following example request: <a
+href="http://git.io/xMNOvw">git.io/xMNOvw</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-of_sales_order">of_sales_order</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-of_sales_order">
+            
+              <b>of_sales_order</b>(data)
+            
+            <a href="../../classes/ShipCompliant/CheckCompliance.html#method-c-of_sales_order" name="method-c-of_sales_order" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Checks the compliance of a sales order from the data specified.</p>
+
+<p>An example of all the required fields can be seen here: <a
+href="http://git.io/xMNOvw">git.io/xMNOvw</a></p>
+
+<pre><code>ShipCompliant::CheckCompliance.of_sales_order({
+  address_option: {
+    ignore_street_level_errors: true,
+    reject_if_address_suggested: &#39;false&#39; # Savon bug? Passes the value as an attribute when a boolean
+  },
+  include_sales_tax_rates: true,
+  # ...
+})</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-of_sales_order_source')" id="l_method-c-of_sales_order_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/cacfd7da7669cb9d5b4e0039c931ad99609a1da2/lib/ship_compliant/check_compliance.rb#L34" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-of_sales_order_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/check_compliance.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">of_sales_order</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">camel_cased_keys</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">deep_transform_keys</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">classify</span> }
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">client</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:check_compliance_of_sales_order_with_address_validation</span>, <span class="ruby-identifier">camel_cased_keys</span>)
+  <span class="ruby-constant">CheckComplianceResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    

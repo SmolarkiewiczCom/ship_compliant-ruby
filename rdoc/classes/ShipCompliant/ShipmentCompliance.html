@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::ShipmentCompliance</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/ship_compliant.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::ShipmentCompliance 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:result)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/shipment_compliance_rb.html">lib/ship_compliant/shipment_compliance.rb</a></li>
+            
+        </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ShipCompliant::ShipmentCompliance-label-ShipCompliant%3A%3AShipmentCompliance"><a href="ShipmentCompliance.html">ShipCompliant::ShipmentCompliance</a></h2>
+
+<p>Wrap the <code>ShipmentComplianceResponse</code> node.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-compliant-3F">compliant?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rules">rules</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-shipment_key">shipment_key</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-compliant-3F">
+            
+              <b>compliant?</b>()
+            
+            <a href="../../classes/ShipCompliant/ShipmentCompliance.html#method-i-compliant-3F" name="method-i-compliant-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Checks if the shipment was compliant.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-compliant-3F_source')" id="l_method-i-compliant-3F_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1ae3f6d589540ba1384f1da3ae4b485be11de77b/lib/ship_compliant/shipment_compliance.rb#L8" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-compliant-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/shipment_compliance.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">compliant?</span>
+  <span class="ruby-identifier">result</span>[<span class="ruby-value">:is_compliant</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rules">
+            
+              <b>rules</b>()
+            
+            <a href="../../classes/ShipCompliant/ShipmentCompliance.html#method-i-rules" name="method-i-rules" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Wraps the <code>RuleComplianceResponse</code> nodes with <a
+href="ComplianceRule.html">ComplianceRule</a>.</p>
+
+<pre><code>compliance_errors = shipment.rules.reject { |r| r.compliant? }
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rules_source')" id="l_method-i-rules_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1ae3f6d589540ba1384f1da3ae4b485be11de77b/lib/ship_compliant/shipment_compliance.rb#L20" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-rules_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/shipment_compliance.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rules</span>
+  <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">result</span>[<span class="ruby-value">:rules</span>][<span class="ruby-value">:rule_compliance_response</span>]).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rule</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">ComplianceRule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">rule</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-shipment_key">
+            
+              <b>shipment_key</b>()
+            
+            <a href="../../classes/ShipCompliant/ShipmentCompliance.html#method-i-shipment_key" name="method-i-shipment_key" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the shipment key.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-shipment_key_source')" id="l_method-i-shipment_key_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1ae3f6d589540ba1384f1da3ae4b485be11de77b/lib/ship_compliant/shipment_compliance.rb#L13" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-shipment_key_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/shipment_compliance.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">shipment_key</span>
+  <span class="ruby-identifier">result</span>[<span class="ruby-value">:key</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

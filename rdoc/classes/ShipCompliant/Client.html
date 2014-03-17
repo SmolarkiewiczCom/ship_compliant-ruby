@@ -70,6 +70,18 @@
           </ul>
         </dd>
       
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-savon_call">savon_call</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
     </dl>
   
 
@@ -114,6 +126,10 @@
           
           
           
+            <div class="aka">
+              Also aliased as: <a href="Client.html#method-i-savon_call">savon_call</a>
+            </div>
+          
 
           
           
@@ -125,21 +141,49 @@
                 Source: 
                 <a href="javascript:toggleSource('method-i-call_source')" id="l_method-i-call_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/eb7e670c74e855cf9ff8544039d5583ddc627609/lib/ship_compliant/client.rb#L33" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1f11fa43a2a3d80332e148a71a2e96f467d73a87/lib/ship_compliant/client.rb#L35" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-call_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/client.rb, line 33</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/client.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">call</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">locals</span> = {})
   <span class="ruby-identifier">locals</span>[<span class="ruby-string">&#39;Security&#39;</span>] = <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">credentials</span>
 
-  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">message</span><span class="ruby-operator">:</span> {
+  <span class="ruby-identifier">response</span> = <span class="ruby-identifier">savon_call</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">message</span><span class="ruby-operator">:</span> {
     <span class="ruby-string">&#39;Request&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">locals</span>
   })
+
+  <span class="ruby-identifier">get_result_from_response</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">response</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
             
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-savon_call">
+            
+              <b>savon_call</b>(operation, locals = {})
+            
+            <a href="../../classes/ShipCompliant/Client.html#method-i-savon_call" name="method-i-savon_call" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>“Backup” original <a href="Client.html#method-i-call">call</a> from
+Savon::Client</p>
+            </div>
+          
+          
+          
+
+          
+            <div class="aka">
+              Alias for: <a href="Client.html#method-i-call">call</a>
+            </div>
+          
+          
+          
           </div>
                     </div>
 

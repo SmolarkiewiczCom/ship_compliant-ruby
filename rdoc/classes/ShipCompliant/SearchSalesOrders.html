@@ -162,7 +162,7 @@ orders = ShipCompliant::SearchSalesOrders.find_by({
                 Source: 
                 <a href="javascript:toggleSource('method-c-find_by_source')" id="l_method-c-find_by_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/8570b2ece0c8d677754d1e068554b653a2f17850/lib/ship_compliant/search_sales_orders.rb#L39" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3eb8545f77aa4ab7182d3bce2554eb3280073006/lib/ship_compliant/search_sales_orders.rb#L39" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-c-find_by_source" class="dyn-source">
@@ -171,7 +171,7 @@ orders = ShipCompliant::SearchSalesOrders.find_by({
   <span class="ruby-identifier">order_query</span> = <span class="ruby-constant">OrderSearch</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">query</span>).<span class="ruby-identifier">to_h</span>
 
   <span class="ruby-identifier">sales</span> = <span class="ruby-identifier">search_sales</span>(<span class="ruby-identifier">order_query</span>)
-  <span class="ruby-identifier">parse_response</span>(<span class="ruby-identifier">sales</span>)
+  <span class="ruby-constant">SearchSalesOrdersResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sales</span>.<span class="ruby-identifier">to_hash</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
