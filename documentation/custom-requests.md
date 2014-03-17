@@ -22,8 +22,7 @@ results = ShipCompliant.client.call(:get_inventory_details, {
 })
 
 results[:response_status] #=> 'Success'
-results[:inventory_locations][:inventory_location][:supplier] #=> 'Angelic
-Cellars'
+results[:inventory_locations][:inventory_location][:supplier] #=> 'Angelic Cellars'
 ```
 
 **Note:** Making a direct call returns a Hash from the elements within the
