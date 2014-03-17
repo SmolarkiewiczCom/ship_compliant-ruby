@@ -1,7 +1,6 @@
 When(/^I check compliance with a missing product$/) do
   VCR.use_cassette('compliance_missing_product') do
-    @compliance_status = ShipCompliant.client.call(:check_compliance_of_sales_order_with_address_validation, {
-      #@compliace_status = ShipCompliant::CheckCompliance.of_sales_order({
+    @compliance_status = ShipCompliant::CheckCompliance.of_sales_order({
       'AddressOption' => {
         'IgnoreStreetLevelErrors' => true,
         'RejectIfAddressSuggested' => 'false'
@@ -91,16 +90,13 @@ When(/^I check compliance with a missing product$/) do
 end
 
 Then(/^I should receive a product key error$/) do
-  @compliance_status.should == {
-    response_status: 'Failure',
-    errors: {
-      error: {
-        code: '201',
-        key: '1',
-        message: 'Product matching given BrandKey/ProductKey does not exist [DEN,Shoe].',
-        target: 'Shipment',
-        type: 'Validation'
-      }
-    }
-  }
+  @compliance_status.failure?.should be_true
+  @compliance_status.error_count.should == 1
+  error = @compliance_status.errors.first
+
+  error.code.should == 201
+  error.key.should == '1'
+  error.message.should == 'Product matching given BrandKey/ProductKey does not exist [DEN,Shoe].'
+  error.target.should == 'Shipment'
+  error.type.should == 'Validation'
 end
