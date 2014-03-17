@@ -21,10 +21,13 @@ results = ShipCompliant.client.call(:get_inventory_details, {
   'ProductKey' => '03EstateZin'
 })
 
-puts results.inspect
+results[:response_status] #=> 'Success'
+results[:inventory_locations][:inventory_location][:supplier] #=> 'Angelic
+Cellars'
 ```
 
-**Note:** Making a direct call returns a [Savon::Response][savon_response].
+**Note:** Making a direct call returns a Hash from the elements within the
+`METHOD_result` node.
 
 ## Change WSDL
 
