@@ -121,21 +121,48 @@ compliance_status = ShipCompliant::CheckCompliance.of_sales_order({
 })
 ```
 
-## 2. Non-Compliant Product Response
+## 2. Missing Product Response
 
 ```ruby
-puts compliance_status.compliant? #=> false
-shipment = compliance_status.compliance_rules_for_shipment('1')
-errors = shipment.rules.reject { |r| r.compliant? }
+if compliance_status.failure?
+  puts "There were #{compliance_status.error_count} errors."
+
+  compliance_status.errors.each_with_index do |error, i|
+    puts "#{i + 1}. #{error.message}"
+    puts "\t CODE: #{error.code}; KEY: #{error.key}; TARGET: #{error.target}; TYPE: #{error.type}"
+  end
+end
 ```
 
-## 3. More Examples
+## 3. Non-Compliant Product Response
+
+```ruby
+unless compliance_status.compliant?
+  shipment = compliance_status.compliance_rules_for_shipment('1')
+  errors = shipment.rules.reject { |r| r.compliant? }
+
+  errors.each do |error|
+    puts error.rule_description
+  end
+end
+```
+
+## 4. Suggested Address Response
+
+```ruby
+address = compliance_status.suggested_address
+
+puts "Suggested Address\n"
+
+puts "\t#{address.street1}"
+puts "\t#{address.street2}" unless address.street2.blank?
+puts "\t#{address.city}, #{address.state} (#{address.zip1}-#{address.zip2}"
+```
+
+## 5. More Examples
 
 For more examples, have a look at the [Cucumber specs][cucumber_specs]. You'll be able to see both
 a request made and how handle the response.
-
-All requests made support the following methods from
-[BaseResult][base_result_class].
 
 [official_docs]: https://shipcompliant.desk.com/customer/portal/articles/1451915-api-checkcomplianceofsalesorderwithaddressvalidation-?b_id=2759
 [check_compliance_class]: ../rdoc/classes/ShipCompliant/CheckCompliance.html
