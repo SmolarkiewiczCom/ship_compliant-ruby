@@ -18,6 +18,7 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 ### Core Service Guides
 
 1. [SalesOrder Compliance Check](./sales_orders_compliance_check.html)
+   <small>API: CheckComplianceOfSalesOrderWithAddressValidation</small>
 2. [Search for Orders](./search_sales_orders.html) <small>API:
    SearchSalesOrders</small>
 3. [Voiding Orders](./void_sales_order.html) <small>API: VoidSalesOrder</small>
