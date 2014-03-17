@@ -26,9 +26,24 @@ without committing any of them.
 - [CommitSalesOrder][commit_sales_order_class]
 - [CommitSalesOrderResult][commit_sales_order_result_class]
 
-# Examples
+<h4 class="definition-title">Definition</h4>
 
-## 1. Commit All Shipments
+```ruby
+ShipCompliant::CommitSalesOrder.call
+```
+
+<h4 class="definition-title">Example Request</h4>
+
+```ruby
+result = ShipCompliant::CommitSalesOrder.call({
+  commit_options: 'AllShipments',
+  payments: nil,
+  sales_tax_collected: 0,
+  sales_order_key: 'ORDER-KEY'
+})
+```
+
+<h4 class="definition-title">Example Response</h4>
 
 ```ruby
 result = ShipCompliant::CommitSalesOrder.call({

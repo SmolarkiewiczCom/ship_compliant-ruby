@@ -18,15 +18,24 @@ page through the result set.
 - [SearchSalesOrderSummary][search_sales_order_summary_class]
 
 
-# Examples
+<h4 class="definition-title">Definition</h4>
 
-## 1. Orders Within Date Range
+```ruby
+ShipCompliant::SearchSalesOrders.find_by
+```
+
+<h4 class="definition-title">Example Request</h4>
+
 ```ruby
 orders = ShipCompliant::SearchSalesOrders.find_by({
   purchase_date_min: DateTime.new(2014, 3, 10),
   purchase_date_max: DateTime.new(2014, 3, 12)
 })
+```
 
+<h4 class="definition-title">Example Response</h4>
+
+```ruby
 if orders.failure?
   puts "ERROR: #{orders.error_message}"
   exit(1)
@@ -43,22 +52,6 @@ orders.each do |order|
   #{order.shipment_summary[:requested_ship_date].strftime('%B %d, %Y')}"
   puts "- Shipped On: #{order.shipment_summary[:ship_date].strftime('%B %d,
   %Y')}"
-end
-```
-
-## 2. Find Non-Compliant Orders
-
-```ruby
-# possible statuses are "Compliant", "NotCompliant", or "Any". Any is default.
-orders = ShipCompliant::SearchSalesOrders.find_by({
-  compliance_status: 'NotCompliant'
-})
-
-puts "#{orders.length} orders found"
-
-orders.each do |order|
-  puts "ORDER #{order.order_key} is not compliant"
-  puts "---"
 end
 ```
 

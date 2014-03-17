@@ -15,44 +15,28 @@ void an order with committed shipments before entering a new order with the same
 - [VoidSalesOrder][void_sales_order_class]
 - [VoidSalesOrderResult][void_sales_order_result_class]
 
-# Examples
+<h4 class="definition-title">Definition</h4>
 
-## 1. Void an Order by SalesOrderKey
+```ruby
+ShipCompliant::VoidSalesOrder.by_order_key
+```
+
+<h4 class="definition-title">Example Request</h4>
 
 ```ruby
 result = ShipCompliant::VoidSalesOrder.by_order_key('OrderKey')
+```
 
+<h4 class="definition-title">Example Response</h4>
+
+```ruby
 if result.success?
   puts "Order Voided"
 else
   puts "Failed to void order"
-  puts "[%d] %s" % [result.error_code, result.error_message]
-end
-```
 
-## 2. Voiding Non-Compliant Orders
-
-This example finds all non-compliate sales orders older than a week and voids
-them. You might use something like this in a CRON job to reset the volume limits
-and reporting on a daily basis.
-
-```ruby
-orders = ShipCompliant::SearchSalesOrders.find_by({
-  compliance_status: 'NotCompliant',
-  purchase_date_max: 1.week.ago.to_date,
-  purchase_date_min: DateTime.new(1900, 1, 1) # required field
-})
-
-puts "#{orders.length} non-compliant orders found"
-
-orders.each do |order|
-  result = ShipCompliant::VoidSalesOrder.by_order_key(order.order_key)
-
-  if result.success?
-    puts "Order #{order.order_key} voided successfully."
-  else
-    puts "FAILED: Order #{order.order_key} could not be voided. Message:
-    #{result.error_message}"
+  result.errors.each do |error|
+    puts "\t[%d] %s" % [error.code, error.message]
   end
 end
 ```

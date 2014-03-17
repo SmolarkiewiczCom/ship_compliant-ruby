@@ -22,12 +22,13 @@ by one or more shipments, the product will not be updated.
 - [AddUpdateProduct][add_update_order_class]
 - [AddUpdateProductResult][add_update_order_result_class]
 
-# Examples
+<h4 class="definition-title">Definition</h4>
 
-## 1. Update Existing Product
+```ruby
+ShipCompliant::AddUpdateProduct.product
+```
 
-If you set the `update_mode` to `UpdateExisting` you can update part of a
-product.
+<h4 class="definition-title">Example Request</h4>
 
 ```ruby
 result = ShipCompliant::AddUpdateProduct.product({
@@ -40,11 +41,17 @@ result = ShipCompliant::AddUpdateProduct.product({
   unit_price: 54.99
 
 }, update_mode: 'UpdateExisting')
+```
 
+<h4 class="definition-title">Example Response</h4>
+
+```ruby
 if result.success?
   puts "Product Updated Successfully"
 else
-  puts "FAILED: #{result.error_message}"
+  result.errors.each do |error|
+    puts "ERROR: #{error.message}"
+  end
 end
 ```
 

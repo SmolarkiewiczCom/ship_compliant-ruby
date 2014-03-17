@@ -28,9 +28,13 @@ CommitSalesOrder() to save the sales order to ShipCompliant.
 - [ComplianceRule][compliance_rule_class]
 - [SuggestedAddress][suggested_address_class]
 
-# Examples
+<h4 class="definition-title">Definition</h4>
 
-## 1. Example Request
+```ruby
+ShipCompliant::CheckCompliance.of_sales_order
+```
+
+<h4 class="definition-title">Example Request</h4>
 
 ```ruby
 compliance_status = ShipCompliant::CheckCompliance.of_sales_order({
@@ -121,7 +125,7 @@ compliance_status = ShipCompliant::CheckCompliance.of_sales_order({
 })
 ```
 
-## 2. Missing Product Response
+<h2 class="definition-title">Missing Product Response</h2>
 
 ```ruby
 if compliance_status.failure?
@@ -134,7 +138,7 @@ if compliance_status.failure?
 end
 ```
 
-## 3. Non-Compliant Product Response
+<h2 class="definition-title">Non-Compliant Product Response</h2>
 
 ```ruby
 unless compliance_status.compliant?
@@ -147,7 +151,7 @@ unless compliance_status.compliant?
 end
 ```
 
-## 4. Suggested Address Response
+<h2 class="definition-title">Example Suggested Address</h2>
 
 ```ruby
 address = compliance_status.suggested_address
@@ -159,7 +163,7 @@ puts "\t#{address.street2}" unless address.street2.blank?
 puts "\t#{address.city}, #{address.state} (#{address.zip1}-#{address.zip2}"
 ```
 
-## 5. More Examples
+---
 
 For more examples, have a look at the [Cucumber specs][cucumber_specs]. You'll be able to see both
 a request made and how handle the response.

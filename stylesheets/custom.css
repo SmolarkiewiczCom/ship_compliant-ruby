@@ -1,0 +1,12 @@
+.definition-title {
+  background: #D0D6DD;
+  padding: 0.5em;
+  margin: 0;
+  border-radius: 3px 3px 0 0;
+  color: #636A72;
+  font-size: 1em;
+}
+
+.definition-title + .highlight pre {
+  border-radius: 0 0 3px 3px;
+}
