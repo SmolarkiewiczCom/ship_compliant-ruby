@@ -91,7 +91,7 @@ When(/^I check compliance with a missing product$/) do
 end
 
 Then(/^I should receive a product key error$/) do
-  compliance_status.should == {
+  @compliance_status.should == {
     response_status: 'Failure',
     errors: {
       error: {
@@ -103,8 +103,4 @@ Then(/^I should receive a product key error$/) do
       }
     }
   }
-end
-
-def compliance_status
-  @compliance_status
 end
