@@ -256,23 +256,21 @@ bottle_size_ml: &#39;BottleSizeML&#39;
                 Source: 
                 <a href="javascript:toggleSource('method-i-to_h_source')" id="l_method-i-to_h_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/0624ec8ce760646e1fff6e03881a68ecf2070295/lib/ship_compliant/product_attributes.rb#L86" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/377a4a1d15b7d9e42f8090753834eb568eedc27f/lib/ship_compliant/product_attributes.rb#L86" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-to_h_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/ship_compliant/product_attributes.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_h</span>
-  <span class="ruby-identifier">hash</span> = {}
-  <span class="ruby-identifier">details</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">details</span>.<span class="ruby-identifier">deep_transform_keys</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
     <span class="ruby-comment"># handle special cases</span>
-    <span class="ruby-identifier">pascal_key</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">classify</span>
+    <span class="ruby-identifier">pascal_key</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span>
     <span class="ruby-keyword">if</span> <span class="ruby-constant">SPECIAL_CASES</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
       <span class="ruby-identifier">pascal_key</span> = <span class="ruby-constant">SPECIAL_CASES</span>[<span class="ruby-identifier">key</span>]
     <span class="ruby-keyword">end</span>
-
-    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">pascal_key</span>] = <span class="ruby-identifier">value</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    
+    <span class="ruby-identifier">pascal_key</span>
   <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">hash</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

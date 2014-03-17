@@ -159,13 +159,13 @@ href="http://git.io/xMNOvw">git.io/xMNOvw</a></p>
                 Source: 
                 <a href="javascript:toggleSource('method-c-of_sales_order_source')" id="l_method-c-of_sales_order_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/cacfd7da7669cb9d5b4e0039c931ad99609a1da2/lib/ship_compliant/check_compliance.rb#L34" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/377a4a1d15b7d9e42f8090753834eb568eedc27f/lib/ship_compliant/check_compliance.rb#L34" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-c-of_sales_order_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/ship_compliant/check_compliance.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">of_sales_order</span>(<span class="ruby-identifier">data</span>)
-  <span class="ruby-identifier">camel_cased_keys</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">deep_transform_keys</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">classify</span> }
+  <span class="ruby-identifier">camel_cased_keys</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">deep_transform_keys</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span> }
   <span class="ruby-identifier">result</span> = <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">client</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:check_compliance_of_sales_order_with_address_validation</span>, <span class="ruby-identifier">camel_cased_keys</span>)
   <span class="ruby-constant">CheckComplianceResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>)
 <span class="ruby-keyword">end</span></pre>

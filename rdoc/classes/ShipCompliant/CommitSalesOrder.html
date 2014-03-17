@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::CommitSalesOrder</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/ship_compliant.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::CommitSalesOrder 
+            
+                <span class="parent">&lt; 
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/commit_sales_order_rb.html">lib/ship_compliant/commit_sales_order.rb</a></li>
+            
+        </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ShipCompliant::CommitSalesOrder-label-ShipCompliant%3A%3ACommitSalesOrder"><a href="CommitSalesOrder.html">ShipCompliant::CommitSalesOrder</a></h2>
+
+<p>This method takes in a Sales Order Key in the request and saves the order
+if it has previously been checked for compliance.</p>
+<ul><li>
+<p>If the CommitOption is set to “AllShipments”, all the shipments in the
+sales order will be committed.</p>
+</li><li>
+<p>If it is set to “CompliantShipments”, just the non-committed compliant
+sales orders will be committed.</p>
+</li></ul>
+
+<p>Please keep in mind that if “CompliantShipments” is selected, it will be of
+great value to the customer if the non-compliant, non-committed orders were
+flagged as such for further review.</p>
+
+<p>If the CommitOption is not specified, zero shipments will be committed.
+This allows the integrator to get the commit status of the shipments in a
+sales order without committing any of them.</p>
+
+<pre><code>result = ShipCompliant::CommitSalesOrder.call({
+  commit_options: &#39;AllShipments&#39;,
+  payments: nil,
+  sales_tax_collected: 0,
+  sales_order_key: &#39;ORDER-KEY&#39;
+})
+
+puts result.success? #=&gt; true
+puts &quot;The following shipments were committed.&quot;
+
+puts result.committed_shipments #=&gt; [&#39;1&#39;, &#39;2&#39;, ...]
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-call">call</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-call">
+            
+              <b>call</b>(commit_data)
+            
+            <a href="../../classes/ShipCompliant/CommitSalesOrder.html#method-c-call" name="method-c-call" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Marks a SalesOrder as committed.</p>
+
+<p>Returns an instance of <a
+href="CommitSalesOrderResult.html">ShipCompliant::CommitSalesOrderResult</a>.</p>
+
+<pre><code>ShipCompliant::CommitSalesOrder.call({
+  commit_options: &#39;CompliantShipments&#39;,
+  payments: nil,
+  sales_tax_collected: 0,
+  sales_order_key: &#39;ORDER-KEY&#39;
+})</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-call_source')" id="l_method-c-call_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/544c11310a9d7962b66a1ca5fb0cd3d17140c9e1/lib/ship_compliant/commit_sales_order.rb#L41" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-call_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/commit_sales_order.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">commit_data</span>)
+  <span class="ruby-identifier">commit_data</span>.<span class="ruby-identifier">deep_transform_keys!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span> }
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">client</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:commit_sales_order</span>, <span class="ruby-identifier">commit_data</span>)
+  <span class="ruby-constant">CommitSalesOrderResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    
