@@ -16,7 +16,3 @@ Feature: Check Compliance Of SalesOrder With Address Validation
   Scenario: Check compliance with non-compliant product
     When I check compliance with a non-compliant product
     Then I should receive error messages
-
-  Scenario: Check compliance with compliant order
-    When I check compliance with a compliant order
-    Then I should receive compliance overview
