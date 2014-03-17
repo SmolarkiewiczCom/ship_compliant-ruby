@@ -64,6 +64,16 @@ module ShipCompliant
       ShipmentCompliance.new(shipment)
     end
 
+    # Returns the +AddressValidationResult+.
+    def address_validation_result
+      response[:address_validation_result]
+    end
+
+    # Returns an instance of SuggestedAddress.
+    def suggested_address
+      SuggestedAddress.new(response[:suggested_address])
+    end
+
     private
     
     # Nori returns XML attributes as a key beginning with a spiral (@).

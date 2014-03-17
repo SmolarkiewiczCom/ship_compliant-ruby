@@ -139,3 +139,37 @@ Then(/^I should receive the shipment compliance results$/) do
     'Shipments to this region have a per customer volume limit of 36 cases per individual per calendar year. The volume will be calculated from combined onsite and offsite sales.'
   ]
 end
+
+Then(/^I should receive the suggested address$/) do
+  @compliance_status.address_validation_result.should == 'ValidatedWithStreetLevelNormalization'
+  address = @compliance_status.suggested_address
+  
+  address.city.should == 'New York'
+  address.county.should == 'New York'
+  address.state.should == 'NY'
+  address.street1.should == '253 Broadway'
+  address.street2.should == 'Fl 9'
+  address.zip1.should == 10007
+  address.zip2.should == 2326
+
+  address.details.should == {
+    city_abbreviation: 'New York',
+    congressional_district: '10',
+    county_fips: '36061',
+    time_zone: 'Eastern Time',
+    time_zone_code: '05'
+  }
+
+  address.parts.should == {
+    company: nil,
+    mail_box_name: nil,
+    mail_box_number: nil,
+    post_direction: nil,
+    pre_direction: nil,
+    street_name: 'Broadway',
+    street_number: '253',
+    street_suffix: nil,
+    suite_name: 'Fl',
+    suite_number: '9'
+  }
+end
