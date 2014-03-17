@@ -129,6 +129,14 @@ shipment = compliance_status.compliance_rules_for_shipment('1')
 errors = shipment.rules.reject { |r| r.compliant? }
 ```
 
+## 3. More Examples
+
+For more examples, have a look at the [Cucumber specs][cucumber_specs]. You'll be able to see both
+a request made and how handle the response.
+
+All requests made support the following methods from
+[BaseResult][base_result_class].
+
 [official_docs]: https://shipcompliant.desk.com/customer/portal/articles/1451915-api-checkcomplianceofsalesorderwithaddressvalidation-?b_id=2759
 [check_compliance_class]: ../rdoc/classes/ShipCompliant/CheckCompliance.html
 [check_compliance_result_class]: ../rdoc/classes/ShipCompliant/CheckComplianceResult.html
@@ -136,3 +144,4 @@ errors = shipment.rules.reject { |r| r.compliant? }
 [shipment_compliance_class]: ../rdoc/classes/ShipCompliant/ShipmentCompliance.html
 [compliance_rule_class]: ../rdoc/classes/ShipCompliant/ComplianceRule.html
 [suggested_address_class]: ../rdoc/classes/ShipCompliant/SuggestedAddress.html
+[cucumber_specs]: https://github.com/BaylorRae/ship_compliant-ruby/tree/master/features/step_definitions/compliance_check
