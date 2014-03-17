@@ -8,8 +8,12 @@ title: ShipCompliant - Ruby API Client
 The ShipCompliant Ruby API client tries to mirror the offical SOAP methods while
 retaining Ruby style.
 
+## Making Requests
+
 When looking through the [CoreService Documentation][core_service], you'll see
-API requests like so.
+API requests like so. In most cases, the name of the SOAP method is the name of
+the API wrapper class. E.g. `SearchSalesOrders()` can be called with
+[ShipCompliant::SearchSalesOrders][search_sales_orders_class].
 
 ```xml
 <!-- API: SearchSalesOrders(). -->
@@ -43,8 +47,25 @@ ShipCompliant::SearchSalesOrders.find_by({
 You can view the list of available API methods in the [RDoc
 documentation][rdocs].
 
+## The Response
+
+The convention for each result class is to append `Result` to the class called.
+E.g. For `SearchSalesOrder`, the result class would be
+`SearchSalesOrdersResult`.
+
+All requests made support the following methods from
+[BaseResult][base_result_class].
+
+- `error_count` <small>(integer) The number of errors.</small>
+- `errors` <small>(array) [ErrorResult][error_result_class].</small>
+- `failure?` <small>(boolean) Response status failed.</small>
+- `success?` <small>(boolean) Response status succeeded.</small>
+
 Next Step. Learn how to make [Custom Requests][custom_requests].
 
 [core_service]: https://shipcompliant.desk.com/customer/portal/articles/1451976-api-coreservice-v1-2?b_id=2759
+[search_sales_orders_class]: ../rdoc/classes/ShipCompliant/SearchSalesOrders.html
 [rdocs]: ../rdoc
+[base_result_class]: ../rdoc/classes/ShipCompliant/BaseResult.html
+[error_result_class]: ../rdoc/classes/ShipCompliant/ErrorResult.html
 [custom_requests]: custom-requests.html
