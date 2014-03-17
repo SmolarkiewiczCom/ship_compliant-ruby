@@ -46,13 +46,6 @@ result = ShipCompliant::CommitSalesOrder.call({
 <h4 class="definition-title">Example Response</h4>
 
 ```ruby
-result = ShipCompliant::CommitSalesOrder.call({
-  commit_options: 'AllShipments',
-  payments: nil,
-  sales_tax_collected: 0,
-  sales_order_key: 'ORDER-KEY'
-})
-
 puts result.success? #=> true
 puts "The following shipments were committed."
 
