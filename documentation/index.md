@@ -24,6 +24,8 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 3. [Voiding Orders](./void_sales_order.html) <small>API: VoidSalesOrder</small>
 4. [Managing Products](./add_update_product.html) <small>API:
    AddUpdateProduct</small>
+5. [Committing Orders](./commit_sales_orders.html) <small>API:
+   CommitSalesOrder</small>
 
 ## APIS
 [Browse all classes and methods.][rdoc]
