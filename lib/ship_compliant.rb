@@ -36,6 +36,9 @@ require "ship_compliant/shipment_compliance"
 require "ship_compliant/compliance_rule"
 require "ship_compliant/suggested_address"
 
+require "ship_compliant/commit_sales_order"
+require "ship_compliant/commit_sales_order_result"
+
 module ShipCompliant
   # Your code goes here...
 end
