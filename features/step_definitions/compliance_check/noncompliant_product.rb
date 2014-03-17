@@ -1,6 +1,6 @@
 When(/^I check compliance with a non\-compliant product$/) do
   VCR.use_cassette('compliance_noncompliant_product') do
-    @compliance_status = ShipCompliant.client.call(:check_compliance_of_sales_order_with_address_validation, {
+    @compliance_status = ShipCompliant::CheckCompliance.of_sales_order({
       'AddressOption' => {
         'IgnoreStreetLevelErrors' => true,
         'RejectIfAddressSuggested' => 'false'
@@ -85,6 +85,18 @@ When(/^I check compliance with a non\-compliant product$/) do
   end
 end
 
-Then(/^I should recive error messages$/) do
-  pending
+Then(/^I should receive error messages$/) do
+  @compliance_status.compliant?.should be_false
+  shipment = @compliance_status.compliance_rules_for_shipment('1')
+  errors = shipment.rules.select { |r| !r.compliant? }
+
+  errors.map(&:rule_description).should == [
+    'Shipments to this region require an excise tax of $.45 per 1 gallon on offsite sales of wine due within 20 days after every month. For a summary of the taxes in the state, click here.',
+    'Shipments to this region for offsite sales require the following shipping label: Alcoholic Beverages - Cannot deliver to intoxicated persons.',
+    'Shipments to this region require sales tax for offsite sales shipments. For a summary of the taxes in the state, click here.',
+    'Shipments to this region have a per customer volume limit of 24 cases per individual per calendar year. The volume will be calculated from combined onsite and offsite sales.',
+    'A license is required for shipping offsite sales and must be renewed every 1 year. The cost of this license is $50.00. Note: Renewal fee is $25..',
+    'Suppliers shipping to this region must submit reporting data for offsite sales due within 1 month after every year. This region requires a periodic report even if no shipments have been made. The following information should be included within the report:  ShipTo Name, ShipTo Address, BillTo Name, Type of Product (Eg: Wine, Sparkling Wine..), Volume of Product, Unit Price, Date of Purchase, Date of Shipment, Invoice Number. .',
+    'Only wines of your own production or bottling are allowed to be shipped to this region. Note: Authorized direct shipping includes "sales by a winery of wine produced or bottled by the winery."..'
+  ]
 end
