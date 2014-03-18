@@ -59,8 +59,12 @@ if result.success?
   puts &quot;Order Voided&quot;
 else
   puts &quot;Failed to void order&quot;
-  puts &quot;[%d] %s&quot; % [result.error_code, result.error_message]
-end</code></pre>
+
+  result.errors.each do |error|
+    puts &quot;[%d] %s&quot; % [error.code, error.message]
+  end
+end
+</code></pre>
 
     </div>
   
@@ -147,11 +151,11 @@ href="VoidSalesOrderResult.html">ShipCompliant::VoidSalesOrderResult</a></p>
                 Source: 
                 <a href="javascript:toggleSource('method-c-by_order_key_source')" id="l_method-c-by_order_key_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/5edd39abd88ac7a4aceb15ecce33cbb6bcbba04d/lib/ship_compliant/void_sales_order.rb#L27" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/5edd39abd88ac7a4aceb15ecce33cbb6bcbba04d/lib/ship_compliant/void_sales_order.rb#L30" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-c-by_order_key_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/void_sales_order.rb, line 27</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/void_sales_order.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">by_order_key</span>(<span class="ruby-identifier">order_key</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-identifier">void_order</span>({ <span class="ruby-string">&#39;SalesOrderKey&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">order_key</span> })
   <span class="ruby-constant">VoidSalesOrderResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>)

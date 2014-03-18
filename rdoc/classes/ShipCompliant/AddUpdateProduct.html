@@ -65,8 +65,11 @@ referenced by one or more shipments, the product will not be updated.</p>
 if result.success?
   puts &quot;Product added successfully.
 else
-  puts result.error_message
-end</code></pre>
+  result.errors.each do |error|
+    puts error.message
+  end
+end
+</code></pre>
 
     </div>
   
@@ -171,11 +174,11 @@ exists.</p>
                 Source: 
                 <a href="javascript:toggleSource('method-c-product_source')" id="l_method-c-product_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/dccec288e51a337125c82ab740173ad7d81a55d1/lib/ship_compliant/add_update_product.rb#L47" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/dccec288e51a337125c82ab740173ad7d81a55d1/lib/ship_compliant/add_update_product.rb#L49" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-c-product_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/add_update_product.rb, line 47</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/add_update_product.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">product</span>(<span class="ruby-identifier">product</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">details</span> = {
     <span class="ruby-string">&#39;Product&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">ProductAttributes</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">product</span>).<span class="ruby-identifier">to_h</span>,
