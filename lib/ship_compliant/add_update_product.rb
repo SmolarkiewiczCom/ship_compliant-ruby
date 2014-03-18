@@ -21,7 +21,9 @@ module ShipCompliant
   #   if result.success?
   #     puts "Product added successfully.
   #   else
-  #     puts result.error_message
+  #     result.errors.each do |error|
+  #       puts error.message
+  #     end
   #   end
   class AddUpdateProduct
 

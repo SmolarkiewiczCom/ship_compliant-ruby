@@ -14,7 +14,10 @@ module ShipCompliant
   #     puts "Order Voided"
   #   else
   #     puts "Failed to void order"
-  #     puts "[%d] %s" % [result.error_code, result.error_message]
+  #
+  #     result.errors.each do |error|
+  #       puts "[%d] %s" % [error.code, error.message]
+  #     end
   #   end
   class VoidSalesOrder
 
