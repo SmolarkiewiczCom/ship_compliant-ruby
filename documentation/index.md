@@ -1,5 +1,5 @@
 ---
-layout: default-documentation
+layout: default
 title: ShipCompliant - Ruby API Client
 ---
 
@@ -30,4 +30,4 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 ## APIS
 [Browse all classes and methods.][rdoc]
 
-[rdoc]: ../rdoc
+[rdoc]: {{ site.github.url }}/rdoc
