@@ -13,16 +13,61 @@ server through Savon SOAP client.
 
 Here's a basic example of the [GetInventoryDetails][get_inventory_details] method.
 
+<h4 class="definition-title">Definition</h4>
+
+```ruby
+ShipCompliant.client.call
+```
+
+<h4 class="definition-title">Example Request</h4>
+
 ```ruby
 results = ShipCompliant.client.call(:get_inventory_details, {
-  'BrandKey' => 'Estate',
+  'BrandKey' => 'DEN',
   'FulfillmentLocation' => 'WineShipping',
-  'InventoryType' => 'All',
-  'ProductKey' => '03EstateZin'
+  'InventoryType' => 'All'
 })
+```
 
-results[:response_status] #=> 'Success'
-results[:inventory_locations][:inventory_location][:supplier] #=> 'Angelic Cellars'
+<h4 class="definition-title">Example Response</h4>
+
+```ruby
+{
+  inventory_locations: {
+    inventory_location: {
+      fulfillment_account: nil,
+      fulfillment_location: "WineShipping",
+      inventory_products: {
+        inventory_product: {
+          brand_key: "DEN",
+          default_case: "12x750 mL",
+          description: "Capital Hill Reserve Cabernet",
+          fulfillment_sku: "04CHRCAB75",
+          inventory_levels: {
+            inventory_level: {
+              effective_date: DateTime.new(2014, 3, 13, 18, 0, 6),
+              inventory_type: "Available",
+              quantity: "25",
+              synchronization_date: DateTime.new(2014, 3, 13, 18, 0, 6)
+            }
+          },
+          percent_alcohol: "13",
+          product_key: "04CHRCAB75",
+          product_type: "Wine",
+          unit_price: "0",
+          varietal: nil,
+          vintage: "2011",
+          volume_amount: "750",
+          volume_ml: "750",
+          volume_unit: "Milliliter"
+        }
+      },
+      sub_inventory_code: nil,
+      supplier: "ShipC Library Wines"
+    }
+  },
+  response_status: "Success"
+}
 ```
 
 **Note:** Making a direct call returns a Hash from the elements within the
