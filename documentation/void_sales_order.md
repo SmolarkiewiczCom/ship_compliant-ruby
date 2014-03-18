@@ -42,5 +42,5 @@ end
 ```
 
 [official_docs]: https://shipcompliant.desk.com/customer/portal/articles/1462186-api-voidsalesorder-?b_id=2759
-[void_sales_order_class]: ../rdoc/classes/ShipCompliant/VoidSalesOrder.html
-[void_sales_order_result_class]: ../rdoc/classes/ShipCompliant/VoidSalesOrderResult.html
+[void_sales_order_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/VoidSalesOrder.html
+[void_sales_order_result_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/VoidSalesOrderResult.html

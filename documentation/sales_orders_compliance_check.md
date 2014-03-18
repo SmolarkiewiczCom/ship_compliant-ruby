@@ -169,10 +169,10 @@ For more examples, have a look at the [Cucumber specs][cucumber_specs]. You'll b
 a request made and how handle the response.
 
 [official_docs]: https://shipcompliant.desk.com/customer/portal/articles/1451915-api-checkcomplianceofsalesorderwithaddressvalidation-?b_id=2759
-[check_compliance_class]: ../rdoc/classes/ShipCompliant/CheckCompliance.html
-[check_compliance_result_class]: ../rdoc/classes/ShipCompliant/CheckComplianceResult.html
-[shipment_sales_tax_rate_class]: ../rdoc/classes/ShipCompliant/ShipmentSalesTaxRate.html
-[shipment_compliance_class]: ../rdoc/classes/ShipCompliant/ShipmentCompliance.html
-[compliance_rule_class]: ../rdoc/classes/ShipCompliant/ComplianceRule.html
-[suggested_address_class]: ../rdoc/classes/ShipCompliant/SuggestedAddress.html
-[cucumber_specs]: https://github.com/BaylorRae/ship_compliant-ruby/tree/master/features/step_definitions/compliance_check
+[check_compliance_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/CheckCompliance.html
+[check_compliance_result_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/CheckComplianceResult.html
+[shipment_sales_tax_rate_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/ShipmentSalesTaxRate.html
+[shipment_compliance_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/ShipmentCompliance.html
+[compliance_rule_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/ComplianceRule.html
+[suggested_address_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/SuggestedAddress.html
+[cucumber_specs]: {{ site.github.repository_url }}/tree/master/features/step_definitions/compliance_check

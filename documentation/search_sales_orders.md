@@ -56,6 +56,6 @@ end
 ```
 
 [official_docs]: https://shipcompliant.desk.com/customer/portal/articles/1456007-api-searchsalesorders-?b_id=2759
-[search_sales_orders_class]: ../rdoc/classes/ShipCompliant/SearchSalesOrders.html
-[search_sales_orders_result_class]: ../rdoc/classes/ShipCompliant/SearchSalesOrdersResult.html
-[search_sales_order_summary_class]: ../rdoc/classes/ShipCompliant/SearchSalesOrderSummary.html
+[search_sales_orders_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/SearchSalesOrders.html
+[search_sales_orders_result_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/SearchSalesOrdersResult.html
+[search_sales_order_summary_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/SearchSalesOrderSummary.html

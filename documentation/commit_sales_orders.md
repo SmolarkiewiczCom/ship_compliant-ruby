@@ -53,5 +53,5 @@ puts result.committed_shipments #=> ['1', '2', ...]
 ```
 
 [official_docs]: https://shipcompliant.desk.com/customer/portal/articles/1452750-api-commitsalesorder-?b_id=2759
-[commit_sales_order_class]: ../rdoc/classes/ShipCompliant/CommitSalesOrder.html
-[commit_sales_order_result_class]: ../rdoc/classes/ShipCompliant/CommitSalesOrderResult.html
+[commit_sales_order_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/CommitSalesOrder.html
+[commit_sales_order_result_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/CommitSalesOrderResult.html

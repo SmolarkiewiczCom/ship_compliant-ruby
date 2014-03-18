@@ -31,4 +31,4 @@ end
 
 Congratulations! You can now use ShipCompliant in your Ruby application.
 
-Next step. View the [Getting Started Guide](./getting-started.html).
+Next step. View the [Getting Started Guide]({{ site.github.url }}/documentation/getting-started.html).

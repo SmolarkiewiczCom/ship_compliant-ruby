@@ -64,8 +64,8 @@ All requests made support the following methods from
 Next Step. Learn how to make [Custom Requests][custom_requests].
 
 [core_service]: https://shipcompliant.desk.com/customer/portal/articles/1451976-api-coreservice-v1-2?b_id=2759
-[search_sales_orders_class]: ../rdoc/classes/ShipCompliant/SearchSalesOrders.html
-[rdocs]: ../rdoc
-[base_result_class]: ../rdoc/classes/ShipCompliant/BaseResult.html
-[error_result_class]: ../rdoc/classes/ShipCompliant/ErrorResult.html
-[custom_requests]: custom-requests.html
+[search_sales_orders_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/SearchSalesOrders.html
+[rdocs]: {{ site.github.url }}/rdoc
+[base_result_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/BaseResult.html
+[error_result_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/ErrorResult.html
+[custom_requests]: {{ site.github.url }}/documentation/custom-requests.html

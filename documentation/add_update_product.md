@@ -56,5 +56,5 @@ end
 ```
 
 [official_docs]: https://shipcompliant.desk.com/customer/portal/articles/1451989-api-addupdateproduct-?b_id=2759
-[add_update_order_class]: ../rdoc/classes/ShipCompliant/AddUpdateProduct.html
-[add_update_order_result_class]: ../rdoc/classes/ShipCompliant/AddUpdateProductResult.html
+[add_update_order_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/AddUpdateProduct.html
+[add_update_order_result_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/AddUpdateProductResult.html
