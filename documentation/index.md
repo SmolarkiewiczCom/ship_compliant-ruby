@@ -13,7 +13,9 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 
 1. [Installation](./installation.html)
 2. [Getting Started](./getting-started.html)
-3. [Custom Requests](./custom-requests.html)
+3. [Working with Reponses](./responses.html)
+4. [Response Errors](./errors.html)
+5. [Custom Requests](./custom-requests.html)
 
 ### Core Service Guides
 

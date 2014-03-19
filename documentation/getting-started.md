@@ -47,25 +47,10 @@ ShipCompliant::SearchSalesOrders.find_by({
 You can view the list of available API methods in the [RDoc
 documentation][rdocs].
 
-## The Response
+---
 
-The convention for each result class is to append `Result` to the class called.
-E.g. For `SearchSalesOrder`, the result class would be
-`SearchSalesOrdersResult`.
-
-All requests made support the following methods from
-[BaseResult][base_result_class].
-
-- `error_count` <small>(integer) The number of errors.</small>
-- `errors` <small>(array) [ErrorResult][error_result_class].</small>
-- `failure?` <small>(boolean) Response status failed.</small>
-- `success?` <small>(boolean) Response status succeeded.</small>
-
-Next Step. Learn how to make [Custom Requests][custom_requests].
+Next Step. Learn how to [Work with Reponses][responses].
 
 [core_service]: https://shipcompliant.desk.com/customer/portal/articles/1451976-api-coreservice-v1-2?b_id=2759
 [search_sales_orders_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/SearchSalesOrders.html
-[rdocs]: {{ site.github.url }}/rdoc
-[base_result_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/BaseResult.html
-[error_result_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/ErrorResult.html
-[custom_requests]: {{ site.github.url }}/documentation/custom-requests.html
+[responses]: {{ site.github.url }}/documentation/responses.html
