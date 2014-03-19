@@ -1,12 +1,13 @@
 module ShipCompliant
-  # == ShipCompliant::GetInventoryDetailsResult
+  # == ShipCompliant::GetInventoryDetails
   #
   # Provides inventory details for each Product on a Fulfillment Location,
   # Fulfillment Account basis.
   #
   #   result = ShipCompliant::GetInventoryDetails.call
+  #   product = result.products_for_location('WineShipping').first
   #
-  #   result.quantity_for_product('PRODUCT-KEY') #=> {
+  #   product.inventory_levels #=> {
   #     available: 25,
   #     reserved: 13
   #   }

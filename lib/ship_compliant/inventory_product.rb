@@ -1,4 +1,17 @@
 module ShipCompliant
+  # == ShipCompliant::InventoryProduct
+  #
+  # InventoryProduct is a value object that has methods to access product data from GetInventoryDetails.
+  #   
+  #  products = @inventory_results.products_for_location('WineShipping')
+  #  
+  #  products.each do |product|
+  #    puts "[%s] %s" % [product.product_key, product.description]
+  #  
+  #    product.inventory_levels.each do |type, quantity|
+  #      puts "%s are %s" % [quantity, type]
+  #    end
+  #  end
   class InventoryProduct < Struct.new(:product)
 
     # Returns the +DefaultCase+ of a product.
@@ -61,11 +74,11 @@ module ShipCompliant
     # - The key is the +InventoryType+.
     # - The value is +Quantity+ as a float.
     #
-    #   product.inventory_levels #=> {
-    #     available: 2,
-    #     on_hold: 2,
-    #     back_order: 4
-    #   }
+    #     product.inventory_levels #=> {
+    #       available: 2,
+    #       on_hold: 2,
+    #       back_order: 4
+    #     }
     def inventory_levels
       levels = {}
       
