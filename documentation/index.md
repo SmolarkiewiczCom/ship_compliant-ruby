@@ -12,10 +12,11 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 ## Guides
 
 1. [Installation](./installation.html)
-2. [Getting Started](./getting-started.html)
-3. [Working with Reponses](./responses.html)
-4. [Response Errors](./errors.html)
-5. [Custom Requests](./custom-requests.html)
+2. [Configuration Settings](./configuration.html)
+3. [Getting Started](./getting-started.html)
+4. [Working with Reponses](./responses.html)
+5. [Response Errors](./errors.html)
+6. [Custom Requests](./custom-requests.html)
 
 ### Core Service Guides
 
