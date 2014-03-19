@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::GetInventoryDetailsResult</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/ship_compliant.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::GetInventoryDetailsResult 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:response)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/get_inventory_details_result_rb.html">lib/ship_compliant/get_inventory_details_result.rb</a></li>
+            
+        </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ShipCompliant::GetInventoryDetailsResult-label-ShipCompliant%3A%3AGetInventoryDetailsResult"><a href="GetInventoryDetailsResult.html">ShipCompliant::GetInventoryDetailsResult</a></h2>
+
+<p>Wraps the result of <code>GetInventoryDetails</code> and provides methods
+to access locations and products for a location</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-location">location</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-locations">locations</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-products_for_location">products_for_location</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="BaseResult.html">
+              ShipCompliant::BaseResult
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-location">
+            
+              <b>location</b>(key)
+            
+            <a href="../../classes/ShipCompliant/GetInventoryDetailsResult.html#method-i-location" name="method-i-location" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Finds a location by <code>FulfillmentLocation</code>.</p>
+
+<pre><code>result.location(&#39;WineShipping&#39;)[:supplier] #=&gt; &#39;LOCATION-SUPPLIER&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-location_source')" id="l_method-i-location_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1706d19eb70aaa6f3034621535f829d7e53dc322/lib/ship_compliant/get_inventory_details_result.rb#L21" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-location_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/get_inventory_details_result.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">location</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">location</span> = <span class="ruby-identifier">locations</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span>[<span class="ruby-value">:fulfillment_location</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">key</span> }.<span class="ruby-identifier">first</span>
+
+  <span class="ruby-keyword">return</span> {} <span class="ruby-keyword">if</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">location</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-locations">
+            
+              <b>locations</b>()
+            
+            <a href="../../classes/ShipCompliant/GetInventoryDetailsResult.html#method-i-locations" name="method-i-locations" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns an array of <code>InventoryLocation</code> nodes.</p>
+
+<pre><code>result.locations[0][:sub_inventory_code] #=&gt; &#39;SUB-CODE&#39;
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-locations_source')" id="l_method-i-locations_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1706d19eb70aaa6f3034621535f829d7e53dc322/lib/ship_compliant/get_inventory_details_result.rb#L12" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-locations_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/get_inventory_details_result.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">locations</span>
+  <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">response</span>[<span class="ruby-value">:inventory_locations</span>]).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">location</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">location</span>[<span class="ruby-value">:inventory_location</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-products_for_location">
+            
+              <b>products_for_location</b>(key)
+            
+            <a href="../../classes/ShipCompliant/GetInventoryDetailsResult.html#method-i-products_for_location" name="method-i-products_for_location" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns an array of <a
+href="InventoryProduct.html">ShipCompliant::InventoryProduct</a>.</p>
+
+<pre><code>result.products_for_location(&#39;WineShipping&#39;).each do |product|
+  puts product.product_key
+  puts &quot;\t#{product.description}&quot;
+  puts &quot;---\n&quot;
+end
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-products_for_location_source')" id="l_method-i-products_for_location_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/1706d19eb70aaa6f3034621535f829d7e53dc322/lib/ship_compliant/get_inventory_details_result.rb#L35" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-products_for_location_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/get_inventory_details_result.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">products_for_location</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">location</span>(<span class="ruby-identifier">key</span>)[<span class="ruby-value">:inventory_products</span>]).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">product</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">InventoryProduct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">product</span>[<span class="ruby-value">:inventory_product</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

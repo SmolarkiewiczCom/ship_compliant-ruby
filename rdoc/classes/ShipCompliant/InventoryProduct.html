@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::InventoryProduct</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/ship_compliant.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::InventoryProduct 
+            
+                <span class="parent">&lt; 
+                    
+                    Struct.new(:product)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/inventory_product_rb.html">lib/ship_compliant/inventory_product.rb</a></li>
+            
+        </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ShipCompliant::InventoryProduct-label-ShipCompliant%3A%3AInventoryProduct"><a href="InventoryProduct.html">ShipCompliant::InventoryProduct</a></h2>
+
+<p><a href="InventoryProduct.html">InventoryProduct</a> is a value object that
+has methods to access product data from <a
+href="GetInventoryDetails.html">GetInventoryDetails</a>.</p>
+
+<pre><code>products = @inventory_results.products_for_location(&#39;WineShipping&#39;)
+
+products.each do |product|
+  puts &quot;[%s] %s&quot; % [product.product_key, product.description]
+
+  product.inventory_levels.each do |type, quantity|
+    puts &quot;%s are %s&quot; % [quantity, type]
+  end
+end
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-default_case">default_case</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-description">description</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fulfillment_sku">fulfillment_sku</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inventory_levels">inventory_levels</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-percent_alcohol">percent_alcohol</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-product_key">product_key</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-product_type">product_type</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-unit_price">unit_price</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-vintage">vintage</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-volume_amount">volume_amount</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-volume_ml">volume_ml</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-volume_unit">volume_unit</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-default_case">
+            
+              <b>default_case</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-default_case" name="method-i-default_case" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>DefaultCase</code> of a product.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_case_source')" id="l_method-i-default_case_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L18" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-default_case_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_case</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:default_case</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-description">
+            
+              <b>description</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-description" name="method-i-description" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>Description</code> of a product.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-description_source')" id="l_method-i-description_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L33" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-description_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">description</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:description</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fulfillment_sku">
+            
+              <b>fulfillment_sku</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-fulfillment_sku" name="method-i-fulfillment_sku" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>FulfillmentSku</code> of a product.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fulfillment_sku_source')" id="l_method-i-fulfillment_sku_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L43" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-fulfillment_sku_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fulfillment_sku</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:fulfillment_sku</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inventory_levels">
+            
+              <b>inventory_levels</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-inventory_levels" name="method-i-inventory_levels" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a Hash of inventory levels.</p>
+<ul><li>
+<p>The key is the <code>InventoryType</code>.</p>
+</li><li>
+<p>The value is <code>Quantity</code> as a float.</p>
+
+<pre><code>product.inventory_levels #=&gt; {
+  available: 2,
+  on_hold: 2,
+  back_order: 4
+}
+</code></pre>
+</li></ul>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inventory_levels_source')" id="l_method-i-inventory_levels_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L82" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-inventory_levels_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inventory_levels</span>
+  <span class="ruby-identifier">levels</span> = {}
+  
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:inventory_levels</span>][<span class="ruby-value">:inventory_level</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">level</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">key</span> = <span class="ruby-identifier">level</span>[<span class="ruby-value">:inventory_type</span>].<span class="ruby-identifier">underscore</span>.<span class="ruby-identifier">to_sym</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">level</span>[<span class="ruby-value">:quantity</span>].<span class="ruby-identifier">to_f</span>
+
+    <span class="ruby-identifier">levels</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">levels</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-percent_alcohol">
+            
+              <b>percent_alcohol</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-percent_alcohol" name="method-i-percent_alcohol" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>PercentAlcohol</code> of a product as a float.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-percent_alcohol_source')" id="l_method-i-percent_alcohol_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L48" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-percent_alcohol_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">percent_alcohol</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:percent_alcohol</span>].<span class="ruby-identifier">to_f</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-product_key">
+            
+              <b>product_key</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-product_key" name="method-i-product_key" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>ProductKey</code> of a product.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-product_key_source')" id="l_method-i-product_key_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L23" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-product_key_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">product_key</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:product_key</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-product_type">
+            
+              <b>product_type</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-product_type" name="method-i-product_type" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>ProductType</code> of a product.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-product_type_source')" id="l_method-i-product_type_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L28" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-product_type_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">product_type</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:product_type</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-unit_price">
+            
+              <b>unit_price</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-unit_price" name="method-i-unit_price" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>UnitPrice</code> of a product as a float.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-unit_price_source')" id="l_method-i-unit_price_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L38" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-unit_price_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unit_price</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:unit_price</span>].<span class="ruby-identifier">to_f</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-vintage">
+            
+              <b>vintage</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-vintage" name="method-i-vintage" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>Vintage</code> of a product as an integer.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-vintage_source')" id="l_method-i-vintage_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L53" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-vintage_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">vintage</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:vintage</span>].<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-volume_amount">
+            
+              <b>volume_amount</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-volume_amount" name="method-i-volume_amount" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>VolumeAmount</code> of a product as a float.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-volume_amount_source')" id="l_method-i-volume_amount_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L58" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-volume_amount_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">volume_amount</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:volume_amount</span>].<span class="ruby-identifier">to_f</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-volume_ml">
+            
+              <b>volume_ml</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-volume_ml" name="method-i-volume_ml" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>VolumeML</code> of a product as a float.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-volume_ml_source')" id="l_method-i-volume_ml_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L63" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-volume_ml_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">volume_ml</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:volume_ml</span>].<span class="ruby-identifier">to_f</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-volume_unit">
+            
+              <b>volume_unit</b>()
+            
+            <a href="../../classes/ShipCompliant/InventoryProduct.html#method-i-volume_unit" name="method-i-volume_unit" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>VolumeUnit</code> of a product.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-volume_unit_source')" id="l_method-i-volume_unit_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3b4e5352d1ea78cbc99675705e7cad8299b57722/lib/ship_compliant/inventory_product.rb#L68" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-volume_unit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/inventory_product.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">volume_unit</span>
+  <span class="ruby-identifier">product</span>[<span class="ruby-value">:volume_unit</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    
