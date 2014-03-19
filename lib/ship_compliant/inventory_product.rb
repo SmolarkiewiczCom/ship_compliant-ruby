@@ -56,5 +56,27 @@ module ShipCompliant
       product[:volume_unit]
     end
 
+    # Returns a Hash of inventory levels.
+    #
+    # - The key is the +InventoryType+.
+    # - The value is +Quantity+ as a float.
+    #
+    #   product.inventory_levels #=> {
+    #     available: 2,
+    #     on_hold: 2,
+    #     back_order: 4
+    #   }
+    def inventory_levels
+      levels = {}
+      
+      product[:inventory_levels][:inventory_level].each do |level|
+        key = level[:inventory_type].underscore.to_sym
+        value = level[:quantity].to_f
+
+        levels[key] = value
+      end
+
+      levels
+    end
   end
 end

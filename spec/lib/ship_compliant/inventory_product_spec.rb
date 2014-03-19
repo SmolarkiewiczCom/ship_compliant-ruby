@@ -69,6 +69,16 @@ module ShipCompliant
       end
     end
 
+    context "inventory_levels" do
+      it "returns a hash of inventory levels" do
+        subject.inventory_levels.should == {
+          available: 100,
+          on_hand: 20,
+          some_amazing_type: 1000
+        }
+      end
+    end
+
     subject do
       InventoryProduct.new({
         default_case: 'DEFAULT-CASE',
@@ -81,7 +91,24 @@ module ShipCompliant
         vintage: '1922',
         volume_amount: '944',
         volume_ml: '944',
-        volume_unit: 'Milliliter'
+        volume_unit: 'Milliliter',
+        inventory_levels: {
+          inventory_level: [
+            {
+              random_key: 'PleaseIgnore',
+              inventory_type: 'Available',
+              quantity: '100'
+            },
+            {
+              inventory_type: 'OnHand',
+              quantity: '20'
+            },
+            {
+              inventory_type: 'SomeAmazingType',
+              quantity: '1000'
+            }
+          ]
+        }
       })
     end
 
