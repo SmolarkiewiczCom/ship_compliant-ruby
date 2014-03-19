@@ -59,6 +59,21 @@ module ShipCompliant
         ]
       end
 
+      it "doesn't break when errors is already an array" do
+        result = FauxResult.new({
+          response_status: 'Failure',
+          errors: [
+            {error: { code: '404' }},
+            {error: { code: '500' }}
+          ]
+        })
+
+        result.errors.should == [
+          ErrorResult.new(code: '404'),
+          ErrorResult.new(code: '500')
+        ]
+      end
+
       it "returns an empty array for successful response" do
         result = FauxResult.new(success_message)
         result.errors.should == []

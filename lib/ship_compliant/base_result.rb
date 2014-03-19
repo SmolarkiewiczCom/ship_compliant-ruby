@@ -28,8 +28,8 @@ module ShipCompliant
     #   end
     def errors
       return [] if success?
-      @errors ||= Array.wrap(response[:errors][:error]).map do |error|
-        ErrorResult.new(error)
+      @errors ||= Array.wrap(response[:errors]).map do |error|
+        ErrorResult.new(error[:error])
       end
     end
 
