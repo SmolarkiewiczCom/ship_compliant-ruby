@@ -26,6 +26,8 @@ view the [RDoc documentation][rdoc] to see all the available methods.
    AddUpdateProduct</small>
 5. [Committing Orders](./commit_sales_orders.html) <small>API:
    CommitSalesOrder</small>
+6. [Get Inventory Details](./get_inventory_details.html) <small>API:
+   GetInventoryDetails</small>
 
 ## APIS
 [Browse all classes and methods.][rdoc]
