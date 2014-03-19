@@ -11,6 +11,11 @@ Location, Fulfillment Account basis.
 The method may be called with empty criteria to return all products with
 Available inventory.
 
+- [Official Documentation][official_docs]
+- [GetInventoryDetails][get_inventory_details_class]
+- [GetInventoryDetailsResult][get_inventory_details_result_class]
+- [InventoryProduct][inventory_product_class]
+
 <h4 class="definition-title">Definition</h4>
 
 ```ruby
@@ -39,3 +44,8 @@ products.each do |product|
   end
 end
 ```
+
+[official_docs]: https://shipcompliant.desk.com/customer/portal/articles/1455805-api-getinventorydetails-?b_id=2759
+[get_inventory_details_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/GetInventoryDetails.html
+[get_inventory_details_result_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/GetInventoryDetailsResult.html
+[inventory_product_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/InventoryProduct.html
