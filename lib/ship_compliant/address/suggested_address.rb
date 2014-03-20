@@ -1,4 +1,9 @@
 module ShipCompliant
+  # == ShipCompliant::SuggestedAddress
+  #
+  # This is a value object that wraps the +SuggestedAddress+ node. It inherits
+  # methods from Address, but it also as methods to access suggested address
+  # details and parts.
   class SuggestedAddress < Address
 
     # Returns a Hash of the address location details.
