@@ -1,10 +1,11 @@
-Wed, 19 Mar 2014 12:16:05 -0500
-lib/ship_compliant.rb	Wed, 19 Mar 2014 11:35:16 -0500
+Thu, 20 Mar 2014 11:35:41 -0500
+lib/ship_compliant.rb	Thu, 20 Mar 2014 11:31:28 -0500
 lib/ship_compliant/add_update_product.rb	Tue, 18 Mar 2014 00:30:53 -0500
 lib/ship_compliant/add_update_product_result.rb	Sun, 16 Mar 2014 22:39:22 -0500
+lib/ship_compliant/address.rb	Thu, 20 Mar 2014 11:32:45 -0500
 lib/ship_compliant/base_result.rb	Wed, 19 Mar 2014 10:55:41 -0500
 lib/ship_compliant/check_compliance.rb	Mon, 17 Mar 2014 09:54:01 -0500
-lib/ship_compliant/check_compliance_result.rb	Sun, 16 Mar 2014 22:39:22 -0500
+lib/ship_compliant/check_compliance_result.rb	Thu, 20 Mar 2014 11:34:19 -0500
 lib/ship_compliant/client.rb	Sun, 16 Mar 2014 22:39:22 -0500
 lib/ship_compliant/commit_sales_order.rb	Mon, 17 Mar 2014 10:12:31 -0500
 lib/ship_compliant/commit_sales_order_result.rb	Mon, 17 Mar 2014 10:22:02 -0500
@@ -24,7 +25,6 @@ lib/ship_compliant/search_sales_orders.rb	Sun, 16 Mar 2014 22:39:22 -0500
 lib/ship_compliant/search_sales_orders_result.rb	Sun, 16 Mar 2014 22:39:22 -0500
 lib/ship_compliant/shipment_compliance.rb	Sun, 16 Mar 2014 22:39:22 -0500
 lib/ship_compliant/shipment_sales_tax_rate.rb	Sun, 16 Mar 2014 22:39:22 -0500
-lib/ship_compliant/suggested_address.rb	Sun, 16 Mar 2014 22:39:22 -0500
 lib/ship_compliant/version.rb	Tue, 11 Mar 2014 23:27:28 -0500
 lib/ship_compliant/void_sales_order.rb	Tue, 18 Mar 2014 00:31:40 -0500
 lib/ship_compliant/void_sales_order_result.rb	Sun, 16 Mar 2014 22:39:22 -0500

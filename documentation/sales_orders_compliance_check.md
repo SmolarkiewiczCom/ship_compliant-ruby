@@ -26,7 +26,7 @@ CommitSalesOrder() to save the sales order to ShipCompliant.
 - [ShipmentSalesTaxRate][shipment_sales_tax_rate_class]
 - [ShipmentCompliance][shipment_compliance_class]
 - [ComplianceRule][compliance_rule_class]
-- [SuggestedAddress][suggested_address_class]
+- [Address][address_class]
 
 <h4 class="definition-title">Definition</h4>
 
@@ -174,5 +174,5 @@ a request made and how handle the response.
 [shipment_sales_tax_rate_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/ShipmentSalesTaxRate.html
 [shipment_compliance_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/ShipmentCompliance.html
 [compliance_rule_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/ComplianceRule.html
-[suggested_address_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/SuggestedAddress.html
+[address_class]: {{ site.github.url }}/rdoc/classes/ShipCompliant/Address.html
 [cucumber_specs]: {{ site.github.repository_url }}/tree/master/features/step_definitions/compliance_check
