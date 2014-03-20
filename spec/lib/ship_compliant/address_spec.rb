@@ -45,18 +45,6 @@ module ShipCompliant
       end
     end
 
-    context "details" do
-      it "gets the details" do
-        subject.details.should == { address_details: true }
-      end
-    end
-
-    context "parts" do
-      it "gets the parts" do
-        subject.parts.should == { address_parts: true }
-      end
-    end
-
     subject do
       Address.new(
         city: 'A City',
@@ -65,9 +53,7 @@ module ShipCompliant
         street1: 'Street 1',
         street2: 'Street 2',
         zip1: '12345',
-        zip2: '1234',
-        details: { address_details: true },
-        parts: { address_parts: true }
+        zip2: '1234'
       )
     end
 

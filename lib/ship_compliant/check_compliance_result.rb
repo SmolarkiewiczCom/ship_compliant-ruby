@@ -71,7 +71,7 @@ module ShipCompliant
 
     # Returns an instance of Address.
     def suggested_address
-      Address.new(response[:suggested_address])
+      SuggestedAddress.new(response[:suggested_address])
     end
 
     private

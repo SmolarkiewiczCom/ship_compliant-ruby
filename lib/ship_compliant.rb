@@ -8,6 +8,7 @@ require "ship_compliant/base_result"
 require "ship_compliant/error_result"
 
 require "ship_compliant/address"
+require "ship_compliant/address/suggested_address"
 
 # SEARCH SALES ORDERS
 require "ship_compliant/order_search"
