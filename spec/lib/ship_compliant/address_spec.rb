@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module ShipCompliant
-  describe SuggestedAddress do
+  describe Address do
 
     context "city" do
       it "gets the city" do
@@ -58,7 +58,7 @@ module ShipCompliant
     end
 
     subject do
-      SuggestedAddress.new(
+      Address.new(
         city: 'A City',
         county: 'A County',
         state: 'A State',

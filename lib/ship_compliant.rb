@@ -7,6 +7,8 @@ require "ship_compliant/client"
 require "ship_compliant/base_result"
 require "ship_compliant/error_result"
 
+require "ship_compliant/address"
+
 # SEARCH SALES ORDERS
 require "ship_compliant/order_search"
 require "ship_compliant/search_sales_orders"
@@ -34,7 +36,6 @@ require "ship_compliant/check_compliance_result"
 
 require "ship_compliant/shipment_compliance"
 require "ship_compliant/compliance_rule"
-require "ship_compliant/suggested_address"
 
 require "ship_compliant/commit_sales_order"
 require "ship_compliant/commit_sales_order_result"

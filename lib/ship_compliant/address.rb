@@ -1,12 +1,13 @@
 module ShipCompliant
-  # == ShipCompliant::SuggestedAddress
+  # == ShipCompliant::Address
   #
-  # This is a value object that wraps the +SuggestedAddress+ node.
+  # This is a value object that wraps an address node. +SuggestedAddress+,
+  # +BillTo+, and +ShipTo+.
   #
-  #   address = ShipCompliant::SuggestedAddress.new(city: 'Boston', state: 'MA')
+  #   address = ShipCompliant::Address.new(city: 'Boston', state: 'MA')
   #   address.city #=> 'Boston'
   #   address.state #=> 'MA'
-  class SuggestedAddress < Struct.new(:address)
+  class Address < Struct.new(:address)
 
     # Returns the suggested city.
     def city

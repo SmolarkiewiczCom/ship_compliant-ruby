@@ -86,7 +86,7 @@ module ShipCompliant
 
     context "suggested_address" do
       it "returns the suggested address" do
-        subject.suggested_address.should == SuggestedAddress.new({
+        subject.suggested_address.should == Address.new({
           city: 'Bluebell',
           state: 'Ice Cream'
         })

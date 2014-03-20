@@ -69,9 +69,9 @@ module ShipCompliant
       response[:address_validation_result]
     end
 
-    # Returns an instance of SuggestedAddress.
+    # Returns an instance of Address.
     def suggested_address
-      SuggestedAddress.new(response[:suggested_address])
+      Address.new(response[:suggested_address])
     end
 
     private
