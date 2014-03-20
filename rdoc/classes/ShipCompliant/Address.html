@@ -45,8 +45,7 @@
       
 <h2 id="class-ShipCompliant::Address-label-ShipCompliant%3A%3AAddress"><a href="Address.html">ShipCompliant::Address</a></h2>
 
-<p>This is a value object that wraps an address node.
-<code>SuggestedAddress</code>, <code>BillTo</code>, and
+<p>This is a value object that wraps an address node. <code>BillTo</code> and
 <code>ShipTo</code>.</p>
 
 <pre><code>address = ShipCompliant::Address.new(city: &#39;Boston&#39;, state: &#39;MA&#39;)
@@ -85,30 +84,6 @@ address.state #=&gt; &#39;MA&#39;
               
               <li>
                 <a href="#method-i-county">county</a>
-              </li>
-            
-          </ul>
-        </dd>
-      
-        <dt>D</dt>
-        <dd>
-          <ul>
-            
-              
-              <li>
-                <a href="#method-i-details">details</a>
-              </li>
-            
-          </ul>
-        </dd>
-      
-        <dt>P</dt>
-        <dd>
-          <ul>
-            
-              
-              <li>
-                <a href="#method-i-parts">parts</a>
               </li>
             
           </ul>
@@ -202,11 +177,11 @@ address.state #=&gt; &#39;MA&#39;
                 Source: 
                 <a href="javascript:toggleSource('method-i-city_source')" id="l_method-i-city_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/e1df2f9fffcc80d46d7bd8c7538dd2730e85e520/lib/ship_compliant/address.rb#L13" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/71196ad3e8c9843e8de082e51086d5b0655aa6d6/lib/ship_compliant/address.rb#L12" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-city_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 13</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">city</span>
   <span class="ruby-identifier">address</span>[<span class="ruby-value">:city</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -241,123 +216,13 @@ address.state #=&gt; &#39;MA&#39;
                 Source: 
                 <a href="javascript:toggleSource('method-i-county_source')" id="l_method-i-county_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/e1df2f9fffcc80d46d7bd8c7538dd2730e85e520/lib/ship_compliant/address.rb#L18" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/71196ad3e8c9843e8de082e51086d5b0655aa6d6/lib/ship_compliant/address.rb#L17" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-county_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 18</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">county</span>
   <span class="ruby-identifier">address</span>[<span class="ruby-value">:county</span>]
-<span class="ruby-keyword">end</span></pre>
-              </div>
-            </div>
-            
-          </div>
-        
-        <div class="method">
-          <div class="title method-title" id="method-i-details">
-            
-              <b>details</b>()
-            
-            <a href="../../classes/ShipCompliant/Address.html#method-i-details" name="method-i-details" class="permalink">Link</a>
-          </div>
-          
-          
-            <div class="description">
-              <p>Returns a Hash of the address location details.</p>
-<ul><li>
-<p><code>city_abbreviation</code></p>
-</li><li>
-<p><code>congressional_district</code></p>
-</li><li>
-<p><code>county_fips</code></p>
-</li><li>
-<p><code>time_zone</code></p>
-</li><li>
-<p><code>time_zone_code</code></p>
-</li></ul>
-            </div>
-          
-          
-          
-
-          
-          
-          
-            
-            <div class="sourcecode">
-              
-              <p class="source-link">
-                Source: 
-                <a href="javascript:toggleSource('method-i-details_source')" id="l_method-i-details_source">show</a>
-                
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/e1df2f9fffcc80d46d7bd8c7538dd2730e85e520/lib/ship_compliant/address.rb#L54" target="_blank" class="github_url">on GitHub</a>
-                
-              </p>
-              <div id="method-i-details_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 54</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">details</span>
-  <span class="ruby-identifier">address</span>[<span class="ruby-value">:details</span>]
-<span class="ruby-keyword">end</span></pre>
-              </div>
-            </div>
-            
-          </div>
-        
-        <div class="method">
-          <div class="title method-title" id="method-i-parts">
-            
-              <b>parts</b>()
-            
-            <a href="../../classes/ShipCompliant/Address.html#method-i-parts" name="method-i-parts" class="permalink">Link</a>
-          </div>
-          
-          
-            <div class="description">
-              <p>Returns a Hash of the address parts.</p>
-<ul><li>
-<p><code>company</code></p>
-</li><li>
-<p><code>mail_box_name</code></p>
-</li><li>
-<p><code>mail_box_number</code></p>
-</li><li>
-<p><code>post_direction</code></p>
-</li><li>
-<p><code>pre_direction</code></p>
-</li><li>
-<p><code>street_name</code></p>
-</li><li>
-<p><code>street_number</code></p>
-</li><li>
-<p><code>street_suffix</code></p>
-</li><li>
-<p><code>suite_name</code></p>
-</li><li>
-<p><code>suite_number</code></p>
-</li></ul>
-            </div>
-          
-          
-          
-
-          
-          
-          
-            
-            <div class="sourcecode">
-              
-              <p class="source-link">
-                Source: 
-                <a href="javascript:toggleSource('method-i-parts_source')" id="l_method-i-parts_source">show</a>
-                
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/e1df2f9fffcc80d46d7bd8c7538dd2730e85e520/lib/ship_compliant/address.rb#L70" target="_blank" class="github_url">on GitHub</a>
-                
-              </p>
-              <div id="method-i-parts_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 70</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">parts</span>
-  <span class="ruby-identifier">address</span>[<span class="ruby-value">:parts</span>]
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -390,11 +255,11 @@ address.state #=&gt; &#39;MA&#39;
                 Source: 
                 <a href="javascript:toggleSource('method-i-state_source')" id="l_method-i-state_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/e1df2f9fffcc80d46d7bd8c7538dd2730e85e520/lib/ship_compliant/address.rb#L23" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/71196ad3e8c9843e8de082e51086d5b0655aa6d6/lib/ship_compliant/address.rb#L22" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-state_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 23</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">state</span>
   <span class="ruby-identifier">address</span>[<span class="ruby-value">:state</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -429,11 +294,11 @@ address.state #=&gt; &#39;MA&#39;
                 Source: 
                 <a href="javascript:toggleSource('method-i-street1_source')" id="l_method-i-street1_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/e1df2f9fffcc80d46d7bd8c7538dd2730e85e520/lib/ship_compliant/address.rb#L28" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/71196ad3e8c9843e8de082e51086d5b0655aa6d6/lib/ship_compliant/address.rb#L27" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-street1_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 28</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">street1</span>
   <span class="ruby-identifier">address</span>[<span class="ruby-value">:street1</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -468,11 +333,11 @@ address.state #=&gt; &#39;MA&#39;
                 Source: 
                 <a href="javascript:toggleSource('method-i-street2_source')" id="l_method-i-street2_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/e1df2f9fffcc80d46d7bd8c7538dd2730e85e520/lib/ship_compliant/address.rb#L33" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/71196ad3e8c9843e8de082e51086d5b0655aa6d6/lib/ship_compliant/address.rb#L32" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-street2_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 33</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">street2</span>
   <span class="ruby-identifier">address</span>[<span class="ruby-value">:street2</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -507,11 +372,11 @@ address.state #=&gt; &#39;MA&#39;
                 Source: 
                 <a href="javascript:toggleSource('method-i-zip1_source')" id="l_method-i-zip1_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/e1df2f9fffcc80d46d7bd8c7538dd2730e85e520/lib/ship_compliant/address.rb#L38" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/71196ad3e8c9843e8de082e51086d5b0655aa6d6/lib/ship_compliant/address.rb#L37" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-zip1_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 38</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">zip1</span>
   <span class="ruby-identifier">address</span>[<span class="ruby-value">:zip1</span>].<span class="ruby-identifier">to_i</span>
 <span class="ruby-keyword">end</span></pre>
@@ -546,11 +411,11 @@ address.state #=&gt; &#39;MA&#39;
                 Source: 
                 <a href="javascript:toggleSource('method-i-zip2_source')" id="l_method-i-zip2_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/e1df2f9fffcc80d46d7bd8c7538dd2730e85e520/lib/ship_compliant/address.rb#L43" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/71196ad3e8c9843e8de082e51086d5b0655aa6d6/lib/ship_compliant/address.rb#L42" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-zip2_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 43</span>
+                <pre><span class="ruby-comment"># File lib/ship_compliant/address.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">zip2</span>
   <span class="ruby-identifier">address</span>[<span class="ruby-value">:zip2</span>].<span class="ruby-identifier">to_i</span>
 <span class="ruby-keyword">end</span></pre>
