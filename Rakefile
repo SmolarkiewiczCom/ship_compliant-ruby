@@ -24,6 +24,7 @@ class RDoc::Generator::SDoc
 end
 
 RDoc::Task.new('docs') do |rdoc|
+  rdoc.title = 'ShipCompliant API'
   rdoc.template = 'ship_complaint'
   rdoc.options << '--format' << 'sdoc'
   rdoc.options << '--github'
