@@ -21,6 +21,14 @@ module ShipCompliant
           ComplianceRule.new(compliance_description: "You're clear for take off ghost rider")
         ]
       end
+
+      it "returns an empty array when none found" do
+        shipment = ShipmentCompliance.new({
+          rules: nil
+        })
+
+        shipment.rules.should == []
+      end
     end
 
     subject do

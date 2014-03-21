@@ -18,6 +18,7 @@ module ShipCompliant
     #
     #   compliance_errors = shipment.rules.reject { |r| r.compliant? }
     def rules
+      return [] if result[:rules].nil?
       Array.wrap(result[:rules][:rule_compliance_response]).map do |rule|
         ComplianceRule.new(rule)
       end

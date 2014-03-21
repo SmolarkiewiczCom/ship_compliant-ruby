@@ -10,11 +10,17 @@ require "ship_compliant/error_result"
 require "ship_compliant/address"
 require "ship_compliant/address/suggested_address"
 
+require "ship_compliant/shipment"
+require "ship_compliant/package"
+
 # SEARCH SALES ORDERS
 require "ship_compliant/order_search"
 require "ship_compliant/search_sales_orders"
 require "ship_compliant/search_sales_orders_result"
 require "ship_compliant/search_sales_order_summary"
+
+require "ship_compliant/get_sales_order_extended"
+require "ship_compliant/get_sales_order_extended_result"
 
 # VOID SALES ORDER
 require "ship_compliant/void_sales_order"

@@ -23,6 +23,11 @@ module ShipCompliant
       address[:state]
     end
 
+    # Returns the country.
+    def country
+      address[:country]
+    end
+
     # Returns the suggested street.
     def street1
       address[:street1]
@@ -40,8 +45,43 @@ module ShipCompliant
 
     # Returns the suggested zip code extension.
     def zip2
+      return nil if address[:zip2].blank?
       address[:zip2].to_i
     end
 
+    # Returns the company.
+    def company
+      address[:company]
+    end
+
+    # Returns the first name.
+    def first_name
+      address[:first_name]
+    end
+
+    # Returns the last name.
+    def last_name
+      address[:last_name]
+    end
+
+    # Returns the phone.
+    def phone
+      address[:phone]
+    end
+
+    # Returns the fax.
+    def fax
+      address[:fax]
+    end
+
+    # Returns the email address.
+    def email
+      address[:email]
+    end
+
+    # Returns the date of birth.
+    def date_of_birth
+      address[:date_of_birth]
+    end
   end
 end
