@@ -5,5 +5,5 @@ To generate the docs for the main repo this needs to be located in `lib/rdoc`
 Then run
 
 ```bash
-rake redoc
+rake redocs
 ```
