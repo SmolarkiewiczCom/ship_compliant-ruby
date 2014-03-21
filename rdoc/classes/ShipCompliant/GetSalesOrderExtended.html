@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::GetSalesOrderExtended</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/ship_compliant.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::GetSalesOrderExtended 
+            
+                <span class="parent">&lt; 
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/get_sales_order_extended_rb.html">lib/ship_compliant/get_sales_order_extended.rb</a></li>
+            
+        </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ShipCompliant::GetSalesOrderExtended-label-ShipCompliant%3A%3AGetSalesOrderExtended"><a href="GetSalesOrderExtended.html">ShipCompliant::GetSalesOrderExtended</a></h2>
+
+<p>This method takes in a Sales Order Key and returns detailed data about the
+sales order, including compliance status.</p>
+
+<p>Use this method to query the full details of a sales order and the
+shipments in the sales order.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-by_order_key">by_order_key</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-by_order_key">
+            
+              <b>by_order_key</b>(order_key)
+            
+            <a href="../../classes/ShipCompliant/GetSalesOrderExtended.html#method-c-by_order_key" name="method-c-by_order_key" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Finds a <code>SalesOrder</code> by the <code>SalesOrderKey</code>.</p>
+
+<p>Returns an instance of <a
+href="GetSalesOrderExtendedResult.html">ShipCompliant::GetSalesOrderExtendedResult</a>.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-by_order_key_source')" id="l_method-c-by_order_key_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/fa20cfc5f54cee7f38c53749dd7b1cd604c6dbd0/lib/ship_compliant/get_sales_order_extended.rb#L14" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-by_order_key_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/get_sales_order_extended.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">by_order_key</span>(<span class="ruby-identifier">order_key</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">client</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:get_sales_order_extended</span>, {
+    <span class="ruby-string">&#39;SalesOrderKey&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">order_key</span>
+  })
+
+  <span class="ruby-constant">GetSalesOrderExtendedResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    
