@@ -32,7 +32,7 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 6. [Get Inventory Details](./get_inventory_details.html) <small>API:
    GetInventoryDetails</small>
 7. [Get Updates for Committed Orders](./get_sales_order_extended.html)
-   <small>API: GetSalesOrderExtended<small>
+   <small>API: GetSalesOrderExtended</small>
 
 ## APIS
 [Browse all classes and methods.][rdoc]
