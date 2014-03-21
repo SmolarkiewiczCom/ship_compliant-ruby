@@ -51,6 +51,12 @@ module ShipCompliant
       end
     end
 
+    context "channel_details" do
+      it "returns the details" do
+        subject.channel_details.should == ChannelDetails.new(some_details: 'online sales')
+      end
+    end
+
     subject do
       GetSalesOrderExtendedResult.new({
         compliance_results: {
@@ -64,6 +70,9 @@ module ShipCompliant
             state: 'WY'
           },
           shipments: [shipment]
+        },
+        order_channel_details: {
+          some_details: 'online sales'
         }
       })
     end

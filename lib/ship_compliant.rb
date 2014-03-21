@@ -12,6 +12,7 @@ require "ship_compliant/address/suggested_address"
 
 require "ship_compliant/shipment"
 require "ship_compliant/package"
+require "ship_compliant/channel_details"
 
 # SEARCH SALES ORDERS
 require "ship_compliant/order_search"

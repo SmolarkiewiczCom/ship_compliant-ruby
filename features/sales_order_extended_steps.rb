@@ -58,5 +58,6 @@ Then(/^I should receive shipment information$/) do
 end
 
 Then(/^I should receive order channel details$/) do
-  pending # express the regexp above with the code you wish you had
+  details = @order_result.channel_details
+  details.order_channel.should == 'MyOrders'
 end

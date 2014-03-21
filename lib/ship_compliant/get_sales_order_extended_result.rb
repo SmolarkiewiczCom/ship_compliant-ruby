@@ -49,5 +49,9 @@ module ShipCompliant
       shipment = shipments.select { |s| s[:shipment_key] == shipment_key }.first
       Shipment.new(shipment)
     end
+
+    def channel_details
+      ChannelDetails.new(response[:order_channel_details])
+    end
   end
 end

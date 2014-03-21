@@ -1,6 +1,5 @@
 Feature: Get Sales Order Extended
 
-  @wip
   Scenario: I search for order information
     Given I've added my credentials
     When I search for order information
