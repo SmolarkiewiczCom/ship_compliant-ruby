@@ -1,4 +1,9 @@
 module ShipCompliant
+  # == ShipCompliant::GetSalesOrderExtendedResult
+  #
+  # Wraps the response of +GetSalesOrderExtended+ and provides methods to
+  # quickly access compliace rules of a shipment, the billing address,
+  # shipments, and channel details.
   class GetSalesOrderExtendedResult < Struct.new(:response)
     include BaseResult
 
@@ -50,6 +55,9 @@ module ShipCompliant
       Shipment.new(shipment)
     end
 
+    # Returns the +OrderChannelDetails+ node as an instance of ShipCompliant::ChannelDetails.
+    #
+    #   puts sales_order.channel_details.order_channel #=> 'MyOrders'
     def channel_details
       ChannelDetails.new(response[:order_channel_details])
     end
