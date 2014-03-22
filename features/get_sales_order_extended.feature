@@ -1,7 +1,9 @@
 Feature: Get Sales Order Extended
 
-  Scenario: I search for order information
+  Background:
     Given I've added my credentials
+
+  Scenario: I search for order information
     When I search for order information
     Then I should receive shipment compliance statuses
     And I should receive billing information
@@ -9,4 +11,5 @@ Feature: Get Sales Order Extended
     And I should receive order channel details
 
   Scenario: I search for an order that doesn't exist
-    When pending
+    When I search for an invalid order
+    Then I should receive an error that the order doesn't exist
