@@ -32,6 +32,10 @@ require "ship_compliant/product_attributes"
 require "ship_compliant/add_update_product"
 require "ship_compliant/add_update_product_result"
 
+# ADD UPDATE BRAND
+require "ship_compliant/add_update_brand"
+require "ship_compliant/add_update_brand_result"
+
 # SALES TAX
 require "ship_compliant/shipment_sales_tax_rate"
 require "ship_compliant/sales_tax_rate"
