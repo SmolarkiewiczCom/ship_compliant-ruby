@@ -25,7 +25,7 @@ module ShipCompliant
     let(:response) { File.read('spec/fixtures/add_update_product.xml') }
 
     context "product" do
-      it "queries the client with product and update mode" do
+      it "queries the client with product an update mode" do
         AddUpdateProduct.stub(:add_update_product) { {} }
         
         result = AddUpdateProduct.product({
