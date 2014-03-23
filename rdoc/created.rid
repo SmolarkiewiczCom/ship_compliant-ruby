@@ -1,7 +1,9 @@
-Fri, 21 Mar 2014 14:08:44 -0500
-lib/ship_compliant.rb	Fri, 21 Mar 2014 13:52:40 -0500
+Sun, 23 Mar 2014 11:13:17 -0500
+lib/ship_compliant.rb	Sat, 22 Mar 2014 10:20:57 -0500
+lib/ship_compliant/add_update_brand.rb	Sun, 23 Mar 2014 11:11:39 -0500
+lib/ship_compliant/add_update_brand_result.rb	Sun, 23 Mar 2014 11:12:21 -0500
 lib/ship_compliant/add_update_product.rb	Tue, 18 Mar 2014 00:30:53 -0500
-lib/ship_compliant/add_update_product_result.rb	Sun, 16 Mar 2014 22:39:22 -0500
+lib/ship_compliant/add_update_product_result.rb	Sun, 23 Mar 2014 11:13:06 -0500
 lib/ship_compliant/address.rb	Fri, 21 Mar 2014 11:59:17 -0500
 lib/ship_compliant/address/suggested_address.rb	Thu, 20 Mar 2014 11:49:05 -0500
 lib/ship_compliant/base_result.rb	Wed, 19 Mar 2014 10:55:41 -0500

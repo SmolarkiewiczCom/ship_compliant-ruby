@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::AddUpdateBrand</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/ship_compliant.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::AddUpdateBrand 
+            
+                <span class="parent">&lt; 
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/add_update_brand_rb.html">lib/ship_compliant/add_update_brand.rb</a></li>
+            
+        </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ShipCompliant::AddUpdateBrand-label-ShipCompliant%3A%3AAddUpdateBrand"><a href="AddUpdateBrand.html">ShipCompliant::AddUpdateBrand</a></h2>
+
+<p>Checks to see if a brand with the same key already exists. If one does not
+exist, it will add the brand with the specified name. If a brand exists
+with the same brand key then the brand name will be updated.</p>
+
+<p>Use this method to add a new brand or update an existing brand in the
+system. A brand must be defined before adding products.</p>
+
+<pre><code>ShipCompliant::AddUpdateBrand.brand({
+  key: &#39;DENSNW&#39;,
+  name: &#39;Denver Snow&#39;,
+
+  this_brand_is_bottled_by_a_third_party: false,
+  this_brand_is_produced_by_a_third_party: false,
+  this_brand_operates_under_a_trade_name: false,
+  this_brand_was_acquired_from_a_third_party: false
+})</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-brand">brand</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-brand">
+            
+              <b>brand</b>(brand, options = {})
+            
+            <a href="../../classes/ShipCompliant/AddUpdateBrand.html#method-c-brand" name="method-c-brand" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Adds or updates a brand depending on <code>:update_mode</code>.</p>
+
+<p><code>brand</code> parameter must be a Hash.</p>
+
+<h3 id="method-c-brand-label-Options">Options</h3>
+
+<p>You can specify the update mode by passing a hash as the second argument.
+The default is <code>ErrorOnExisting</code>.</p>
+
+<p>Available options are.</p>
+<ul><li>
+<p>UpdateExisting - Existing brand information is updated.</p>
+</li><li>
+<p>IgnoreExisting - Pre-existing information is not updated.</p>
+</li><li>
+<p>ErrorOnExisting - An error message is returned if the brand already exists.</p>
+
+<pre><code>ShipCompliant::AddUpdateBrand.product({
+  # brand attributes
+}, update_mode: &#39;UpdateExisting&#39;)</code></pre>
+</li></ul>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-brand_source')" id="l_method-c-brand_source">show</a>
+                
+                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/c95fef36603833f0b70d9e7d75a5e701c1fde53e/lib/ship_compliant/add_update_brand.rb#L40" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-c-brand_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/add_update_brand.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">brand</span>(<span class="ruby-identifier">brand</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">client</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:add_update_brand</span>, {
+    <span class="ruby-string">&#39;Brand&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">brand</span>.<span class="ruby-identifier">deep_transform_keys</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span> },
+    <span class="ruby-string">&#39;UpdateMode&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:update_mode</span>, <span class="ruby-string">&#39;ErrorOnExisting&#39;</span>)
+  })
+
+  <span class="ruby-constant">AddUpdateBrandResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">result</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    
