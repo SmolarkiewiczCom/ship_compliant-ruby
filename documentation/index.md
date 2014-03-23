@@ -30,11 +30,12 @@ view the [RDoc documentation][rdoc] to see all the available methods.
 3. [Voiding Orders](./void_sales_order.html) <small>API: VoidSalesOrder</small>
 4. [Managing Products](./add_update_product.html) <small>API:
    AddUpdateProduct</small>
-5. [Committing Orders](./commit_sales_orders.html) <small>API:
+5. [Managing Brands](./add_update_brand.html) <small>API: AddUpdateBrand</small>
+6. [Committing Orders](./commit_sales_orders.html) <small>API:
    CommitSalesOrder</small>
-6. [Get Inventory Details](./get_inventory_details.html) <small>API:
+7. [Get Inventory Details](./get_inventory_details.html) <small>API:
    GetInventoryDetails</small>
-7. [Get Updates for Committed Orders](./get_sales_order_extended.html)
+8. [Get Updates for Committed Orders](./get_sales_order_extended.html)
    <small>API: GetSalesOrderExtended</small>
 
 ## APIS
