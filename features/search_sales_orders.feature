@@ -5,6 +5,7 @@ Feature: Search Sales Orders
     When I search for orders by purchase date
     Then I should find two orders
     And I should receive a success status for search
+    And I should have paging cookie information
 
   Scenario: I have an invalid search
     Given I've added my credentials

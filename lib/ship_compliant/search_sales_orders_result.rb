@@ -47,6 +47,16 @@ module ShipCompliant
       end
     end
 
+    # Returns the +PagingCookie+ node.
+    def paging_cookie
+      response[:paging_cookie]
+    end
+
+    # Returns the +PagingCookieExpires+ node as DateTime.
+    def paging_cookie_expires
+      response[:paging_cookie_expires]
+    end
+
     private
 
     # Standardizes the XML response by converting fields to integers

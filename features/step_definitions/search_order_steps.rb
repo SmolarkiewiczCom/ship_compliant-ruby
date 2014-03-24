@@ -17,6 +17,11 @@ Then(/^I should receive a success status for search$/) do
   @search_results.success?.should be_true
 end
 
+Then(/^I should have paging cookie information$/) do
+  @search_results.paging_cookie.should == '3087b638-5c60-42ba-91b2-5eae589e553a'
+  @search_results.paging_cookie_expires.should == DateTime.new(2014, 3, 11, 21, 45, 22.3330533, '-05')
+end
+
 Then(/^I should get an error status for search$/) do
   @search_results.failure?.should be_true
   @search_results.error_count.should == 1
