@@ -19,7 +19,7 @@ module ShipCompliant
 
   # Creates a new client from a WSDL url.
   def self.new_client_from_wsdl(wsdl)
-    Client.new(wsdl: wsdl, log: configuration.log)
+    Client.new(wsdl: wsdl, log: configuration.log, filters: %W[PartnerKey Username Password])
   end
 
   class Client < Savon::Client
