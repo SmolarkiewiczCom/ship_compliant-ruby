@@ -6,6 +6,8 @@ the 9 main API calls.
 
 [Documentation][documentation_path] | [RDoc][rdoc_path] | [CoreService V1.2][core_service_path]
 
+[![Build Status](https://travis-ci.org/BaylorRae/ship_compliant-ruby.png?branch=master)](https://travis-ci.org/BaylorRae/ship\_compliant-ruby) [![Code Climate](https://codeclimate.com/github/BaylorRae/ship_compliant-ruby.png)](https://codeclimate.com/github/BaylorRae/ship_compliant-ruby)
+
 ## Installation
 
 Add this line to your application's Gemfile:
