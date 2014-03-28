@@ -1,8 +1,20 @@
 require 'bundler/gem_tasks'
 
+require "rspec/core/rake_task"
+
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.verbose = false
+  t.ruby_opts = "-I./spec -rspec_helper"
+  t.rspec_opts = %w[--format progress]
+end
+
+require 'cucumber/rake/task'
+Cucumber::Rake::Task.new
+
+task default: [:spec, :cucumber]
+
 # SDoc command
 # sdoc --main README.md lib README.md -o pages/rdoc --template=ship_complaint
-
 require 'sdoc'
 
 class RDoc::Generator::SDoc

@@ -1,6 +1,7 @@
 require 'bundler/setup'
 Bundler.setup
 
+require "rspec"
 require "set"
 require 'ship_compliant'
 require "savon/mock/spec_helper"
