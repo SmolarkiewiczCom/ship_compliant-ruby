@@ -6,7 +6,7 @@ the 9 main API calls.
 
 [Documentation][documentation_path] | [RDoc][rdoc_path] | [CoreService V1.2][core_service_path]
 
-[![Coverage Status](https://coveralls.io/repos/BaylorRae/ship_compliant-ruby/badge.png?branch=master)](https://coveralls.io/r/BaylorRae/ship\_compliant-ruby?branch=master) [![Build Status](https://api.travis-ci.org/BaylorRae/ship_compliant-ruby.png?branch=master)](https://travis-ci.org/BaylorRae/ship\_compliant-ruby) [![Code Climate](https://codeclimate.com/github/BaylorRae/ship_compliant-ruby.png)](https://codeclimate.com/github/BaylorRae/ship_compliant-ruby)
+[![Coverage Status]][coveralls_status] [![Build Status]][travis_status] [![Code Climate]][code_gpa]
 
 ## Installation
 
@@ -45,6 +45,18 @@ TODO: Coming soon...
 5. Create new Pull Request
 
 [soap_wiki]: http://en.wikipedia.org/wiki/SOAP
+
+<!-- Documenation Links -->
 [documentation_path]: http://baylorrae.github.io/ship_compliant-ruby/documentation/
 [rdoc_path]: http://baylorrae.github.io/ship_compliant-ruby/rdoc/
 [core_service_path]: https://shipcompliant.desk.com/customer/portal/articles/1451976-api-coreservice-v1-2?b_id=2759
+
+<!-- Status Badges -->
+[Coverage Status]: https://coveralls.io/repos/BaylorRae/ship_compliant-ruby/badge.png?branch=master
+[coveralls_status]: https://coveralls.io/r/BaylorRae/ship\_compliant-ruby?branch=master
+
+[Build Status]: https://travis-ci.org/BaylorRae/ship_compliant-ruby.png?branch=master
+[travis_status]: https://travis-ci.org/BaylorRae/ship_compliant-ruby
+
+[Code Climate]: https://codeclimate.com/github/BaylorRae/ship_compliant-ruby.png
+[code_gpa]: https://codeclimate.com/github/BaylorRae/ship_compliant-ruby
