@@ -28,7 +28,6 @@ Gem::Specification.new do |s|
   # TESTING
   s.add_development_dependency "rspec", "~> 2.13"
   s.add_development_dependency "cucumber", "~> 1.3"
-  s.add_development_dependency "savon_spec", "~> 1.3"
   s.add_development_dependency "webmock", "~> 1.17"
   s.add_development_dependency "vcr", "~> 2.9"
 end
