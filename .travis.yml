@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - 1.9.2
+  - 1.9.3
+  - 2.0.0
+  - 2.1.0
+env: CUCUMBER_FORMAT=progress SHIP_COMPLIANT_KEY=foo SHIP_COMPLIANT_USER=bar SHIP_COMPLIANT_PASS=baz
