@@ -1,6 +1,9 @@
 require 'bundler/setup'
 Bundler.setup
 
+require 'coveralls'
+Coveralls.wear!
+
 require "rspec"
 require "set"
 require 'ship_compliant'

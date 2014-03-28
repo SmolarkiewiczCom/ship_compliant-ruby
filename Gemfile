@@ -4,3 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem "savon_spec", group: :test
+gem 'coveralls', require: false
