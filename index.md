@@ -5,9 +5,13 @@ title: ShipCompliant - Ruby API Client
 
 # ShipCompliant - Ruby API Client
 
-The ShipCompliant gem is a API Client for the [SOAP][soap_wiki] API provided by
+The ShipCompliant gem is an API Client for the [SOAP][soap_wiki] API provided by
 ShipCompliant. This gem has been created for fast implementation and supports
 the 9 main API calls.
+
+[Documentation][documentation_path] | [RDoc][rdoc_path] | [CoreService V1.2][core_service_path]
+
+[![Coverage Status](https://coveralls.io/repos/BaylorRae/ship_compliant-ruby/badge.png?branch=master)](https://coveralls.io/r/BaylorRae/ship\_compliant-ruby?branch=master) [![Build Status](https://api.travis-ci.org/BaylorRae/ship_compliant-ruby.png?branch=master)](https://travis-ci.org/BaylorRae/ship\_compliant-ruby) [![Code Climate](https://codeclimate.com/github/BaylorRae/ship_compliant-ruby.png)](https://codeclimate.com/github/BaylorRae/ship_compliant-ruby)
 
 ## Installation
 
@@ -46,3 +50,6 @@ TODO: Coming soon...
 5. Create new Pull Request
 
 [soap_wiki]: http://en.wikipedia.org/wiki/SOAP
+[documentation_path]: http://baylorrae.github.io/ship_compliant-ruby/documentation/
+[rdoc_path]: http://baylorrae.github.io/ship_compliant-ruby/rdoc/
+[core_service_path]: https://shipcompliant.desk.com/customer/portal/articles/1451976-api-coreservice-v1-2?b_id=2759
