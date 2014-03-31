@@ -47,8 +47,8 @@ TODO: Coming soon...
 [soap_wiki]: http://en.wikipedia.org/wiki/SOAP
 
 <!-- Documenation Links -->
-[documentation_path]: http://baylorrae.github.io/ship_compliant-ruby/documentation/
-[rdoc_path]: http://baylorrae.github.io/ship_compliant-ruby/rdoc/
+[documentation_path]: http://shipcompliant.github.io/ship_compliant-ruby/documentation/
+[rdoc_path]: http://shipcompliant.github.io/ship_compliant-ruby/rdoc/
 [core_service_path]: https://shipcompliant.desk.com/customer/portal/articles/1451976-api-coreservice-v1-2?b_id=2759
 
 <!-- Status Badges -->
