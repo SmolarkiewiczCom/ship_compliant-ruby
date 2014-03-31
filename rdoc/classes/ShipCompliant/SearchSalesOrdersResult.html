@@ -103,6 +103,23 @@ end
           </ul>
         </dd>
       
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-paging_cookie">paging_cookie</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-paging_cookie_expires">paging_cookie_expires</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
         <dt>R</dt>
         <dd>
           <ul>
@@ -212,7 +229,7 @@ end
                 Source: 
                 <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3eb8545f77aa4ab7182d3bce2554eb3280073006/lib/ship_compliant/search_sales_orders_result.rb#L22" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/ShipCompliant/ship_compliant-ruby/blob/e0daad862bb8e3b54dd8a1086538507a7147be0c/lib/ship_compliant/search_sales_orders_result.rb#L22" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-c-new_source" class="dyn-source">
@@ -254,13 +271,91 @@ end
                 Source: 
                 <a href="javascript:toggleSource('method-i-length_source')" id="l_method-i-length_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3eb8545f77aa4ab7182d3bce2554eb3280073006/lib/ship_compliant/search_sales_orders_result.rb#L28" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/ShipCompliant/ship_compliant-ruby/blob/e0daad862bb8e3b54dd8a1086538507a7147be0c/lib/ship_compliant/search_sales_orders_result.rb#L28" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-length_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/ship_compliant/search_sales_orders_result.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">length</span>
   <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:count_sales_orders_returned</span>, <span class="ruby-number">0</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-paging_cookie">
+            
+              <b>paging_cookie</b>()
+            
+            <a href="../../classes/ShipCompliant/SearchSalesOrdersResult.html#method-i-paging_cookie" name="method-i-paging_cookie" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>PagingCookie</code> node.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-paging_cookie_source')" id="l_method-i-paging_cookie_source">show</a>
+                
+                  | <a href="https://github.com/ShipCompliant/ship_compliant-ruby/blob/e0daad862bb8e3b54dd8a1086538507a7147be0c/lib/ship_compliant/search_sales_orders_result.rb#L51" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-paging_cookie_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/search_sales_orders_result.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">paging_cookie</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:paging_cookie</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-paging_cookie_expires">
+            
+              <b>paging_cookie_expires</b>()
+            
+            <a href="../../classes/ShipCompliant/SearchSalesOrdersResult.html#method-i-paging_cookie_expires" name="method-i-paging_cookie_expires" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the <code>PagingCookieExpires</code> node as DateTime.</p>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-paging_cookie_expires_source')" id="l_method-i-paging_cookie_expires_source">show</a>
+                
+                  | <a href="https://github.com/ShipCompliant/ship_compliant-ruby/blob/e0daad862bb8e3b54dd8a1086538507a7147be0c/lib/ship_compliant/search_sales_orders_result.rb#L56" target="_blank" class="github_url">on GitHub</a>
+                
+              </p>
+              <div id="method-i-paging_cookie_expires_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/search_sales_orders_result.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">paging_cookie_expires</span>
+  <span class="ruby-identifier">response</span>[<span class="ruby-value">:paging_cookie_expires</span>]
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -293,7 +388,7 @@ end
                 Source: 
                 <a href="javascript:toggleSource('method-i-remaining_orders_length_source')" id="l_method-i-remaining_orders_length_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3eb8545f77aa4ab7182d3bce2554eb3280073006/lib/ship_compliant/search_sales_orders_result.rb#L34" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/ShipCompliant/ship_compliant-ruby/blob/e0daad862bb8e3b54dd8a1086538507a7147be0c/lib/ship_compliant/search_sales_orders_result.rb#L34" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-remaining_orders_length_source" class="dyn-source">
@@ -339,7 +434,7 @@ end
                 Source: 
                 <a href="javascript:toggleSource('method-i-summaries_source')" id="l_method-i-summaries_source">show</a>
                 
-                  | <a href="https://github.com/BaylorRae/ship_compliant-ruby/blob/3eb8545f77aa4ab7182d3bce2554eb3280073006/lib/ship_compliant/search_sales_orders_result.rb#L44" target="_blank" class="github_url">on GitHub</a>
+                  | <a href="https://github.com/ShipCompliant/ship_compliant-ruby/blob/e0daad862bb8e3b54dd8a1086538507a7147be0c/lib/ship_compliant/search_sales_orders_result.rb#L44" target="_blank" class="github_url">on GitHub</a>
                 
               </p>
               <div id="method-i-summaries_source" class="dyn-source">
