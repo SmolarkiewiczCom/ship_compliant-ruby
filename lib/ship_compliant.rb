@@ -20,6 +20,8 @@ require "ship_compliant/search_sales_orders"
 require "ship_compliant/search_sales_orders_result"
 require "ship_compliant/search_sales_order_summary"
 
+require "ship_compliant/search_more_sales_orders"
+
 require "ship_compliant/get_sales_order_extended"
 require "ship_compliant/get_sales_order_extended_result"
 

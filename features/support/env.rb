@@ -3,6 +3,7 @@ Bundler.setup
 
 require 'ship_compliant'
 require 'vcr'
+require 'pry'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'

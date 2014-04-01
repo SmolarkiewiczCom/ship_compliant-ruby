@@ -8,6 +8,7 @@ require "rspec"
 require "set"
 require 'ship_compliant'
 require "savon/mock/spec_helper"
+require "pry"
 
 RSpec.configure do |config|
   config.include Savon::SpecHelper

@@ -1,0 +1,1141 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Tue, 01 Apr 2014 03:31:17 GMT
+      Content-Length:
+      - '10776'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<wsdl:definitions xmlns:s=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:soap12=\"http://schemas.xmlsoap.org/wsdl/soap12/\" xmlns:http=\"http://schemas.xmlsoap.org/wsdl/http/\"
+        xmlns:mime=\"http://schemas.xmlsoap.org/wsdl/mime/\" xmlns:tns=\"http://ws.shipcompliant.com/\"
+        xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\" xmlns:tm=\"http://microsoft.com/wsdl/mime/textMatching/\"
+        xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\" targetNamespace=\"http://ws.shipcompliant.com/\"
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">\r\n  <wsdl:types>\r\n    <s:schema
+        elementFormDefault=\"qualified\" targetNamespace=\"http://ws.shipcompliant.com/\">\r\n
+        \     <s:element name=\"CheckComplianceOfSalesOrderWithAddressValidation\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Request\" type=\"tns:CheckComplianceOfSalesOrderWithAddressValidationRequest\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"CheckComplianceOfSalesOrderWithAddressValidationRequest\">\r\n
+        \       <s:complexContent mixed=\"false\">\r\n          <s:extension base=\"tns:CheckComplianceOfSalesOrderRequest\">\r\n
+        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Option\" type=\"s:string\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
+        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"CheckComplianceOfSalesOrderRequest\">\r\n        <s:complexContent
+        mixed=\"false\">\r\n          <s:extension base=\"tns:BaseRequest\">\r\n            <s:sequence>\r\n
+        \             <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"AddressOption\"
+        type=\"tns:AddressOption\" />\r\n              <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"IncludeSalesTaxRates\" type=\"s:boolean\" />\r\n              <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"PersistOption\" type=\"tns:PersistOption\"
+        />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesOrder\"
+        type=\"tns:SalesOrder\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
+        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"BaseRequest\" abstract=\"true\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Security\" type=\"tns:Security\" />\r\n
+        \       </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType name=\"Security\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"InstanceID\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"PartnerKey\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"AddressOption\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"IgnoreStreetLevelErrors\" type=\"s:boolean\" />\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"RejectIfAddressSuggested\"
+        type=\"s:boolean\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:simpleType name=\"PersistOption\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Null\" />\r\n          <s:enumeration value=\"OverrideExisting\"
+        />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n      <s:complexType
+        name=\"SalesOrder\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"BillTo\" type=\"tns:Address\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"CashierKey\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"CustomerKey\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Discounts\" type=\"tns:ArrayOfSalesOrderDiscount\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ExternalCustomerKey\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ExternalOfferKeys\"
+        type=\"tns:ArrayOfString\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ExternalSalesOrderKey\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"FulfillmentType\" type=\"tns:FulfillmentType\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"OrderType\"
+        type=\"tns:OrderType\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Payments\" type=\"tns:ArrayOfPayment\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"PurchaseDate\" type=\"s:dateTime\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ReferenceNumber\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"RefundedOrderReference\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"RegisterID\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"SalesAssociateKey\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesOrderKey\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"SalesTaxCollected\"
+        type=\"s:decimal\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"SettlementBatchNumber\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Shipments\" type=\"tns:ArrayOfShipment\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Tags\" type=\"tns:ArrayOfTag\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"Address\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"City\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Company\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Country\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"County\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"DateOfBirth\" type=\"s:dateTime\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Email\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Fax\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"FirstName\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"LastName\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Phone\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"State\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Street1\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Street2\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Zip1\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Zip2\" type=\"s:string\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ArrayOfSalesOrderDiscount\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"SalesOrderDiscount\" nillable=\"true\"
+        type=\"tns:SalesOrderDiscount\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"SalesOrderDiscount\">\r\n        <s:attribute
+        name=\"Amount\" type=\"s:decimal\" use=\"required\" />\r\n        <s:attribute
+        name=\"Code\" type=\"s:string\" />\r\n        <s:attribute name=\"Type\" type=\"s:string\"
+        />\r\n      </s:complexType>\r\n      <s:complexType name=\"ArrayOfString\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
+        name=\"string\" nillable=\"true\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:simpleType name=\"FulfillmentType\">\r\n
+        \       <s:restriction base=\"s:string\">\r\n          <s:enumeration value=\"Null\"
+        />\r\n          <s:enumeration value=\"Club\" />\r\n          <s:enumeration
+        value=\"Daily\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
+        \     <s:simpleType name=\"OrderType\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Null\" />\r\n          <s:enumeration value=\"Club\"
+        />\r\n          <s:enumeration value=\"Fax\" />\r\n          <s:enumeration
+        value=\"InPerson\" />\r\n          <s:enumeration value=\"Internet\" />\r\n
+        \         <s:enumeration value=\"Mail\" />\r\n          <s:enumeration value=\"Phone\"
+        />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n      <s:complexType
+        name=\"ArrayOfPayment\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"unbounded\" name=\"Payment\" nillable=\"true\" type=\"tns:Payment\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"Payment\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"Amount\" type=\"s:decimal\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"SubType\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"TransactionID\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Type\" type=\"s:string\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ArrayOfShipment\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"Shipment\"
+        nillable=\"true\" type=\"tns:Shipment\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"Shipment\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Discounts\" type=\"tns:ArrayOfShipmentDiscount\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ExternalClubKeys\"
+        type=\"tns:ArrayOfString\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"FulfillmentAccount\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"FulfillmentHouse\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentExceptionReason\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentExceptionType\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"FulfillmentStatus\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"GiftNote\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"Handling\" nillable=\"true\" type=\"s:double\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"InsuredAmount\"
+        type=\"s:double\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"LicenseRelationship\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Packages\" type=\"tns:ArrayOfPackage\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ShipDate\"
+        type=\"s:dateTime\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ShipmentItems\" type=\"tns:ArrayOfShipmentItem\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ShipmentKey\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ShipmentStatus\"
+        type=\"tns:ShipmentStatus\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"Shipping\" nillable=\"true\" type=\"s:double\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ShippingService\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ShipTo\"
+        type=\"tns:Address\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"SpecialInstructions\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"ArrayOfShipmentDiscount\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
+        name=\"ShipmentDiscount\" nillable=\"true\" type=\"tns:ShipmentDiscount\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ShipmentDiscount\">\r\n        <s:attribute name=\"Amount\" type=\"s:decimal\"
+        use=\"required\" />\r\n        <s:attribute name=\"Code\" type=\"s:string\"
+        />\r\n        <s:attribute name=\"Type\" type=\"s:string\" />\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ArrayOfPackage\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"Package\"
+        nillable=\"true\" type=\"tns:Package\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"Package\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"TrackingNumber\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"TrackingStatus\"
+        type=\"s:string\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ArrayOfShipmentItem\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"ShipmentItem\"
+        nillable=\"true\" type=\"tns:ShipmentItem\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"ShipmentItem\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"BrandKey\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Discounts\" type=\"tns:ArrayOfShipmentItemDiscount\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ProductKey\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"ProductQuantity\" type=\"s:double\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"ProductUnitPrice\" type=\"s:double\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"CITB\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"ArrayOfShipmentItemDiscount\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
+        name=\"ShipmentItemDiscount\" nillable=\"true\" type=\"tns:ShipmentItemDiscount\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ShipmentItemDiscount\">\r\n        <s:attribute name=\"Amount\" type=\"s:decimal\"
+        use=\"required\" />\r\n        <s:attribute name=\"Code\" type=\"s:string\"
+        />\r\n        <s:attribute name=\"Type\" type=\"s:string\" />\r\n      </s:complexType>\r\n
+        \     <s:simpleType name=\"ShipmentStatus\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Null\" />\r\n          <s:enumeration value=\"Delivered\"
+        />\r\n          <s:enumeration value=\"InProcess\" />\r\n          <s:enumeration
+        value=\"Shipped\" />\r\n          <s:enumeration value=\"PaymentAccepted\"
+        />\r\n          <s:enumeration value=\"SentToFulfillment\" />\r\n          <s:enumeration
+        value=\"Voided\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
+        \     <s:complexType name=\"ArrayOfTag\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"Tag\" nillable=\"true\" type=\"tns:Tag\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"Tag\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Name\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:element name=\"CheckComplianceOfSalesOrderWithAddressValidationResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"CheckComplianceOfSalesOrderWithAddressValidationResult\"
+        type=\"tns:CheckComplianceOfSalesOrderWithAddressValidationResponse\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"CheckComplianceOfSalesOrderWithAddressValidationResponse\">\r\n
+        \       <s:complexContent mixed=\"false\">\r\n          <s:extension base=\"tns:CheckComplianceOfSalesOrderResponse\">\r\n
+        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"AddressValidationResult\" type=\"s:string\" />\r\n              <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"SuggestedAddress\" type=\"tns:AddressSuggestion\"
+        />\r\n            </s:sequence>\r\n          </s:extension>\r\n        </s:complexContent>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"CheckComplianceOfSalesOrderResponse\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Errors\" type=\"tns:ArrayOfError\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"ResponseStatus\" type=\"tns:ResponseStatus\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesOrder\" type=\"tns:SalesOrderComplianceResponse\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ArrayOfError\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"unbounded\" name=\"Error\" nillable=\"true\" type=\"tns:Error\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"Error\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Code\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Data\" type=\"tns:ErrorData\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Key\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Message\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"Target\" type=\"tns:ErrorTarget\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"Type\" type=\"tns:ErrorType\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"ErrorData\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"AddressSuggestion\"
+        type=\"tns:AddressSuggestion\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"AddressSuggestion\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"City\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"County\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Details\" type=\"tns:AddressDetails\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Parts\" type=\"tns:AddressParts\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"State\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Street1\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Street2\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Zip1\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Zip2\" type=\"s:string\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"AddressDetails\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"CityAbbreviation\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"CongressionalDistrict\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"CountyFips\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"TimeZone\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"TimeZoneCode\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"AddressParts\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Company\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"MailBoxName\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"MailBoxNumber\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"PostDirection\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"PreDirection\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"StreetName\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"StreetNumber\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"StreetSuffix\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"SuiteName\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"SuiteNumber\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:simpleType name=\"ErrorTarget\">\r\n        <s:restriction
+        base=\"s:string\">\r\n          <s:enumeration value=\"Null\" />\r\n          <s:enumeration
+        value=\"Address\" />\r\n          <s:enumeration value=\"Age\" />\r\n          <s:enumeration
+        value=\"Batch\" />\r\n          <s:enumeration value=\"Brand\" />\r\n          <s:enumeration
+        value=\"Distributor\" />\r\n          <s:enumeration value=\"Product\" />\r\n
+        \         <s:enumeration value=\"SalesOrder\" />\r\n          <s:enumeration
+        value=\"Shipment\" />\r\n          <s:enumeration value=\"Tax\" />\r\n          <s:enumeration
+        value=\"SSO\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
+        \     <s:simpleType name=\"ErrorType\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Authentication\" />\r\n          <s:enumeration
+        value=\"Server\" />\r\n          <s:enumeration value=\"Validation\" />\r\n
+        \       </s:restriction>\r\n      </s:simpleType>\r\n      <s:simpleType name=\"ResponseStatus\">\r\n
+        \       <s:restriction base=\"s:string\">\r\n          <s:enumeration value=\"Failure\"
+        />\r\n          <s:enumeration value=\"Success\" />\r\n        </s:restriction>\r\n
+        \     </s:simpleType>\r\n      <s:complexType name=\"SalesOrderComplianceResponse\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"IsCompliant\" type=\"s:boolean\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Key\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesTaxRates\" type=\"tns:SalesTaxRates\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Shipments\"
+        type=\"tns:ArrayOfShipmentComplianceResponse\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"SalesTaxRates\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"RecommendedSalesTaxDue\" type=\"s:decimal\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ShipmentSalesTaxRates\" type=\"tns:ArrayOfShipmentSalesTaxRate\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ArrayOfShipmentSalesTaxRate\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"ShipmentSalesTaxRate\" nillable=\"true\"
+        type=\"tns:ShipmentSalesTaxRate\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ShipmentSalesTaxRate\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FreightSalesTaxRate\"
+        type=\"tns:FreightSalesTaxRate\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"ProductSalesTaxRates\" type=\"tns:ArrayOfProductSalesTaxRate\"
+        />\r\n        </s:sequence>\r\n        <s:attribute name=\"ShipmentKey\" type=\"s:string\"
+        />\r\n      </s:complexType>\r\n      <s:complexType name=\"FreightSalesTaxRate\">\r\n
+        \       <s:attribute name=\"SalesTaxDue\" type=\"s:decimal\" use=\"required\"
+        />\r\n        <s:attribute name=\"SalesTaxRate\" type=\"s:decimal\" use=\"required\"
+        />\r\n      </s:complexType>\r\n      <s:complexType name=\"ArrayOfProductSalesTaxRate\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
+        name=\"ProductSalesTaxRate\" nillable=\"true\" type=\"tns:ProductSalesTaxRate\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ProductSalesTaxRate\">\r\n        <s:attribute name=\"BrandKey\" type=\"s:string\"
+        />\r\n        <s:attribute name=\"ProductKey\" type=\"s:string\" />\r\n        <s:attribute
+        name=\"SalesTaxDue\" type=\"s:decimal\" use=\"required\" />\r\n        <s:attribute
+        name=\"SalesTaxRate\" type=\"s:decimal\" use=\"required\" />\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ArrayOfShipmentComplianceResponse\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"ShipmentComplianceResponse\"
+        nillable=\"true\" type=\"tns:ShipmentComplianceResponse\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"ShipmentComplianceResponse\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"IsCompliant\" type=\"s:boolean\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Key\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Rules\" type=\"tns:ArrayOfRuleComplianceResponse\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ArrayOfRuleComplianceResponse\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"RuleComplianceResponse\" nillable=\"true\"
+        type=\"tns:RuleComplianceResponse\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"RuleComplianceResponse\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ComplianceDescription\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ComplianceDetails\" type=\"tns:ArrayOfComplianceDetailResponse\" />\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"IsCompliant\"
+        type=\"s:boolean\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"LicenseRelationship\" type=\"tns:LicenseRelationship\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"RuleDescription\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"RuleType\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Supplier\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"CustomerAggregateVolumeLimitDetail\" type=\"tns:CustomerAggregateVolumeLimitDetail\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"PerShipmentVolumeLimitDetail\"
+        type=\"tns:PerShipmentVolumeLimitDetail\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"PerBottleVolumeLimitDetail\" type=\"tns:PerBottleVolumeLimitDetail\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ArrayOfComplianceDetailResponse\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"ComplianceDetailResponse\"
+        nillable=\"true\" type=\"tns:ComplianceDetailResponse\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"ComplianceDetailResponse\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"Type\" type=\"tns:ComplianceDetailType\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Value\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:simpleType name=\"ComplianceDetailType\">\r\n
+        \       <s:restriction base=\"s:string\">\r\n          <s:enumeration value=\"BrandNameNotRegistered\"
+        />\r\n          <s:enumeration value=\"LabelNotRegistered\" />\r\n          <s:enumeration
+        value=\"NextShipDate\" />\r\n          <s:enumeration value=\"VolumeOverLimit\"
+        />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n      <s:simpleType
+        name=\"LicenseRelationship\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Null\" />\r\n          <s:enumeration value=\"Default\"
+        />\r\n          <s:enumeration value=\"Pickup\" />\r\n          <s:enumeration
+        value=\"RetailerToConsumer\" />\r\n          <s:enumeration value=\"RetailerToThreeTier\"
+        />\r\n          <s:enumeration value=\"SupplierToConsumer\" />\r\n          <s:enumeration
+        value=\"SupplierToDistributor\" />\r\n          <s:enumeration value=\"SupplierToThreeTier\"
+        />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n      <s:complexType
+        name=\"CustomerAggregateVolumeLimitDetail\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"CustomerType\" type=\"tns:CustomerType\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"TimeFrameCount\"
+        type=\"s:int\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"TimeFrameType\" type=\"tns:TimeFrameType\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"TimeFrameUnit\" type=\"tns:TimeFrameUnit\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"UnitOfMeasure\"
+        type=\"tns:VolumeUnit\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VolumeCount\" type=\"s:int\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:simpleType name=\"CustomerType\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Null\" />\r\n          <s:enumeration value=\"Household\"
+        />\r\n          <s:enumeration value=\"Individual\" />\r\n        </s:restriction>\r\n
+        \     </s:simpleType>\r\n      <s:simpleType name=\"TimeFrameType\">\r\n        <s:restriction
+        base=\"s:string\">\r\n          <s:enumeration value=\"Calendar\" />\r\n          <s:enumeration
+        value=\"Rolling\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
+        \     <s:simpleType name=\"TimeFrameUnit\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Null\" />\r\n          <s:enumeration value=\"Minutes\"
+        />\r\n          <s:enumeration value=\"Hours\" />\r\n          <s:enumeration
+        value=\"Days\" />\r\n          <s:enumeration value=\"Weeks\" />\r\n          <s:enumeration
+        value=\"Months\" />\r\n          <s:enumeration value=\"Years\" />\r\n        </s:restriction>\r\n
+        \     </s:simpleType>\r\n      <s:simpleType name=\"VolumeUnit\">\r\n        <s:restriction
+        base=\"s:string\">\r\n          <s:enumeration value=\"Null\" />\r\n          <s:enumeration
+        value=\"Bottle\" />\r\n          <s:enumeration value=\"Case\" />\r\n          <s:enumeration
+        value=\"Gallon\" />\r\n          <s:enumeration value=\"Liter\" />\r\n          <s:enumeration
+        value=\"Milliliter\" />\r\n          <s:enumeration value=\"Ounce\" />\r\n
+        \         <s:enumeration value=\"Quart\" />\r\n        </s:restriction>\r\n
+        \     </s:simpleType>\r\n      <s:complexType name=\"PerShipmentVolumeLimitDetail\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VolumeCount\" type=\"s:int\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"VolumeUnit\" type=\"tns:VolumeUnit\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"PerBottleVolumeLimitDetail\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VolumeCount\" type=\"s:int\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"VolumeUnit\" type=\"tns:VolumeUnit\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:element name=\"CommitSalesOrder\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Request\" type=\"tns:CommitSalesOrderRequest\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"CommitSalesOrderRequest\">\r\n        <s:complexContent
+        mixed=\"false\">\r\n          <s:extension base=\"tns:BaseRequest\">\r\n            <s:sequence>\r\n
+        \             <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"CommitOption\"
+        type=\"tns:CommitOption\" />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ExternalSalesOrderKey\" type=\"s:string\" />\r\n              <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Payments\" type=\"tns:ArrayOfPayment\"
+        />\r\n              <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"SalesTaxCollected\"
+        nillable=\"true\" type=\"s:decimal\" />\r\n              <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"SalesOrderKey\" type=\"s:string\" />\r\n            </s:sequence>\r\n
+        \         </s:extension>\r\n        </s:complexContent>\r\n      </s:complexType>\r\n
+        \     <s:simpleType name=\"CommitOption\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Null\" />\r\n          <s:enumeration value=\"AllShipments\"
+        />\r\n          <s:enumeration value=\"CompliantShipments\" />\r\n        </s:restriction>\r\n
+        \     </s:simpleType>\r\n      <s:element name=\"CommitSalesOrderResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"CommitSalesOrderResult\" type=\"tns:CommitSalesOrderResponse\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"CommitSalesOrderResponse\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Errors\" type=\"tns:ArrayOfError\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ResponseStatus\"
+        type=\"tns:ResponseStatus\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Shipments\" type=\"tns:ArrayOfShipmentCommitResponse\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"ArrayOfShipmentCommitResponse\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
+        name=\"ShipmentCommitResponse\" nillable=\"true\" type=\"tns:ShipmentCommitResponse\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ShipmentCommitResponse\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Key\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"IsCommitted\" type=\"s:boolean\" />\r\n
+        \       </s:sequence>\r\n      </s:complexType>\r\n      <s:element name=\"VoidSalesOrder\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Request\" type=\"tns:VoidSalesOrderRequest\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"VoidSalesOrderRequest\">\r\n        <s:complexContent
+        mixed=\"false\">\r\n          <s:extension base=\"tns:BaseRequest\">\r\n            <s:sequence>\r\n
+        \             <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesOrderKey\"
+        type=\"s:string\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
+        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:element
+        name=\"VoidSalesOrderResponse\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"VoidSalesOrderResult\"
+        type=\"tns:VoidSalesOrderResponse\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:complexType name=\"VoidSalesOrderResponse\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Errors\" type=\"tns:ArrayOfError\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"ResponseStatus\" type=\"tns:ResponseStatus\" />\r\n
+        \       </s:sequence>\r\n      </s:complexType>\r\n      <s:element name=\"SearchSalesOrders\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Request\" type=\"tns:SearchSalesOrdersRequest\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"SearchSalesOrdersRequest\">\r\n        <s:complexContent
+        mixed=\"false\">\r\n          <s:extension base=\"tns:BaseRequest\">\r\n            <s:sequence>\r\n
+        \             <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ComplianceStatus\"
+        type=\"tns:ShipmentComplianceStatus\" />\r\n              <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"ExternalClubKey\" type=\"s:string\" />\r\n              <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ExternalOfferKey\" type=\"s:string\"
+        />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ExternalSalesOrderKeyMax\"
+        type=\"s:string\" />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ExternalSalesOrderKeyMin\" type=\"s:string\" />\r\n              <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ExternalSalesOrderKeys\" type=\"tns:ArrayOfString\"
+        />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentAccount\"
+        type=\"s:string\" />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"FulfillmentExceptionType\" type=\"s:string\" />\r\n              <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentHouse\" type=\"s:string\"
+        />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentStatus\"
+        type=\"s:string\" />\r\n              <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"LicenseRelationship\" type=\"tns:LicenseRelationship\" />\r\n              <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Partner\" type=\"s:string\" />\r\n
+        \             <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"PurchaseDateMax\"
+        type=\"s:dateTime\" />\r\n              <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"PurchaseDateMin\" type=\"s:dateTime\" />\r\n              <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"RequestedShipDateMax\" type=\"s:dateTime\"
+        />\r\n              <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"RequestedShipDateMin\"
+        type=\"s:dateTime\" />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"SalesOrderKeyMax\" type=\"s:string\" />\r\n              <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesOrderKeyMin\" type=\"s:string\"
+        />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesOrderKeys\"
+        type=\"tns:ArrayOfString\" />\r\n              <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"SaleType\" type=\"tns:SaleType\" />\r\n              <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"SettlementBatchNumber\" type=\"s:string\"
+        />\r\n              <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ShipDateMax\"
+        type=\"s:dateTime\" />\r\n              <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"ShipDateMin\" type=\"s:dateTime\" />\r\n              <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"ShipmentStatus\" type=\"tns:ShipmentStatus\" />\r\n
+        \             <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ShipToState\"
+        type=\"s:string\" />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Tag\" type=\"s:string\" />\r\n              <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"TrackingExistence\" type=\"tns:TrackingExistence\"
+        />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"NotTag\"
+        type=\"s:string\" />\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Channel\" type=\"s:string\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
+        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:simpleType
+        name=\"ShipmentComplianceStatus\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Null\" />\r\n          <s:enumeration value=\"CompliantCommitted\"
+        />\r\n          <s:enumeration value=\"LegacyCommitted\" />\r\n        </s:restriction>\r\n
+        \     </s:simpleType>\r\n      <s:simpleType name=\"SaleType\">\r\n        <s:restriction
+        base=\"s:string\">\r\n          <s:enumeration value=\"Null\" />\r\n          <s:enumeration
+        value=\"Both\" />\r\n          <s:enumeration value=\"Offsite\" />\r\n          <s:enumeration
+        value=\"Onsite\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
+        \     <s:simpleType name=\"TrackingExistence\">\r\n        <s:restriction
+        base=\"s:string\">\r\n          <s:enumeration value=\"Null\" />\r\n          <s:enumeration
+        value=\"HasTrackingNumbers\" />\r\n          <s:enumeration value=\"ZeroTrackingNumbers\"
+        />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n      <s:element
+        name=\"SearchSalesOrdersResponse\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"SearchSalesOrdersResult\"
+        type=\"tns:SearchSalesOrdersResponse\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:complexType name=\"SearchSalesOrdersResponse\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"CountMoreSalesOrdersAvailable\" type=\"s:int\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"CountSalesOrdersReturned\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Errors\"
+        type=\"tns:ArrayOfError\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"PagingCookie\" type=\"s:string\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"PagingCookieExpires\" type=\"s:dateTime\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"ResponseStatus\" type=\"tns:ResponseStatus\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesOrders\"
+        type=\"tns:ArrayOfSalesOrderSummary\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ArrayOfSalesOrderSummary\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"SalesOrderSummary\"
+        nillable=\"true\" type=\"tns:SalesOrderSummary\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"SalesOrderSummary\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ExternalCustomerKey\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ExternalOfferKeys\" type=\"tns:ArrayOfString\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ExternalSalesOrderKey\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"PurchaseDate\" type=\"s:dateTime\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"SalesOrderKey\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"SettlementBatchNumber\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Shipments\"
+        type=\"tns:ArrayOfShipmentSummary\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Tags\" type=\"tns:ArrayOfTagSummary\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"ArrayOfShipmentSummary\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
+        name=\"ShipmentSummary\" nillable=\"true\" type=\"tns:ShipmentSummary\" />\r\n
+        \       </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType name=\"ShipmentSummary\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"ComplianceStatus\" type=\"tns:ShipmentComplianceStatus\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ExternalClubKeys\" type=\"tns:ArrayOfString\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentAccount\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"FulfillmentExceptionReason\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentExceptionType\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentHouse\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"FulfillmentStatus\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Packages\" type=\"tns:ArrayOfPackageSummary\" />\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"RequestedShipDate\"
+        type=\"s:dateTime\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"ShipDate\" type=\"s:dateTime\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"ShipmentKey\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"ShipmentStatus\" type=\"tns:ShipmentStatus\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ShipTo\"
+        type=\"tns:AddressSummary\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ArrayOfPackageSummary\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"PackageSummary\"
+        nillable=\"true\" type=\"tns:PackageSummary\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"PackageSummary\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Carrier\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"TrackingNumber\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"TrackingStatus\" type=\"s:string\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"AddressSummary\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"FirstName\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"LastName\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Zip1\" type=\"s:string\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ArrayOfTagSummary\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"TagSummary\" nillable=\"true\"
+        type=\"tns:TagSummary\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"TagSummary\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Name\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:element name=\"SearchMoreSalesOrders\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Request\" type=\"tns:SearchMoreSalesOrdersRequest\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"SearchMoreSalesOrdersRequest\">\r\n        <s:complexContent
+        mixed=\"false\">\r\n          <s:extension base=\"tns:BaseRequest\">\r\n            <s:sequence>\r\n
+        \             <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"PagingCookie\"
+        type=\"s:string\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
+        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:element
+        name=\"SearchMoreSalesOrdersResponse\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"SearchMoreSalesOrdersResult\"
+        type=\"tns:SearchSalesOrdersResponse\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"GetSalesOrderExtended\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Request\" type=\"tns:GetSalesOrderRequest\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"GetSalesOrderRequest\">\r\n        <s:complexContent
+        mixed=\"false\">\r\n          <s:extension base=\"tns:BaseRequest\">\r\n            <s:sequence>\r\n
+        \             <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesOrderKey\"
+        type=\"s:string\" />\r\n            </s:sequence>\r\n          </s:extension>\r\n
+        \       </s:complexContent>\r\n      </s:complexType>\r\n      <s:element
+        name=\"GetSalesOrderExtendedResponse\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"GetSalesOrderExtendedResult\"
+        type=\"tns:GetSalesOrderExtendedResponse\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:complexType name=\"GetSalesOrderExtendedResponse\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ComplianceResults\" type=\"tns:ComplianceResponse\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Errors\" type=\"tns:ArrayOfError\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ResponseStatus\"
+        type=\"tns:ResponseStatus\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"SalesOrder\" type=\"tns:SalesOrder\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"OrderChannelDetails\" type=\"tns:OrderChannelDetails\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"ComplianceResponse\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"SalesOrder\" type=\"tns:SalesOrderComplianceResponse\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"OrderChannelDetails\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"OrderChannel\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"AdvertiserKey\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"AdvertiserName\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Meta\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:element name=\"AddUpdateBrand\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Request\" type=\"tns:AddUpdateBrandRequest\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:complexType name=\"AddUpdateBrandRequest\">\r\n
+        \       <s:complexContent mixed=\"false\">\r\n          <s:extension base=\"tns:BaseRequest\">\r\n
+        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Brand\" type=\"tns:Brand\" />\r\n              <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"UpdateMode\" nillable=\"true\" type=\"tns:BrandUpdateMode\"
+        />\r\n            </s:sequence>\r\n          </s:extension>\r\n        </s:complexContent>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"Brand\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Key\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Name\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Owner\"
+        type=\"tns:BrandOwner\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"ThisBrandIsBottledByAThirdParty\" nillable=\"true\" type=\"s:boolean\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ThisBrandIsProducedByAThirdParty\"
+        nillable=\"true\" type=\"s:boolean\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"ThisBrandOperatesUnderATradeName\" nillable=\"true\"
+        type=\"s:boolean\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"ThisBrandWasAcquiredFromAThirdParty\" nillable=\"true\" type=\"s:boolean\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"BrandOwner\">\r\n        <s:sequence>\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"City\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Country\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Name\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"State\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Street1\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Street2\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Zip\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:simpleType name=\"BrandUpdateMode\">\r\n
+        \       <s:restriction base=\"s:string\">\r\n          <s:enumeration value=\"UpdateExisting\"
+        />\r\n          <s:enumeration value=\"IgnoreExisting\" />\r\n          <s:enumeration
+        value=\"ErrorOnExisting\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
+        \     <s:element name=\"AddUpdateBrandResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"AddUpdateBrandResult\" type=\"tns:AddUpdateBrandResponse\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:complexType name=\"AddUpdateBrandResponse\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Errors\" type=\"tns:ArrayOfError\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"ResponseStatus\" type=\"tns:ResponseStatus\" />\r\n
+        \       </s:sequence>\r\n      </s:complexType>\r\n      <s:element name=\"AddUpdateProduct\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Request\" type=\"tns:AddUpdateProductRequest\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"AddUpdateProductRequest\">\r\n        <s:complexContent
+        mixed=\"false\">\r\n          <s:extension base=\"tns:BaseRequest\">\r\n            <s:sequence>\r\n
+        \             <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Product\"
+        type=\"tns:ProductInput\" />\r\n              <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"UpdateMode\" nillable=\"true\" type=\"tns:ProductUpdateMode\" />\r\n
+        \           </s:sequence>\r\n          </s:extension>\r\n        </s:complexContent>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"ProductInput\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"Age\" nillable=\"true\" type=\"s:int\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"BottleSizeML\" nillable=\"true\" type=\"s:int\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"BrandKey\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"DefaultCase\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"DefaultRetailUnitPrice\" nillable=\"true\" type=\"s:double\" />\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"DefaultWholesaleCasePrice\"
+        nillable=\"true\" type=\"s:double\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Description\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Flavor\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Style\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"GTIN\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Label\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"NABCA\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"PercentAlcohol\" type=\"s:double\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ProductDistribution\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ProductKey\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"ProductType\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"SCC\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"UNIMERC\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"UnitPrice\" nillable=\"true\"
+        type=\"s:double\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"UPC\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Varietal\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"Vintage\" nillable=\"true\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"VolumeAmount\"
+        type=\"s:double\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"VolumeUnit\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"SubBrand\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ContainerType\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ContainersPerSellingUnit\"
+        nillable=\"true\" type=\"s:int\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:simpleType name=\"ProductUpdateMode\">\r\n        <s:restriction
+        base=\"s:string\">\r\n          <s:enumeration value=\"UpdateExisting\" />\r\n
+        \         <s:enumeration value=\"IgnoreExisting\" />\r\n          <s:enumeration
+        value=\"ErrorOnExisting\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
+        \     <s:element name=\"AddUpdateProductResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"AddUpdateProductResult\" type=\"tns:AddUpdateProductResponse\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"AddUpdateProductResponse\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Errors\" type=\"tns:ArrayOfError\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ResponseStatus\"
+        type=\"tns:ResponseStatus\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:element name=\"GetInventoryDetails\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Request\" type=\"tns:GetInventoryDetailsRequest\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:complexType name=\"GetInventoryDetailsRequest\">\r\n
+        \       <s:complexContent mixed=\"false\">\r\n          <s:extension base=\"tns:BaseRequest\">\r\n
+        \           <s:sequence>\r\n              <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"BrandKey\" type=\"s:string\" />\r\n              <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"FulfillmentAccount\" type=\"s:string\" />\r\n              <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentLocation\" type=\"s:string\"
+        />\r\n              <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"InventoryType\"
+        type=\"tns:InventoryType\" />\r\n              <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"ProductKey\" type=\"s:string\" />\r\n            </s:sequence>\r\n
+        \         </s:extension>\r\n        </s:complexContent>\r\n      </s:complexType>\r\n
+        \     <s:simpleType name=\"InventoryType\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Null\" />\r\n          <s:enumeration value=\"All\"
+        />\r\n          <s:enumeration value=\"Available\" />\r\n          <s:enumeration
+        value=\"BackOrder\" />\r\n          <s:enumeration value=\"Cosmetic\" />\r\n
+        \         <s:enumeration value=\"Custom1\" />\r\n          <s:enumeration
+        value=\"Custom2\" />\r\n          <s:enumeration value=\"Custom3\" />\r\n
+        \         <s:enumeration value=\"Damage\" />\r\n          <s:enumeration value=\"Held\"
+        />\r\n          <s:enumeration value=\"OnHand\" />\r\n          <s:enumeration
+        value=\"OnOrder\" />\r\n          <s:enumeration value=\"Reserved\" />\r\n
+        \       </s:restriction>\r\n      </s:simpleType>\r\n      <s:element name=\"GetInventoryDetailsResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"GetInventoryDetailsResult\" type=\"tns:GetInventoryDetailsResponse\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"GetInventoryDetailsResponse\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Errors\" type=\"tns:ArrayOfError\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"InventoryLocations\"
+        type=\"tns:ArrayOfInventoryLocation\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"ResponseStatus\" type=\"tns:ResponseStatus\" />\r\n
+        \       </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType name=\"ArrayOfInventoryLocation\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
+        name=\"InventoryLocation\" nillable=\"true\" type=\"tns:InventoryLocation\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType
+        name=\"InventoryLocation\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentAccount\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentLocation\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"InventoryProducts\" type=\"tns:ArrayOfInventoryProduct\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"SubInventoryCode\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Supplier\"
+        type=\"s:string\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ArrayOfInventoryProduct\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"InventoryProduct\"
+        nillable=\"true\" type=\"tns:InventoryProduct\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"InventoryProduct\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"BrandKey\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"DefaultCase\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Description\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FulfillmentSku\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"InventoryLevels\" type=\"tns:ArrayOfInventoryLevel\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"PercentAlcohol\" type=\"s:double\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ProductKey\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"ProductType\" type=\"tns:ProductType\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"UnitPrice\" type=\"s:double\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Varietal\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"Vintage\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"VolumeAmount\"
+        type=\"s:double\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"VolumeML\" type=\"s:double\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"VolumeUnit\" type=\"tns:VolumeUnit\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:complexType name=\"ArrayOfInventoryLevel\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"0\" maxOccurs=\"unbounded\"
+        name=\"InventoryLevel\" nillable=\"true\" type=\"tns:InventoryLevel\" />\r\n
+        \       </s:sequence>\r\n      </s:complexType>\r\n      <s:complexType name=\"InventoryLevel\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"EffectiveDate\" type=\"s:dateTime\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"InventoryType\" type=\"tns:InventoryType\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"Quantity\" type=\"s:double\" />\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"SynchronizationDate\"
+        type=\"s:dateTime\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:simpleType name=\"ProductType\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Null\" />\r\n          <s:enumeration value=\"Ale\"
+        />\r\n          <s:enumeration value=\"AppleCider\" />\r\n          <s:enumeration
+        value=\"Beer\" />\r\n          <s:enumeration value=\"BottleBeer\" />\r\n
+        \         <s:enumeration value=\"CanBeer\" />\r\n          <s:enumeration
+        value=\"Cider\" />\r\n          <s:enumeration value=\"DraughtBeer\" />\r\n
+        \         <s:enumeration value=\"Food\" />\r\n          <s:enumeration value=\"KegBeer\"
+        />\r\n          <s:enumeration value=\"MaltLiquor\" />\r\n          <s:enumeration
+        value=\"MerchandiseNonTaxable\" />\r\n          <s:enumeration value=\"MerchandiseTaxable\"
+        />\r\n          <s:enumeration value=\"SparklingWine\" />\r\n          <s:enumeration
+        value=\"Spirits\" />\r\n          <s:enumeration value=\"Wine\" />\r\n          <s:enumeration
+        value=\"WineCooler\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
+        \   </s:schema>\r\n  </wsdl:types>\r\n  <wsdl:message name=\"CheckComplianceOfSalesOrderWithAddressValidationSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:CheckComplianceOfSalesOrderWithAddressValidation\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"CheckComplianceOfSalesOrderWithAddressValidationSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:CheckComplianceOfSalesOrderWithAddressValidationResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"CommitSalesOrderSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:CommitSalesOrder\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"CommitSalesOrderSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:CommitSalesOrderResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"VoidSalesOrderSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:VoidSalesOrder\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"VoidSalesOrderSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:VoidSalesOrderResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"SearchSalesOrdersSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:SearchSalesOrders\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SearchSalesOrdersSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:SearchSalesOrdersResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SearchMoreSalesOrdersSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:SearchMoreSalesOrders\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"SearchMoreSalesOrdersSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:SearchMoreSalesOrdersResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetSalesOrderExtendedSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetSalesOrderExtended\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetSalesOrderExtendedSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetSalesOrderExtendedResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"AddUpdateBrandSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:AddUpdateBrand\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"AddUpdateBrandSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:AddUpdateBrandResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"AddUpdateProductSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:AddUpdateProduct\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"AddUpdateProductSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:AddUpdateProductResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetInventoryDetailsSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetInventoryDetails\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetInventoryDetailsSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetInventoryDetailsResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:portType name=\"CoreServiceSoap\">\r\n
+        \   <wsdl:operation name=\"CheckComplianceOfSalesOrderWithAddressValidation\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Checks
+        the compliance of the specified salesorder and includes address suggestions.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:CheckComplianceOfSalesOrderWithAddressValidationSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:CheckComplianceOfSalesOrderWithAddressValidationSoapOut\"
+        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"CommitSalesOrder\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Commits
+        the specified salesorder.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:CommitSalesOrderSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:CommitSalesOrderSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"VoidSalesOrder\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Voids each shipment in the
+        specified salesorder.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:VoidSalesOrderSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:VoidSalesOrderSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SearchSalesOrders\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Retrieves the first page of
+        salesorder results based on the given search parameters.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:SearchSalesOrdersSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:SearchSalesOrdersSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SearchMoreSalesOrders\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Retrieves
+        the next page of salesorder results based on a previous search.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:SearchMoreSalesOrdersSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:SearchMoreSalesOrdersSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetSalesOrderExtended\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Retrieves the specified salesorder
+        with extended third-party advertiser details (when available).</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:GetSalesOrderExtendedSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:GetSalesOrderExtendedSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"AddUpdateBrand\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Adds the specified brand to
+        the system; if the specified brand already exists, it is updated.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:AddUpdateBrandSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:AddUpdateBrandSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"AddUpdateProduct\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Adds
+        the specified product to the system; if the specified product already exists,
+        it is updated.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:AddUpdateProductSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:AddUpdateProductSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetInventoryDetails\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">Retrieves inventory information.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:GetInventoryDetailsSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:GetInventoryDetailsSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \ </wsdl:portType>\r\n  <wsdl:binding name=\"CoreServiceSoap\" type=\"tns:CoreServiceSoap\">\r\n
+        \   <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n
+        \   <wsdl:operation name=\"CheckComplianceOfSalesOrderWithAddressValidation\">\r\n
+        \     <soap:operation soapAction=\"http://ws.shipcompliant.com/CheckComplianceOfSalesOrderWithAddressValidation\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"CommitSalesOrder\">\r\n      <soap:operation soapAction=\"http://ws.shipcompliant.com/CommitSalesOrder\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"VoidSalesOrder\">\r\n      <soap:operation soapAction=\"http://ws.shipcompliant.com/VoidSalesOrder\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SearchSalesOrders\">\r\n      <soap:operation soapAction=\"http://ws.shipcompliant.com/SearchSalesOrders\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SearchMoreSalesOrders\">\r\n      <soap:operation soapAction=\"http://ws.shipcompliant.com/SearchMoreSalesOrders\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetSalesOrderExtended\">\r\n      <soap:operation soapAction=\"http://ws.shipcompliant.com/GetSalesOrderExtended\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"AddUpdateBrand\">\r\n      <soap:operation soapAction=\"http://ws.shipcompliant.com/AddUpdateBrand\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"AddUpdateProduct\">\r\n      <soap:operation soapAction=\"http://ws.shipcompliant.com/AddUpdateProduct\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetInventoryDetails\">\r\n      <soap:operation soapAction=\"http://ws.shipcompliant.com/GetInventoryDetails\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:binding name=\"CoreServiceSoap12\" type=\"tns:CoreServiceSoap\">\r\n
+        \   <soap12:binding transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n
+        \   <wsdl:operation name=\"CheckComplianceOfSalesOrderWithAddressValidation\">\r\n
+        \     <soap12:operation soapAction=\"http://ws.shipcompliant.com/CheckComplianceOfSalesOrderWithAddressValidation\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"CommitSalesOrder\">\r\n      <soap12:operation soapAction=\"http://ws.shipcompliant.com/CommitSalesOrder\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"VoidSalesOrder\">\r\n      <soap12:operation soapAction=\"http://ws.shipcompliant.com/VoidSalesOrder\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SearchSalesOrders\">\r\n      <soap12:operation soapAction=\"http://ws.shipcompliant.com/SearchSalesOrders\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SearchMoreSalesOrders\">\r\n      <soap12:operation soapAction=\"http://ws.shipcompliant.com/SearchMoreSalesOrders\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetSalesOrderExtended\">\r\n      <soap12:operation soapAction=\"http://ws.shipcompliant.com/GetSalesOrderExtended\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"AddUpdateBrand\">\r\n      <soap12:operation soapAction=\"http://ws.shipcompliant.com/AddUpdateBrand\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"AddUpdateProduct\">\r\n      <soap12:operation soapAction=\"http://ws.shipcompliant.com/AddUpdateProduct\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetInventoryDetails\">\r\n      <soap12:operation soapAction=\"http://ws.shipcompliant.com/GetInventoryDetails\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:service name=\"CoreService\">\r\n    <wsdl:port name=\"CoreServiceSoap\"
+        binding=\"tns:CoreServiceSoap\">\r\n      <soap:address location=\"https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx\"
+        />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"CoreServiceSoap12\" binding=\"tns:CoreServiceSoap12\">\r\n
+        \     <soap12:address location=\"https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx\"
+        />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
+    http_version: 
+  recorded_at: Tue, 01 Apr 2014 03:31:18 GMT
+- request:
+    method: post
+    uri: https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?><env:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:tns=\"http://ws.shipcompliant.com/\"
+        xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\"><env:Body><tns:SearchMoreSalesOrders><tns:Request><tns:PagingCookie>33d2c6d7-212c-46fd-9712-d4a5ca1f4f2f</tns:PagingCookie><tns:Security><tns:PartnerKey><PARTNER_KEY></tns:PartnerKey><tns:Username><USERNAME></tns:Username><tns:Password><PASSWORD></tns:Password></tns:Security></tns:Request></tns:SearchMoreSalesOrders></env:Body></env:Envelope>"
+    headers:
+      Soapaction:
+      - "\"http://ws.shipcompliant.com/SearchMoreSalesOrders\""
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '623'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Tue, 01 Apr 2014 03:31:17 GMT
+      Content-Length:
+      - '11173'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\" xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\"
+        xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\"><soap:Header><wsa:Action>http://ws.shipcompliant.com/SearchMoreSalesOrdersResponse</wsa:Action><wsa:MessageID>uuid:80e81ce1-8f7d-4b06-aa64-295e9ab4ae4f</wsa:MessageID><wsa:RelatesTo>uuid:93b1061d-327e-4b51-a655-efb007bac17c</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp
+        wsu:Id=\"Timestamp-ffdcb3d9-28c5-4aee-a071-708d161037ac\"><wsu:Created>2014-04-01T03:31:17Z</wsu:Created><wsu:Expires>2014-04-01T03:36:17Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body><SearchMoreSalesOrdersResponse
+        xmlns=\"http://ws.shipcompliant.com/\"><SearchMoreSalesOrdersResult><CountMoreSalesOrdersAvailable>883</CountMoreSalesOrdersAvailable><CountSalesOrdersReturned>100</CountSalesOrdersReturned><PagingCookie>33d2c6d7-212c-46fd-9712-d4a5ca1f4f2f</PagingCookie><PagingCookieExpires>2014-03-31T22:36:17.5982052-05:00</PagingCookieExpires><ResponseStatus>Success</ResponseStatus><SalesOrders><SalesOrderSummary><PurchaseDate>2014-01-06T00:00:00</PurchaseDate><SalesOrderKey>TST1093656_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a839903376</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-06T00:00:00</RequestedShipDate><ShipDate>2014-01-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Dana</FirstName><LastName>Johnson</LastName><Zip1>75032</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-03T00:00:00</PurchaseDate><SalesOrderKey>TST1097871</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a839971561</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-03T00:00:00</RequestedShipDate><ShipDate>2014-01-03T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Greg</FirstName><LastName>Skipton</LastName><Zip1>43235</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-13T00:00:00</PurchaseDate><SalesOrderKey>TST1101877_A</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa839982521</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-13T00:00:00</RequestedShipDate><ShipDate>2014-01-13T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Joseph</FirstName><LastName>Orlando</LastName><Zip1>60090</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-13T00:00:00</PurchaseDate><SalesOrderKey>TST1102030</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a839993814</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-13T00:00:00</RequestedShipDate><ShipDate>2014-01-13T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Ken
+        Berquist</FirstName><LastName>C/O Mail Boxes Etc.,</LastName><Zip1>34119</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-13T00:00:00</PurchaseDate><SalesOrderKey>TST1102083</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa839987820</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-13T00:00:00</RequestedShipDate><ShipDate>2014-01-13T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Mary
+        Ann</FirstName><LastName>Amarante</LastName><Zip1>06455</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-13T00:00:00</PurchaseDate><SalesOrderKey>TST1102243</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a839990068</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-13T00:00:00</RequestedShipDate><ShipDate>2014-01-13T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Paulette</FirstName><LastName>Jacobson</LastName><Zip1>55406</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-14T00:00:00</PurchaseDate><SalesOrderKey>TST1102352_A</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a839996428</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-14T00:00:00</RequestedShipDate><ShipDate>2014-01-14T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>james</FirstName><LastName>peters</LastName><Zip1>30506</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-14T00:00:00</PurchaseDate><SalesOrderKey>TST1102381</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa839995080</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-14T00:00:00</RequestedShipDate><ShipDate>2014-01-14T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>King</FirstName><LastName>Jang</LastName><Zip1>10038</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-20T00:00:00</PurchaseDate><SalesOrderKey>TST1106039</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840064930</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-20T00:00:00</RequestedShipDate><ShipDate>2014-01-20T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Eric</FirstName><LastName>Larson</LastName><Zip1>10017</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-20T00:00:00</PurchaseDate><SalesOrderKey>TST1106057</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840065019</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-20T00:00:00</RequestedShipDate><ShipDate>2014-01-20T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Laureen</FirstName><LastName>Somers</LastName><Zip1>10918</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-20T00:00:00</PurchaseDate><SalesOrderKey>TST1106151_A</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840063398</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-20T00:00:00</RequestedShipDate><ShipDate>2014-01-20T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Dennis</FirstName><LastName>Cinelli</LastName><Zip1>44113</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-20T00:00:00</PurchaseDate><SalesOrderKey>TST1106193</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000128176</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-20T00:00:00</RequestedShipDate><ShipDate>2014-01-20T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Casey</FirstName><LastName>Armstrong</LastName><Zip1>94558</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-21T00:00:00</PurchaseDate><SalesOrderKey>TST1106542</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000128347</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-21T00:00:00</RequestedShipDate><ShipDate>2014-01-21T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Shelley</FirstName><LastName>Laurel</LastName><Zip1>95825</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-22T00:00:00</PurchaseDate><SalesOrderKey>TST1107167</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840091554</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-22T00:00:00</RequestedShipDate><ShipDate>2014-01-22T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Gary</FirstName><LastName>Gardner</LastName><Zip1>37311</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-26T00:00:00</PurchaseDate><SalesOrderKey>TST1110417</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840173206</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-26T00:00:00</RequestedShipDate><ShipDate>2014-01-26T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Sharon</FirstName><LastName>DiGiovanni</LastName><Zip1>48312</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-26T00:00:00</PurchaseDate><SalesOrderKey>TST1110726</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840979283</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-26T00:00:00</RequestedShipDate><ShipDate>2014-01-26T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Leslie</FirstName><LastName>Medina</LastName><Zip1>60613</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-30T00:00:00</PurchaseDate><SalesOrderKey>TST1114519</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840259329</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-30T00:00:00</RequestedShipDate><ShipDate>2014-01-30T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Sara</FirstName><LastName>Niemeyer</LastName><Zip1>49930</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-31T00:00:00</PurchaseDate><SalesOrderKey>TST1118739</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000129760</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-31T00:00:00</RequestedShipDate><ShipDate>2014-01-31T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Kevin</FirstName><LastName>Snyder</LastName><Zip1>92701</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-02T00:00:00</PurchaseDate><SalesOrderKey>TST1120498</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000129864</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-02T00:00:00</RequestedShipDate><ShipDate>2014-02-02T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>doug</FirstName><LastName>pecchenino</LastName><Zip1>95125</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-02T00:00:00</PurchaseDate><SalesOrderKey>TST1120635</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840378236</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-02T00:00:00</RequestedShipDate><ShipDate>2014-02-02T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Sharon</FirstName><LastName>Smith</LastName><Zip1>97504</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-02T00:00:00</PurchaseDate><SalesOrderKey>TST1120816</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840378370</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-02T00:00:00</RequestedShipDate><ShipDate>2014-02-02T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Olivia</FirstName><LastName>Colon</LastName><Zip1>10460</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-03T00:00:00</PurchaseDate><SalesOrderKey>TST1121211</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840377924</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-03T00:00:00</RequestedShipDate><ShipDate>2014-02-03T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Matthew</FirstName><LastName>Dobrosky</LastName><Zip1>48638</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1121572_C</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840466631</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Michael</FirstName><LastName>Hill</LastName><Zip1>29577</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1121611</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840469003</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Thomas</FirstName><LastName>Hickey</LastName><Zip1>43017</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1121832</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840467612</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Pamela</FirstName><LastName>Dodd</LastName><Zip1>32819</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1122103</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000133403</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Amy</FirstName><LastName>Brown</LastName><Zip1>89135</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1122278</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840467701</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Aron</FirstName><LastName>Estaver</LastName><Zip1>11101</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1122404</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841006509</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>wendy</FirstName><LastName>blizman</LastName><Zip1>06488</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1122506</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840897746</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>paula</FirstName><LastName>miles</LastName><Zip1>98059</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1122711</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841001700</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Margaret</FirstName><LastName>LeClair</LastName><Zip1>77062</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1122780</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841001755</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>McKensie</FirstName><LastName>DeRocher</LastName><Zip1>78613</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1122826</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841001782</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>George</FirstName><LastName>Eng</LastName><Zip1>11209</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-05T00:00:00</PurchaseDate><SalesOrderKey>TST1123037</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841001362</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-05T00:00:00</RequestedShipDate><ShipDate>2014-02-05T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Catherine</FirstName><LastName>Chu</LastName><Zip1>55419</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-05T00:00:00</PurchaseDate><SalesOrderKey>TST1123097</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841001246</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-05T00:00:00</RequestedShipDate><ShipDate>2014-02-05T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Crystal</FirstName><LastName>Rustigian</LastName><Zip1>30024</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-05T00:00:00</PurchaseDate><SalesOrderKey>TST1123396_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841001040</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-05T00:00:00</RequestedShipDate><ShipDate>2014-02-05T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Kevin</FirstName><LastName>Murphy</LastName><Zip1>27518</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-05T00:00:00</PurchaseDate><SalesOrderKey>TST1123460_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841002432</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-05T00:00:00</RequestedShipDate><ShipDate>2014-02-05T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Michael</FirstName><LastName>Leconte</LastName><Zip1>33566</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-05T00:00:00</PurchaseDate><SalesOrderKey>TST1123527</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841000881</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-05T00:00:00</RequestedShipDate><ShipDate>2014-02-05T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>sharon</FirstName><LastName>dobbin</LastName><Zip1>32127</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-06T00:00:00</PurchaseDate><SalesOrderKey>TST1124617</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840671819</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-06T00:00:00</RequestedShipDate><ShipDate>2014-02-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Robert</FirstName><LastName>Creamer</LastName><Zip1>11568</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-06T00:00:00</PurchaseDate><SalesOrderKey>TST1124633</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840671846</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-06T00:00:00</RequestedShipDate><ShipDate>2014-02-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>james</FirstName><LastName>mattimore</LastName><Zip1>11727</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-06T00:00:00</PurchaseDate><SalesOrderKey>TST1124702</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840671784</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-06T00:00:00</RequestedShipDate><ShipDate>2014-02-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Laurence</FirstName><LastName>Byrne</LastName><Zip1>60091</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-07T00:00:00</PurchaseDate><SalesOrderKey>TST1126113</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840764513</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-07T00:00:00</RequestedShipDate><ShipDate>2014-02-07T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Bruce</FirstName><LastName>Sternemann</LastName><Zip1>10075</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-03T00:00:00</PurchaseDate><SalesOrderKey>TST1129146_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840824430</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-03T00:00:00</RequestedShipDate><ShipDate>2014-02-03T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>david</FirstName><LastName>axelrod</LastName><Zip1>33487</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-03T00:00:00</PurchaseDate><SalesOrderKey>TST1129323_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840823262</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-03T00:00:00</RequestedShipDate><ShipDate>2014-02-03T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Thomas</FirstName><LastName>Iannucci</LastName><Zip1>60126</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-03T00:00:00</PurchaseDate><SalesOrderKey>TST1129391</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840828535</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-03T00:00:00</RequestedShipDate><ShipDate>2014-02-03T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>John</FirstName><LastName>Shelnutt</LastName><Zip1>75070</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-03T00:00:00</PurchaseDate><SalesOrderKey>TST1129535</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840866850</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-03T00:00:00</RequestedShipDate><ShipDate>2014-02-03T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Santo</FirstName><LastName>Di
+        Sclafani</LastName><Zip1>11581</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1129605</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840866887</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>anthony</FirstName><LastName>barbino</LastName><Zip1>06751</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1129672_C</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000135998</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Shipped</ShipmentStatus><ShipTo><FirstName>Christian</FirstName><LastName>Thierbach</LastName><Zip1>92506</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1130062_C</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa840866805</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Stephen</FirstName><LastName>Russell</LastName><Zip1>60137</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-20T00:00:00</PurchaseDate><SalesOrderKey>TST1135295_A</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841069853</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-20T00:00:00</RequestedShipDate><ShipDate>2014-02-20T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Valeria</FirstName><LastName>Cogliani</LastName><Zip1>10003</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-24T00:00:00</PurchaseDate><SalesOrderKey>TST1137364</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841123463</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-24T00:00:00</RequestedShipDate><ShipDate>2014-02-24T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Kevin</FirstName><LastName>Murphy</LastName><Zip1>06824</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-24T00:00:00</PurchaseDate><SalesOrderKey>TST1137374</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841123570</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-24T00:00:00</RequestedShipDate><ShipDate>2014-02-24T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Rich</FirstName><LastName>Riley</LastName><Zip1>06840</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-24T00:00:00</PurchaseDate><SalesOrderKey>TST1137514</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841133453</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-24T00:00:00</RequestedShipDate><ShipDate>2014-02-24T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Michael</FirstName><LastName>Yavner</LastName><Zip1>33180</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-24T00:00:00</PurchaseDate><SalesOrderKey>TST1137577</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841138163</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-24T00:00:00</RequestedShipDate><ShipDate>2014-02-24T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Laborde
+        &amp; Assoc PC</FirstName><LastName>c/o Rick Ruiz</LastName><Zip1>78204</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-24T00:00:00</PurchaseDate><SalesOrderKey>TST1137673</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841133373</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-24T00:00:00</RequestedShipDate><ShipDate>2014-02-24T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Bruce</FirstName><LastName>Ellis</LastName><Zip1>80127</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-25T00:00:00</PurchaseDate><SalesOrderKey>TST1137863</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841141792</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-25T00:00:00</RequestedShipDate><ShipDate>2014-02-25T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Morace</FirstName><LastName>Smith</LastName><Zip1>10005</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-25T00:00:00</PurchaseDate><SalesOrderKey>TST1137936</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841141854</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-25T00:00:00</RequestedShipDate><ShipDate>2014-02-25T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Brad</FirstName><LastName>Steele</LastName><Zip1>30075</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-25T00:00:00</PurchaseDate><SalesOrderKey>TST1138152_A</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841141701</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-25T00:00:00</RequestedShipDate><ShipDate>2014-02-25T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Karl</FirstName><LastName>Moore</LastName><Zip1>10010</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-25T00:00:00</PurchaseDate><SalesOrderKey>TST1138295</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841140678</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-25T00:00:00</RequestedShipDate><ShipDate>2014-02-25T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Robert</FirstName><LastName>Dower</LastName><Zip1>31211</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-25T00:00:00</PurchaseDate><SalesOrderKey>TST1138433</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000138260</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-25T00:00:00</RequestedShipDate><ShipDate>2014-02-25T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Shari</FirstName><LastName>Hanger</LastName><Zip1>85016</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-25T00:00:00</PurchaseDate><SalesOrderKey>TST1138556</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000138264</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-25T00:00:00</RequestedShipDate><ShipDate>2014-02-25T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Jeffrey</FirstName><LastName>Dashnaw</LastName><Zip1>91390</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-25T00:00:00</PurchaseDate><SalesOrderKey>TST1138849</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000138269</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-25T00:00:00</RequestedShipDate><ShipDate>2014-02-25T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Michael</FirstName><LastName>Leeds</LastName><Zip1>94114</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-25T00:00:00</PurchaseDate><SalesOrderKey>TST1139155</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841147528</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-25T00:00:00</RequestedShipDate><ShipDate>2014-02-25T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Mitzy</FirstName><LastName>Ferguson</LastName><Zip1>75028</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-26T00:00:00</PurchaseDate><SalesOrderKey>TST1139616</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000138410</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-26T00:00:00</RequestedShipDate><ShipDate>2014-02-26T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Jonathan</FirstName><LastName>Wilson</LastName><Zip1>94565</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-26T00:00:00</PurchaseDate><SalesOrderKey>TST1139758</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841161351</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-26T00:00:00</RequestedShipDate><ShipDate>2014-02-26T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Aaron</FirstName><LastName>Hawes</LastName><Zip1>63108</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-26T00:00:00</PurchaseDate><SalesOrderKey>TST1140331</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841157623</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-26T00:00:00</RequestedShipDate><ShipDate>2014-02-26T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Matt</FirstName><LastName>Kelly</LastName><Zip1>27284</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-26T00:00:00</PurchaseDate><SalesOrderKey>TST1140435</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841196055</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-26T00:00:00</RequestedShipDate><ShipDate>2014-02-26T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Tahiirah</FirstName><LastName>Allen</LastName><Zip1>33132</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-27T00:00:00</PurchaseDate><SalesOrderKey>TST1140733</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841195967</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-27T00:00:00</RequestedShipDate><ShipDate>2014-02-27T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Dawn</FirstName><LastName>Manning</LastName><Zip1>55449</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-27T00:00:00</PurchaseDate><SalesOrderKey>TST1140877_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841171546</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-27T00:00:00</RequestedShipDate><ShipDate>2014-02-27T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Chuck</FirstName><LastName>Frawley</LastName><Zip1>78216</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-27T00:00:00</PurchaseDate><SalesOrderKey>TST1141001</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000138495</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-27T00:00:00</RequestedShipDate><ShipDate>2014-02-27T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>David</FirstName><LastName>Burnham</LastName><Zip1>95014</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-27T00:00:00</PurchaseDate><SalesOrderKey>TST1141119</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000138496</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-27T00:00:00</RequestedShipDate><ShipDate>2014-02-27T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Gregory
+        S.</FirstName><LastName>Bernard</LastName><Zip1>92660</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-27T00:00:00</PurchaseDate><SalesOrderKey>TST1141325</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000138493</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-27T00:00:00</RequestedShipDate><ShipDate>2014-02-27T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Charles</FirstName><LastName>Hoefer</LastName><Zip1>94941</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-27T00:00:00</PurchaseDate><SalesOrderKey>TST1141389</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000138505</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-27T00:00:00</RequestedShipDate><ShipDate>2014-02-27T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Samuel</FirstName><LastName>Levin</LastName><Zip1>94941</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-27T00:00:00</PurchaseDate><SalesOrderKey>TST1141942</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841196206</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-27T00:00:00</RequestedShipDate><ShipDate>2014-02-27T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Robert</FirstName><LastName>Lubetsky</LastName><Zip1>10017</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-27T00:00:00</PurchaseDate><SalesOrderKey>TST1142187</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841285067</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-27T00:00:00</RequestedShipDate><ShipDate>2014-02-27T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Patricia</FirstName><LastName>Church</LastName><Zip1>98335</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-27T00:00:00</PurchaseDate><SalesOrderKey>TST1142685_A</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841291148</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-27T00:00:00</RequestedShipDate><ShipDate>2014-02-27T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Richard</FirstName><LastName>Lopez</LastName><Zip1>10301</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-05T00:00:00</PurchaseDate><SalesOrderKey>TST1146702</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841477171</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-05T00:00:00</RequestedShipDate><ShipDate>2014-03-05T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Keiko</FirstName><LastName>Sakamoto</LastName><Zip1>10044</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-05T00:00:00</PurchaseDate><SalesOrderKey>TST1146724</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841477082</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-05T00:00:00</RequestedShipDate><ShipDate>2014-03-05T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>JAMES</FirstName><LastName>KELLEHER</LastName><Zip1>10305</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-05T00:00:00</PurchaseDate><SalesOrderKey>TST1146781</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841478018</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-05T00:00:00</RequestedShipDate><ShipDate>2014-03-05T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>WALTER</FirstName><LastName>LACE</LastName><Zip1>11718</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-06T00:00:00</PurchaseDate><SalesOrderKey>TST1147344_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841541655</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-06T00:00:00</RequestedShipDate><ShipDate>2014-03-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>KATHERINE</FirstName><LastName>CUNNINGHAM</LastName><Zip1>10514</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-06T00:00:00</PurchaseDate><SalesOrderKey>TST1147365_A</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841541252</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-06T00:00:00</RequestedShipDate><ShipDate>2014-03-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>agnieszka</FirstName><LastName>domarecka</LastName><Zip1>11385</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-06T00:00:00</PurchaseDate><SalesOrderKey>TST1147401_A</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841541412</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-06T00:00:00</RequestedShipDate><ShipDate>2014-03-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Roy</FirstName><LastName>Pipitone</LastName><Zip1>14075</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-06T00:00:00</PurchaseDate><SalesOrderKey>TST1147408_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841541075</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-06T00:00:00</RequestedShipDate><ShipDate>2014-03-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Fran</FirstName><LastName>Johnnidis</LastName><Zip1>11746</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-06T00:00:00</PurchaseDate><SalesOrderKey>TST1147411_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841541093</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-06T00:00:00</RequestedShipDate><ShipDate>2014-03-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>JOAQUIN</FirstName><LastName>GUADALUPE</LastName><Zip1>10026</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-06T00:00:00</PurchaseDate><SalesOrderKey>TST1147424_A</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841541501</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-06T00:00:00</RequestedShipDate><ShipDate>2014-03-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>HAROLD</FirstName><LastName>LEVY</LastName><Zip1>14604</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-06T00:00:00</PurchaseDate><SalesOrderKey>TST1147428_A</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841541449</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-06T00:00:00</RequestedShipDate><ShipDate>2014-03-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>john</FirstName><LastName>belmonte</LastName><Zip1>10022</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-04T00:00:00</PurchaseDate><SalesOrderKey>TST982966</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa836777124</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-04T00:00:00</RequestedShipDate><ShipDate>2014-03-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>kurt</FirstName><LastName>wolf</LastName><Zip1>60804</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-05T00:00:00</PurchaseDate><SalesOrderKey>TST984140</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a836774922</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-05T00:00:00</RequestedShipDate><ShipDate>2014-03-05T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Randy
+        Cisler</FirstName><LastName>CO-NVTC</LastName><Zip1>20170</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-06T00:00:00</PurchaseDate><SalesOrderKey>TST985070</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a836868812</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-06T00:00:00</RequestedShipDate><ShipDate>2014-03-06T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Sandra</FirstName><LastName>Zamora</LastName><Zip1>78205</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-07T00:00:00</PurchaseDate><SalesOrderKey>TST985928_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a837001200</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-07T00:00:00</RequestedShipDate><ShipDate>2014-03-07T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Marilee</FirstName><LastName>C
+        Zuercher</LastName><Zip1>43017</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-07T00:00:00</PurchaseDate><SalesOrderKey>TST986081_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a837001166</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-07T00:00:00</RequestedShipDate><ShipDate>2014-03-07T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Maritza</FirstName><LastName>Segarra
+        c/o</LastName><Zip1>66441</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-08T00:00:00</PurchaseDate><SalesOrderKey>TST986921</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a836868705</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-08T00:00:00</RequestedShipDate><ShipDate>2014-03-08T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>William</FirstName><LastName>Swietlik</LastName><Zip1>22032</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-09T00:00:00</PurchaseDate><SalesOrderKey>TST987781_B</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a836940760</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-09T00:00:00</RequestedShipDate><ShipDate>2014-03-09T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Terry</FirstName><LastName>Woodall</LastName><Zip1>77345</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTSonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-03-03T00:00:00</PurchaseDate><SalesOrderKey>TST988793</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa837002315</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-03-03T00:00:00</RequestedShipDate><ShipDate>2014-03-03T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Nazrin</FirstName><LastName>Hajiyeva</LastName><Zip1>10044</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTAlbany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-27T00:00:00</PurchaseDate><SalesOrderKey>TST1142717</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841870139</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-27T00:00:00</RequestedShipDate><ShipDate>2014-02-27T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Kerrie</FirstName><LastName>Miller</LastName><Zip1>33076</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTWeatherHold</Name></TagSummary><TagSummary><Name>Sonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-25T00:00:00</PurchaseDate><SalesOrderKey>TST1139172</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa842996804</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-25T00:00:00</RequestedShipDate><ShipDate>2014-02-25T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Mohammed</FirstName><LastName>Al-Marimi</LastName><Zip1>61704</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTWeatherHold</Name></TagSummary><TagSummary><Name>Albany</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1121597</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a841795248</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Jonathan</FirstName><LastName>Means</LastName><Zip1>48084</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTWeatherHold</Name></TagSummary><TagSummary><Name>Sonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-04T00:00:00</PurchaseDate><SalesOrderKey>TST1122715</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1zw0467aa841016114</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-04T00:00:00</RequestedShipDate><ShipDate>2014-02-04T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Margaret</FirstName><LastName>Zhou</LastName><Zip1>94043</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTWeatherHold</Name></TagSummary><TagSummary><Name>Sonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-02-03T00:00:00</PurchaseDate><SalesOrderKey>TST1129458</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>CompliantCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>GSO</Carrier><TrackingNumber>50308000000137658</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-02-03T00:00:00</RequestedShipDate><ShipDate>2014-02-03T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Karen</FirstName><LastName>Harris</LastName><Zip1>93001</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTWeatherHold</Name></TagSummary><TagSummary><Name>Sonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-29T00:00:00</PurchaseDate><SalesOrderKey>TST1113678</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>FedEx</Carrier><TrackingNumber>006486815007757</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-29T00:00:00</RequestedShipDate><ShipDate>2014-01-29T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Rod</FirstName><LastName>Shedd</LastName><Zip1>05403</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTWeatherHold</Name></TagSummary><TagSummary><Name>Sonoma</Name></TagSummary></Tags></SalesOrderSummary><SalesOrderSummary><PurchaseDate>2014-01-17T00:00:00</PurchaseDate><SalesOrderKey>TST1103929</SalesOrderKey><Shipments><ShipmentSummary><ComplianceStatus>LegacyCommitted</ComplianceStatus><FulfillmentAccount
+        /><FulfillmentExceptionReason /><FulfillmentExceptionType>None</FulfillmentExceptionType><FulfillmentHouse>WineShipping</FulfillmentHouse><FulfillmentStatus>None</FulfillmentStatus><Packages><PackageSummary><Carrier>UPS</Carrier><TrackingNumber>1z5x0937a840168990</TrackingNumber><TrackingStatus>InTransit</TrackingStatus></PackageSummary></Packages><RequestedShipDate>2014-01-17T00:00:00</RequestedShipDate><ShipDate>2014-01-17T00:00:00</ShipDate><ShipmentKey>1</ShipmentKey><ShipmentStatus>Delivered</ShipmentStatus><ShipTo><FirstName>Matt</FirstName><LastName>Kelly</LastName><Zip1>27284</Zip1></ShipTo></ShipmentSummary></Shipments><Tags><TagSummary><Name>TSTWeatherHold</Name></TagSummary><TagSummary><Name>Sonoma</Name></TagSummary></Tags></SalesOrderSummary></SalesOrders></SearchMoreSalesOrdersResult></SearchMoreSalesOrdersResponse></soap:Body></soap:Envelope>"
+    http_version: 
+  recorded_at: Tue, 01 Apr 2014 03:31:19 GMT
+recorded_with: VCR 2.9.0
