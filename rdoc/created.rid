@@ -1,4 +1,4 @@
-Mon, 31 Mar 2014 23:02:31 -0500
+Mon, 31 Mar 2014 23:05:08 -0500
 lib/ship_compliant.rb	Mon, 31 Mar 2014 22:35:51 -0500
 lib/ship_compliant/add_update_brand.rb	Fri, 28 Mar 2014 09:35:27 -0500
 lib/ship_compliant/add_update_brand_result.rb	Fri, 28 Mar 2014 09:35:27 -0500
@@ -34,7 +34,7 @@ lib/ship_compliant/search_sales_orders_result.rb	Mon, 31 Mar 2014 22:47:00 -0500
 lib/ship_compliant/shipment.rb	Fri, 28 Mar 2014 09:35:27 -0500
 lib/ship_compliant/shipment_compliance.rb	Fri, 28 Mar 2014 09:35:27 -0500
 lib/ship_compliant/shipment_sales_tax_rate.rb	Sun, 16 Mar 2014 22:39:22 -0500
-lib/ship_compliant/version.rb	Fri, 28 Mar 2014 10:27:52 -0500
+lib/ship_compliant/version.rb	Mon, 31 Mar 2014 23:04:56 -0500
 lib/ship_compliant/void_sales_order.rb	Fri, 28 Mar 2014 09:35:27 -0500
 lib/ship_compliant/void_sales_order_result.rb	Sun, 16 Mar 2014 22:39:22 -0500
 README.md	Mon, 31 Mar 2014 16:45:45 -0500
