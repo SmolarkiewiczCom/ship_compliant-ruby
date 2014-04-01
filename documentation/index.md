@@ -27,15 +27,17 @@ view the [RDoc documentation][rdoc] to see all the available methods.
    <small>API: CheckComplianceOfSalesOrderWithAddressValidation</small>
 2. [Search for Orders](./search_sales_orders.html) <small>API:
    SearchSalesOrders</small>
-3. [Voiding Orders](./void_sales_order.html) <small>API: VoidSalesOrder</small>
-4. [Managing Products](./add_update_product.html) <small>API:
+3. [Search More Orders](./search_more_sales_orders.html) <small>API:
+   SearchMoreSalesOrders</small>
+4. [Voiding Orders](./void_sales_order.html) <small>API: VoidSalesOrder</small>
+5. [Managing Products](./add_update_product.html) <small>API:
    AddUpdateProduct</small>
-5. [Managing Brands](./add_update_brand.html) <small>API: AddUpdateBrand</small>
-6. [Committing Orders](./commit_sales_orders.html) <small>API:
+6. [Managing Brands](./add_update_brand.html) <small>API: AddUpdateBrand</small>
+7. [Committing Orders](./commit_sales_orders.html) <small>API:
    CommitSalesOrder</small>
-7. [Get Inventory Details](./get_inventory_details.html) <small>API:
+8. [Get Inventory Details](./get_inventory_details.html) <small>API:
    GetInventoryDetails</small>
-8. [Get Updates for Committed Orders](./get_sales_order_extended.html)
+9. [Get Updates for Committed Orders](./get_sales_order_extended.html)
    <small>API: GetSalesOrderExtended</small>
 
 ## APIS
