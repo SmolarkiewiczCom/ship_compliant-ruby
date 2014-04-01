@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ShipCompliant::SearchMoreSalesOrders</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/ship_compliant.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ShipCompliant::SearchMoreSalesOrders 
+            
+                <span class="parent">&lt; 
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/lib/ship_compliant/search_more_sales_orders_rb.html">lib/ship_compliant/search_more_sales_orders.rb</a></li>
+            
+        </ul>
+
+        <a target="_parent" href="/ship_compliant-ruby/documentation" class="button">Documentation</a>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="class-ShipCompliant::SearchMoreSalesOrders-label-ShipCompliant%3A%3ASearchMoreSalesOrders"><a href="SearchMoreSalesOrders.html">ShipCompliant::SearchMoreSalesOrders</a></h2>
+
+<p>This method is used in conjunction with <a
+href="SearchSalesOrders.html">SearchSalesOrders</a> to get more results
+from the search that was performed using <a
+href="SearchSalesOrders.html">SearchSalesOrders</a>. This method will
+return 100 results each time.</p>
+
+<p>Only use this method in conjunction with <a
+href="SearchSalesOrders.html">SearchSalesOrders</a>. When there are more
+results available from the search, call this method with the token returned
+from the <a href="SearchSalesOrders.html">SearchSalesOrders</a> results or
+returned from a subsequent call of <a
+href="SearchMoreSalesOrders.html">SearchMoreSalesOrders</a> to see the next
+page of results.</p>
+
+<pre><code>orders = ShipCompliant::SearchMoreSalesOrders.paging_cookie(&#39;paging-cookie&#39;)
+
+puts &quot;#{orders.remaining_orders_length} orders left&quot;
+
+orders.summaries.each do |summary|
+  puts summary.purchase_date #=&gt; DateTime
+end
+</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-paging_cookie">paging_cookie</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-paging_cookie">
+            
+              <b>paging_cookie</b>(cookie)
+            
+            <a href="../../classes/ShipCompliant/SearchMoreSalesOrders.html#method-c-paging_cookie" name="method-c-paging_cookie" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Finds the next 100 orders by a paging cookie. You can get the paging cookie
+from ShipCompliant::SearchSalesOrders#paging_cookie.</p>
+
+<p>Returns an instance of <a
+href="SearchSalesOrdersResult.html">ShipCompliant::SearchSalesOrdersResult</a>.</p>
+
+<pre><code>orders = ShipCompliant::SearchMoreSalesOrders.paging_cookie(&#39;paging-cookie&#39;)
+puts orders.length #=&gt; 100
+</code></pre>
+            </div>
+          
+          
+          
+
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-paging_cookie_source')" id="l_method-c-paging_cookie_source">show</a>
+                
+              </p>
+              <div id="method-c-paging_cookie_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/ship_compliant/search_more_sales_orders.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">paging_cookie</span>(<span class="ruby-identifier">cookie</span>)
+  <span class="ruby-identifier">sales</span> = <span class="ruby-constant">ShipCompliant</span>.<span class="ruby-identifier">client</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">:search_more_sales_orders</span>, {
+    <span class="ruby-string">&#39;PagingCookie&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cookie</span>
+  })
+
+  <span class="ruby-identifier">r</span> = <span class="ruby-constant">SearchSalesOrdersResult</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sales</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+
+    </div>
+  </body>
+</html>    
