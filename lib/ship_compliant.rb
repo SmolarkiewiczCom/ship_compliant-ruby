@@ -1,6 +1,8 @@
 require 'savon'
 require 'active_support/all'
 
+require 'ext/hash/keys'
+
 require "ship_compliant/version"
 require "ship_compliant/configuration"
 require "ship_compliant/client"
