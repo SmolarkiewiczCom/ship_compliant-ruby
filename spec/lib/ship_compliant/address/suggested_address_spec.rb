@@ -7,13 +7,13 @@ module ShipCompliant
 
     context "details" do
       it "gets the details" do
-        subject.details.should == { address_details: true }
+        expect(subject.details).to eq({ address_details: true })
       end
     end
 
     context "parts" do
       it "gets the parts" do
-        subject.parts.should == { address_parts: true }
+        expect(subject.parts).to eq({ address_parts: true })
       end
     end
 

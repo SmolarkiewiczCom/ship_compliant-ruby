@@ -6,54 +6,54 @@ module ShipCompliant
 
     context "shipment_compliance_rules" do
       it "returns compliance rules as an array" do
-        subject.shipment_compliance_rules.should == [
+        expect(subject.shipment_compliance_rules).to eq([
           {
             is_compliant: true,
             key: 'SHIPMENT-KEY',
           }
-        ]
+        ])
       end
     end
 
     context "compliance_rules_for_shipment" do
       it "finds compliance rules for shipment" do
-        subject.compliance_rules_for_shipment('SHIPMENT-KEY').should == ShipmentCompliance.new({
+        expect(subject.compliance_rules_for_shipment('SHIPMENT-KEY')).to eq(ShipmentCompliance.new({
           is_compliant: true,
           key: 'SHIPMENT-KEY'
-        })
+        }))
       end
     end
 
     context "bill_to" do
       it "returns an Address" do
-        subject.bill_to.should == Address.new({
+        expect(subject.bill_to).to eq(Address.new({
           city: 'Jellystone Park',
           state: 'WY'
-        })
+        }))
       end
     end
 
     context "shipments" do
       it "returns an array of shipments" do
-        subject.shipments.should == [{
+        expect(subject.shipments).to eq([{
           shipment_key: 'SHIPMENT-KEY',
           shipment_items: []
-        }]
+        }])
       end
     end
 
     context "find_shipment" do
       it "returns the shipment" do
-        subject.find_shipment('SHIPMENT-KEY').should == Shipment.new({
+        expect(subject.find_shipment('SHIPMENT-KEY')).to eq(Shipment.new({
           shipment_key: 'SHIPMENT-KEY',
           shipment_items: []
-        })
+        }))
       end
     end
 
     context "channel_details" do
       it "returns the details" do
-        subject.channel_details.should == ChannelDetails.new(some_details: 'online sales')
+        expect(subject.channel_details).to eq(ChannelDetails.new(some_details: 'online sales'))
       end
     end
 

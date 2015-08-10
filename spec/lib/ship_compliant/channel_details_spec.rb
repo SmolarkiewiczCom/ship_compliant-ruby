@@ -5,25 +5,25 @@ module ShipCompliant
 
     context "order_channel" do
       it "gets the order_channel" do
-        subject.order_channel.should == 'order-channel'
+        expect(subject.order_channel).to eq('order-channel')
       end
     end
 
     context "advertiser_key" do
       it "gets the advertiser_key" do
-        subject.advertiser_key.should == 'advertiser-key'
+        expect(subject.advertiser_key).to eq('advertiser-key')
       end
     end
     
     context "advertiser_name" do
       it "gets the advertiser_name" do
-        subject.advertiser_name.should == 'advertiser-name'
+        expect(subject.advertiser_name).to eq('advertiser-name')
       end
     end
 
     context "meta" do
       it "gets channel meta" do
-        subject.meta.should == 'channel-meta'
+        expect(subject.meta).to eq('channel-meta')
       end
     end
 

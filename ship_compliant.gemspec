@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry", "~> 0.9"
 
   # TESTING
-  s.add_development_dependency "rspec", "~> 2.13"
+  s.add_development_dependency "rspec", "~> 3.3"
   s.add_development_dependency "cucumber", "~> 1.3"
   s.add_development_dependency "webmock", "~> 1.17"
   s.add_development_dependency "vcr", "~> 2.9"

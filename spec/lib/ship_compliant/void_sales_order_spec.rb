@@ -30,10 +30,10 @@ module ShipCompliant
       end
 
       it "returns a VoidSalesOrderResult" do
-        VoidSalesOrder.stub(:void_order) { {} }
+        allow(VoidSalesOrder).to receive(:void_order) { {} }
         
         result = VoidSalesOrder.by_order_key('SomeOrderId')
-        result.should be_kind_of(VoidSalesOrderResult)
+        expect(result).to be_kind_of(VoidSalesOrderResult)
       end
     end
 

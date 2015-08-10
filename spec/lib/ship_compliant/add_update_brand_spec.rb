@@ -38,7 +38,7 @@ module ShipCompliant
           owner: { name: 'Sam' }
         }, update_mode: 'DoWackaDo')
 
-        result.should be_kind_of(AddUpdateBrandResult)
+        expect(result).to be_kind_of(AddUpdateBrandResult)
       end
 
       it "update mode defaults to ErrorOnExisting" do

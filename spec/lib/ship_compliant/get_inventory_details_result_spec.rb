@@ -7,9 +7,9 @@ module ShipCompliant
 
     context "locations" do
       it "returns an array of locations" do
-        subject.locations.should == [
+        expect(subject.locations).to eq([
           inventory_location[:inventory_location]
-        ]
+        ])
       end
 
       it "handles a single location" do
@@ -17,31 +17,31 @@ module ShipCompliant
           inventory_locations: inventory_location
         })
 
-        result.locations.should == [
+        expect(result.locations).to eq([
           inventory_location[:inventory_location]
-        ]
+        ])
       end
     end
 
     context "location" do
       it "finds a location" do
-        subject.location('WineShipping').should == inventory_location[:inventory_location]
+        expect(subject.location('WineShipping')).to eq(inventory_location[:inventory_location])
       end
 
       it "returns an empty hash when invalid" do
-        subject.location('toys-r-us').should == {}
+        expect(subject.location('toys-r-us')).to eq({})
       end
     end
 
     context "products_for_location" do
       it "returns an array of products" do
-        subject.products_for_location('WineShipping').should == [
+        expect(subject.products_for_location('WineShipping')).to eq([
           InventoryProduct.new(product_key: 'PRODUCT-KEY', inventory_levels: inventory_level)
-        ]
+        ])
       end
 
       it "returns empty array for invalid location" do
-        subject.products_for_location('toys-r-us').should == []
+        expect(subject.products_for_location('toys-r-us')).to eq([])
       end
     end
 

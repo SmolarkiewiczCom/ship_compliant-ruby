@@ -6,14 +6,14 @@ module ShipCompliant
     context "to_h" do
       it "converts keys to pascal case" do
         order = OrderSearch.new(sales_order_key_min: 10)
-        order.to_h.should == {
+        expect(order.to_h).to eq({
           "SalesOrderKeyMin" => 10
-        }
+        })
       end
 
       it "ignores invalid keys" do
         order = OrderSearch.new(xyz: 5)
-        order.to_h.should == {}
+        expect(order.to_h).to eq({})
       end
     end
 

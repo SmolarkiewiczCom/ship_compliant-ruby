@@ -35,7 +35,7 @@ module ShipCompliant
           foo_bar: { baz: false }
         })
 
-        result.should be_kind_of(CheckComplianceResult)
+        expect(result).to be_kind_of(CheckComplianceResult)
       end
     end
 

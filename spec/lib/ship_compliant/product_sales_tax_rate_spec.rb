@@ -8,13 +8,13 @@ module ShipCompliant
 
     context "product_key" do
       it "returns the product key" do
-        subject.product_key.should == 'the-product'
+        expect(subject.product_key).to eq('the-product')
       end
     end
 
     context "brand_key" do
       it "returns the brand key" do
-        subject.brand_key.should == 'brand-key'
+        expect(subject.brand_key).to eq('brand-key')
       end
     end
 

@@ -5,13 +5,13 @@ module ShipCompliant
 
     context "tracking_number" do
       it "gets the tracking_number" do
-        subject.tracking_number.should == 'tracking-number'
+        expect(subject.tracking_number).to eq('tracking-number')
       end
     end
 
     context "tracking_status" do
       it "gets the tracking_status" do
-        subject.tracking_status.should == 'Lost in Transit'
+        expect(subject.tracking_status).to eq('Lost in Transit')
       end
     end
 

@@ -29,7 +29,7 @@ module ShipCompliant
         fulfillment_location: 'FULFILLMENT-LOCATION'
       )
 
-      result.should be_kind_of(GetInventoryDetailsResult)
+      expect(result).to be_kind_of(GetInventoryDetailsResult)
     end
   end
 end
