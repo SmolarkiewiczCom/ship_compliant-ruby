@@ -33,4 +33,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "cucumber", "~> 1.3"
   s.add_development_dependency "webmock", "~> 1.17"
   s.add_development_dependency "vcr", "~> 2.9"
+  s.add_development_dependency "dotenv", "~> 2.0"
 end

@@ -1,6 +1,9 @@
 require 'bundler/setup'
 Bundler.setup
 
+require 'dotenv'
+Dotenv.load
+
 require 'ship_compliant'
 require 'vcr'
 require 'pry'
