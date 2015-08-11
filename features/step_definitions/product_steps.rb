@@ -104,15 +104,15 @@ When(/^I ignore existing product on update$/) do
 end
 
 Then(/^the product should have been created$/) do
-  @product_response.success?.should be_true
+  @product_response.success?.should be_truthy
 end
 
 Then(/^I should get a message that the product was updated$/) do
-  @product_response.success?.should be_true
+  @product_response.success?.should be_truthy
 end
 
 Then(/^I should get an error message for the missing brand$/) do
-  product_response.failure?.should be_true
+  product_response.failure?.should be_truthy
   product_response.errors_count.should == 1
   
   error = product_response.errors[0]
@@ -124,7 +124,7 @@ Then(/^I should get an error message for the missing brand$/) do
 end
 
 Then(/^I should get an error for already defined product$/) do
-  product_response.failure?.should be_true
+  product_response.failure?.should be_truthy
   product_response.errors_count.should == 1
   
   error = product_response.errors[0]

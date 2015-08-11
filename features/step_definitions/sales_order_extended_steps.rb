@@ -12,7 +12,7 @@ end
 
 Then(/^I should receive shipment compliance statuses$/) do
   shipment_compliance = @order_result.compliance_rules_for_shipment('1')
-  shipment_compliance.compliant?.should be_true
+  shipment_compliance.compliant?.should be_truthy
   shipment_compliance.rules.should == []
 end
 
@@ -69,7 +69,7 @@ Then(/^I should receive order channel details$/) do
 end
 
 Then(/^I should receive an error that the order doesn't exist$/) do
-  @order_result.failure?.should be_true
+  @order_result.failure?.should be_truthy
   error = @order_result.errors.first
 
   error.code.should == 200

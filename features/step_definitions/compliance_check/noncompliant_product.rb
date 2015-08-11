@@ -86,7 +86,7 @@ When(/^I check compliance with a non\-compliant product$/) do
 end
 
 Then(/^I should receive error messages$/) do
-  @compliance_status.compliant?.should be_false
+  @compliance_status.compliant?.should be_falsey
   shipment = @compliance_status.compliance_rules_for_shipment('1')
   errors = shipment.rules.select { |r| !r.compliant? }
 

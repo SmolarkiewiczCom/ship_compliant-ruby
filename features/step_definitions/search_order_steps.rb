@@ -14,7 +14,7 @@ When(/^I search with invalid criteria$/) do
 end
 
 Then(/^I should receive a success status for search$/) do
-  @search_results.success?.should be_true
+  @search_results.success?.should be_truthy
 end
 
 Then(/^I should have paging cookie information$/) do
@@ -23,7 +23,7 @@ Then(/^I should have paging cookie information$/) do
 end
 
 Then(/^I should get an error status for search$/) do
-  @search_results.failure?.should be_true
+  @search_results.failure?.should be_truthy
   @search_results.error_count.should == 1
   
   error = @search_results.errors.first

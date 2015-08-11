@@ -11,12 +11,12 @@ When(/^I search with invalid paging cookie$/) do
 end
 
 Then(/^I should have orders$/) do
-  @orders_result.success?.should be_true
+  @orders_result.success?.should be_truthy
   @orders_result.length.should == 100
 end
 
 Then(/^I should receive an invalid cookie error$/) do
-  @orders_result.failure?.should be_true
+  @orders_result.failure?.should be_truthy
   error = @orders_result.errors.first
 
   error.message.should == 'PagingCookie was not found [00000000-0000-0000-0000-000000000000].'
