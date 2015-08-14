@@ -37,8 +37,8 @@ module ShipCompliant
     #     ShipCompliant::AddUpdateBrand.product({
     #       # brand attributes
     #     }, update_mode: 'UpdateExisting')
-    def self.brand(brand, options = {})
-      result = ShipCompliant.client.call(:add_update_brand, {
+    def self.brand(brand, options: {}, configuration: :default)
+      result = ShipCompliant.client(configuration: configuration).call(:add_update_brand, {
         'Brand' => brand.deep_transform_keys { |key| key.to_s.camelize },
         'UpdateMode' => options.fetch(:update_mode, 'ErrorOnExisting')
       })

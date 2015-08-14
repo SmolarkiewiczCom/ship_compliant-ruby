@@ -38,9 +38,9 @@ module ShipCompliant
     #     sales_tax_collected: 0,
     #     sales_order_key: 'ORDER-KEY'
     #   })
-    def self.call(commit_data)
+    def self.call(commit_data, configuration: :default)
       commit_data.deep_transform_keys! { |key| key.to_s.camelize }
-      result = ShipCompliant.client.call(:commit_sales_order, commit_data)
+      result = ShipCompliant.client(configuration: configuration).call(:commit_sales_order, commit_data)
       CommitSalesOrderResult.new(result)
     end
 

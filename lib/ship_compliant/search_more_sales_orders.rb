@@ -26,8 +26,8 @@ module ShipCompliant
     #
     #   orders = ShipCompliant::SearchMoreSalesOrders.paging_cookie('paging-cookie')
     #   puts orders.length #=> 100
-    def self.paging_cookie(cookie)
-      sales = ShipCompliant.client.call(:search_more_sales_orders, {
+    def self.paging_cookie(cookie, configuration: :default)
+      sales = ShipCompliant.client(configuration: configuration).call(:search_more_sales_orders, {
         'PagingCookie' => cookie
       })
 

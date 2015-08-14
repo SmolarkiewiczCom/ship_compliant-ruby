@@ -21,9 +21,9 @@ module ShipCompliant
     #     brand_key: 'BRAND-KEY',
     #     fulfillment_location: 'WineShipping'
     #   })
-    def self.call(query = {})
+    def self.call(query: {}, configuration: :default)
       query.deep_transform_keys! { |k| k.to_s.camelize }
-      result = ShipCompliant.client.call(:get_inventory_details, query)
+      result = ShipCompliant.client(configuration: configuration).call(:get_inventory_details, query)
       GetInventoryDetailsResult.new(result)
     end
 
