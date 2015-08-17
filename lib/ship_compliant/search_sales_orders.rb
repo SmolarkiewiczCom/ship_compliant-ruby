@@ -36,17 +36,17 @@ module ShipCompliant
     #   orders = ShipCompliant::SearchSalesOrders.find_by({
     #     compliance_status: 'NotCompliant' # possible values are "Compliant", "NotCompliant", or "Any". Any is default.
     #   })
-    def self.find_by(query)
+    def self.find_by(query, configuration: :default)
       order_query = OrderSearch.new(query).to_h
 
-      sales = search_sales(order_query)
+      sales = search_sales(order_query, configuration: configuration)
       SearchSalesOrdersResult.new(sales.to_hash)
     end
 
     private
     
-    def self.search_sales(order_query)
-      ShipCompliant.client.call(:search_sales_orders, order_query)
+    def self.search_sales(order_query, configuration:)
+      ShipCompliant.client(configuration: configuration).call(:search_sales_orders, order_query)
     end
 
   end

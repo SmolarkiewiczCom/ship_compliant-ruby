@@ -3,12 +3,15 @@ require "spec_helper"
 module ShipCompliant
   describe Configuration do
 
+    let(:secondary_username) { 'fdsafdsafdsafdsa' }
+
     before do
       ShipCompliant.configuration = nil
-      ShipCompliant.configure do |c|
+      ShipCompliant.configure do |c, c2|
         c.partner_key = 'abc-123'
         c.username = 'bob@example.com'
         c.password = 'secret'
+        c2.username = secondary_username
       end
     end
     
@@ -16,6 +19,11 @@ module ShipCompliant
       ShipCompliant.configuration.partner_key.should == 'abc-123'
       ShipCompliant.configuration.username.should == 'bob@example.com'
       ShipCompliant.configuration.password.should == 'secret'
+    end
+
+    it "stores secondary set of credentials" do
+      expect(ShipCompliant.secondary_configuration.username)
+        .to eq(secondary_username)
     end
 
     it "creates authentication hash" do

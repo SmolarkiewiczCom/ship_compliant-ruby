@@ -12,12 +12,12 @@ module ShipCompliant
         c.wsdl = 'http://example.com'
       end
 
-      ShipCompliant.client.globals[:wsdl].should == 'http://example.com'
+      ShipCompliant.client(configuration: :default).globals[:wsdl].should == 'http://example.com'
     end
 
     it "uses log value from configuration" do
       # configuration is defined in spec_helper.rb
-      ShipCompliant.client.globals[:log].should == false
+      ShipCompliant.client(configuration: :default).globals[:log].should == false
     end
 
     context "call" do
@@ -64,7 +64,7 @@ module ShipCompliant
       it "changes the default wsdl" do
         ShipCompliant.configuration = nil
         ShipCompliant.client.globals[:wsdl].should == 'https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL'
-        ShipCompliant.wsdl = 'http://ws.example.com?WSDL'
+        ShipCompliant.set_wsdl('http://ws.example.com?WSDL', configuration: :default)
         ShipCompliant.client.globals[:wsdl].should == 'http://ws.example.com?WSDL'
       end
     end

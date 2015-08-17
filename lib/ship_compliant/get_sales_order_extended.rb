@@ -11,8 +11,8 @@ module ShipCompliant
     # Finds a +SalesOrder+ by the +SalesOrderKey+.
     #
     # Returns an instance of ShipCompliant::GetSalesOrderExtendedResult.
-    def self.by_order_key(order_key)
-      result = ShipCompliant.client.call(:get_sales_order_extended, {
+    def self.by_order_key(order_key, configuration: :default)
+      result = ShipCompliant.client(configuration: configuration).call(:get_sales_order_extended, {
         'SalesOrderKey' => order_key
       })
 

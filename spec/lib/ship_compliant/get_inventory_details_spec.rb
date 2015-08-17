@@ -24,10 +24,10 @@ module ShipCompliant
         .with(message: message)
         .returns(File.read('spec/fixtures/void_order_success.xml'))
 
-      result = GetInventoryDetails.call(
+      result = GetInventoryDetails.call(query: {
         brand_key: 'BRAND-KEY',
         fulfillment_location: 'FULFILLMENT-LOCATION'
-      )
+      })
 
       result.should be_kind_of(GetInventoryDetailsResult)
     end

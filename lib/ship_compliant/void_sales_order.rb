@@ -27,15 +27,15 @@ module ShipCompliant
     # Returns an instance of ShipCompliant::VoidSalesOrderResult
     #
     #   result = ShipCompliant::VoidSalesOrder.by_order_key('OrderKey')
-    def self.by_order_key(order_key)
-      result = void_order({ 'SalesOrderKey' => order_key })
+    def self.by_order_key(order_key, configuration: :default)
+      result = void_order({ 'SalesOrderKey' => order_key }, configuration: configuration)
       VoidSalesOrderResult.new(result)
     end
 
     private
 
-    def self.void_order(request)
-      ShipCompliant.client.call(:void_sales_order, request)
+    def self.void_order(request, configuration:)
+      ShipCompliant.client(configuration: configuration).call(:void_sales_order, request)
     end
 
   end
