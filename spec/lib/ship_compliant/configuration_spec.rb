@@ -4,14 +4,20 @@ module ShipCompliant
   describe Configuration do
 
     let(:secondary_username) { 'fdsafdsafdsafdsa' }
+    let(:secondary_password) { 'hello2' }
+    let(:super_supplier_username) { 'hgffadsfasdfasd' }
+    let(:super_supplier_password) { 'hello3' }
 
     before do
       ShipCompliant.configuration = nil
-      ShipCompliant.configure do |c, c2|
+      ShipCompliant.configure do |c, c2, ssc|
         c.partner_key = 'abc-123'
         c.username = 'bob@example.com'
         c.password = 'secret'
         c2.username = secondary_username
+        c2.password = secondary_password
+        ssc.username = super_supplier_username
+        ssc.password = super_supplier_password
       end
     end
     
@@ -24,6 +30,15 @@ module ShipCompliant
     it "stores secondary set of credentials" do
       expect(ShipCompliant.secondary_configuration.username)
         .to eq(secondary_username)
+      expect(ShipCompliant.secondary_configuration.password)
+        .to eq(secondary_password)
+    end
+
+    it "stores creds set for super supplier of credentials" do
+      expect(ShipCompliant.super_supplier_configuration.username)
+        .to eq(super_supplier_username)
+      expect(ShipCompliant.super_supplier_configuration.password)
+        .to eq(super_supplier_password)
     end
 
     it "creates authentication hash" do
