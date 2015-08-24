@@ -1,10 +1,12 @@
 module ShipCompliant
   class << self
-    attr_accessor :configuration, :secondary_configuration
+    attr_accessor :configuration,
+                  :secondary_configuration,
+                  :super_supplier_configuration
   end
 
   def self.configure
-    yield(configuration, secondary_configuration)
+    yield(configuration, secondary_configuration, super_supplier_configuration)
   end
 
   def self.configuration
@@ -13,6 +15,10 @@ module ShipCompliant
 
   def self.secondary_configuration
     @secondary_configuration ||= Configuration.new
+  end
+
+  def self.super_supplier_configuration
+    @super_supplier_configuration ||= Configuration.new
   end
 
   # Stores runtime configuration to authenticate user.
