@@ -21,8 +21,7 @@ module ShipCompliant
   def self.get_config_object_for_key(config_key)
     {
       default: ShipCompliant.configuration,
-      secondary: ShipCompliant.secondary_configuration,
-      super_supplier: ShipCompliant.super_supplier_configuration
+      secondary: ShipCompliant.secondary_configuration
     }[config_key]
   end
 
