@@ -3,6 +3,25 @@ require "spec_helper"
 module ShipCompliant
   describe Client do
 
+    it 'returns the correct config' do
+      ShipCompliant.configure do |c1, c2, c3|
+        c1.username = 'u1'
+        c2.username = 'u2'
+        c3.username = 'u3'
+        c1.password = 'p1'
+        c2.password = 'p2'
+        c3.password = 'p3'
+      end
+
+      ShipCompliant.client(configuration: :default).configuration.username.should == 'u1'
+      ShipCompliant.client(configuration: :secondary).configuration.username.should == 'u2'
+      ShipCompliant.client(configuration: :super_supplier).configuration.username.should == 'u3'
+
+      ShipCompliant.client(configuration: :default).configuration.password.should == 'p1'
+      ShipCompliant.client(configuration: :secondary).configuration.password.should == 'p2'
+      ShipCompliant.client(configuration: :super_supplier).configuration.password.should == 'p3'
+    end
+
     it "inherits from Savon::Client" do
       ShipCompliant.client.should be_kind_of(Savon::Client)
     end
