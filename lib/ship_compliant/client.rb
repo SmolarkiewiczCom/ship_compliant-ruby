@@ -1,13 +1,25 @@
 module ShipCompliant
   class << self
-    attr_accessor :ship_compliant_client
+    attr_accessor :ship_compliant_client,
+                  :client_configuration_map
   end
 
   # Returns an instance of +Client+.
   def self.client(configuration: :default)
-    config = get_config_object_for_key(configuration)
-    self.ship_compliant_client ||= new_client_from_wsdl(config.wsdl,
-      configuration: config)
+    self.ship_compliant_client = client_configuration(configuration: configuration)
+  end
+
+  def self.client_configuration(configuration: :default)
+    client_configuration_map ||= {}
+    if client_configuration_map[configuration].present?
+      client_configuration_map[configuration]
+    else
+      config = get_config_object_for_key(configuration)
+      client_configuration_map[configuration] = new_client_from_wsdl(
+        config.wsdl,
+        configuration: config
+      )
+    end
   end
 
   # Replaces #client with custom WSDL
