@@ -75,6 +75,12 @@ module ShipCompliant
       end
     end
 
+    context "shipment_items" do
+      it "gets the shipment_items" do
+        subject.shipment_items.should == [ShipmentItem.new(product_key: 'SKU')]
+      end
+    end
+
     context "ship_to" do
       it "gets the shipping address" do
         subject.ship_to.should == Address.new(country: 'US')
@@ -98,6 +104,7 @@ module ShipCompliant
         special_instructions: 'Get autograph',
 
         packages: [{ package: {tracking: 'info here'} }],
+        shipment_items: { shipment_item: { product_key: 'SKU'} },
 
         ship_to: { country: 'US' }
       })
