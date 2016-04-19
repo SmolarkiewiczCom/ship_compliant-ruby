@@ -51,6 +51,12 @@ module ShipCompliant
       end
     end
 
+    def shipment_items
+      Array.wrap(shipment[:shipment_items]).map do |shipment_item|
+        ShipmentItem.new(shipment_item[:shipment_item])
+      end
+    end
+
     def ship_to
       Address.new(shipment[:ship_to])
     end
