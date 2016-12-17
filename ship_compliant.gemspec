@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.homepage      = "http://baylorrae.github.io/ship_compliant-ruby"
   s.license       = "MIT"
 
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.2.2'
 
   s.files         = `git ls-files -z`.split("\x0")
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
