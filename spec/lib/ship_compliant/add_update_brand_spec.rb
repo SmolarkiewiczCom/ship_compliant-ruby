@@ -36,7 +36,7 @@ module ShipCompliant
           key: 'WNDFL',
           name: 'Wonderful',
           owner: { name: 'Sam' }
-        }, update_mode: 'DoWackaDo')
+        }, options: { update_mode: 'DoWackaDo'})
 
         result.should be_kind_of(AddUpdateBrandResult)
       end

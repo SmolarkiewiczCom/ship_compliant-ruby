@@ -31,7 +31,7 @@ module ShipCompliant
         result = AddUpdateProduct.product({
           bottle_size_ml: 123,
           default_wholesale_case_price: 150
-        }, update_mode: 'DoWackaDo')
+        }, options: { update_mode: 'DoWackaDo'})
 
         result.should be_kind_of(AddUpdateProductResult)
       end

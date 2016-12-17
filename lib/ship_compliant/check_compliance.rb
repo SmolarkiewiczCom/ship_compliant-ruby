@@ -31,9 +31,9 @@ module ShipCompliant
     #     include_sales_tax_rates: true,
     #     # ...
     #   })
-    def self.of_sales_order(data)
+    def self.of_sales_order(data, configuration: :default)
       camel_cased_keys = data.deep_transform_keys { |key| key.to_s.camelize }
-      result = ShipCompliant.client.call(:check_compliance_of_sales_order_with_address_validation, camel_cased_keys)
+      result = ShipCompliant.client(configuration: configuration).call(:check_compliance_of_sales_order_with_address_validation, camel_cased_keys)
       CheckComplianceResult.new(result)
     end
 

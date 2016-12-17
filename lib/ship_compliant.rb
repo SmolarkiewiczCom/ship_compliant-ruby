@@ -1,6 +1,8 @@
 require 'savon'
 require 'active_support/all'
 
+require 'ext/hash/keys'
+
 require "ship_compliant/version"
 require "ship_compliant/configuration"
 require "ship_compliant/client"
@@ -12,6 +14,7 @@ require "ship_compliant/address/suggested_address"
 
 require "ship_compliant/shipment"
 require "ship_compliant/package"
+require "ship_compliant/shipment_item"
 require "ship_compliant/channel_details"
 
 # SEARCH SALES ORDERS
