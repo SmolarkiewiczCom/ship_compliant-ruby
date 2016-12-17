@@ -16,7 +16,7 @@ module ShipCompliant
   # sales order without committing any of them.
   #
   #   result = ShipCompliant::CommitSalesOrder.call({
-  #     commit_options: 'AllShipments',
+  #     commit_option: 'AllShipments',
   #     payments: nil,
   #     sales_tax_collected: 0,
   #     sales_order_key: 'ORDER-KEY'
