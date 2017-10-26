@@ -62,9 +62,7 @@ module ShipCompliant
     # Standardizes the XML response by converting fields to integers
     # and forcing the order summaries into an array.
     def parse!
-      unless raw.has_key?(:sales_orders)
-        raw[:sales_orders] = {}
-      end
+      raw[:sales_orders] ||= {}
 
       # force orders to be an array
       orders = raw[:sales_orders].fetch(:sales_order_summary, {})
