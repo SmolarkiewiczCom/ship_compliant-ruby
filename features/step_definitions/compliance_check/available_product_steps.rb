@@ -90,8 +90,8 @@ When(/^I check compliance with an available product$/) do
 end
 
 Then(/^I should receive the sales tax rates$/) do
-  @compliance_status.success?.should be_true
-  @compliance_status.compliant?.should be_true
+  @compliance_status.success?.should be_truthy
+  @compliance_status.compliant?.should be_truthy
 
   # Tax Rates
   @compliance_status.recommended_tax_due.should == 44.1
@@ -112,7 +112,7 @@ end
 
 Then(/^I should receive the shipment compliance results$/) do
   shipment_compliance = @compliance_status.compliance_rules_for_shipment('1')
-  shipment_compliance.compliant?.should be_true
+  shipment_compliance.compliant?.should be_truthy
   shipment_compliance.shipment_key.should == '1'
 
   shipment_compliance.rules.length.should == 6

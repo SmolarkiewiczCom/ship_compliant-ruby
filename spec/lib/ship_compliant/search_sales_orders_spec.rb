@@ -32,10 +32,10 @@ module ShipCompliant
       end
       
       it "returns a SearchSalesOrdersResult" do
-        SearchSalesOrders.stub(:search_sales) { {} }
+        allow(SearchSalesOrders).to receive(:search_sales) { {} }
 
         result = SearchSalesOrders.find_by({})
-        result.should be_kind_of(SearchSalesOrdersResult)
+        expect(result).to be_kind_of(SearchSalesOrdersResult)
       end
     end
   end

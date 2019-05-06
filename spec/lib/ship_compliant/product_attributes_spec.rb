@@ -6,9 +6,9 @@ module ShipCompliant
     context "to_h" do
       it "converts keys to pascal case" do
         product = ProductAttributes.new(unit_price: 10)
-        product.to_h.should == {
+        expect(product.to_h).to eq({
           "UnitPrice" => 10
-        }
+        })
       end
 
       it "handles special cases" do
@@ -21,14 +21,14 @@ module ShipCompliant
           upc: 'value'
         )
 
-        product.to_h.should == {
+        expect(product.to_h).to eq({
           'BottleSizeML' => 'value',
           'GTIN' => 'value',
           'NABCA' => 'value',
           'SCC' => 'value',
           'UNIMERC' => 'value',
           'UPC' => 'value'
-        }
+        })
       end
     end
 

@@ -10,6 +10,6 @@ When(/^I commit a sale with all shipments$/) do
 end
 
 Then(/^I get a successful commit message$/) do
-  @order_commit_result.success?.should be_true
+  @order_commit_result.success?.should be_truthy
   @order_commit_result.committed_shipments.should == ['1']
 end

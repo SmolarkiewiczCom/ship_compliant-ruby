@@ -22,9 +22,9 @@ module ShipCompliant
     end
     
     it "stores user credentials" do
-      ShipCompliant.configuration.partner_key.should == 'abc-123'
-      ShipCompliant.configuration.username.should == 'bob@example.com'
-      ShipCompliant.configuration.password.should == 'secret'
+      expect(ShipCompliant.configuration.partner_key).to eq('abc-123')
+      expect(ShipCompliant.configuration.username).to eq('bob@example.com')
+      expect(ShipCompliant.configuration.password).to eq('secret')
     end
 
     it "stores secondary set of credentials" do
@@ -42,27 +42,27 @@ module ShipCompliant
     end
 
     it "creates authentication hash" do
-      ShipCompliant.configuration.credentials.should == {
+      expect(ShipCompliant.configuration.credentials).to eq({
         'PartnerKey' => 'abc-123',
         'Username' => 'bob@example.com',
         'Password' => 'secret'
-      }
+      })
     end
 
     it "defaults log to true" do
-      ShipCompliant.configuration.log.should == true
+      expect(ShipCompliant.configuration.log).to be_truthy
     end
 
     context "wsdl" do
       it "defaults to core services" do
-        ShipCompliant.configuration.wsdl.should == 'https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL'
+        expect(ShipCompliant.configuration.wsdl).to eq('https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL')
       end
 
       it "can be changed" do
         ShipCompliant.configure do |c|
           c.wsdl = 'http://example.com'
         end
-        ShipCompliant.configuration.wsdl.should == 'http://example.com'
+        expect(ShipCompliant.configuration.wsdl).to eq('http://example.com')
       end
     end
 

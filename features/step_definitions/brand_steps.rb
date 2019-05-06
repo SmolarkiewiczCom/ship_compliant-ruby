@@ -54,7 +54,7 @@ When(/^I ignore existing brand on update$/) do
 end
 
 Then(/^I should get an error for already defined brand$/) do
-  @brand_result.failure?.should be_true
+  @brand_result.failure?.should be_truthy
   @brand_result.errors.length.should == 1
   error = @brand_result.errors.first
   
@@ -65,9 +65,9 @@ Then(/^I should get an error for already defined brand$/) do
 end
 
 Then(/^the brand should have been updated$/) do
-  @brand_result.success?.should be_true
+  @brand_result.success?.should be_truthy
 end
 
 Then(/^the brand should have been created$/) do
-  @brand_result.success?.should be_true
+  @brand_result.success?.should be_truthy
 end

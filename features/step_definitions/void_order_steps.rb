@@ -11,11 +11,11 @@ When(/^I void an already void order$/) do
 end
 
 Then(/^I should get a successful response$/) do
-  @voided_order.success?.should be_true
+  @voided_order.success?.should be_truthy
 end
 
 Then(/^I should get an error message$/) do
-  @voided_order.failure?.should be_true
+  @voided_order.failure?.should be_truthy
   @voided_order.errors_count.should == 1
 
   error = @voided_order.errors[0]

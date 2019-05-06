@@ -90,7 +90,7 @@ When(/^I check compliance with a missing product$/) do
 end
 
 Then(/^I should receive a product key error$/) do
-  @compliance_status.failure?.should be_true
+  @compliance_status.failure?.should be_truthy
   @compliance_status.error_count.should == 1
   error = @compliance_status.errors.first
 

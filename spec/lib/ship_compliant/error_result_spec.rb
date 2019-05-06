@@ -16,31 +16,31 @@ module ShipCompliant
 
     context "code" do
       it "returns the code as an integer" do
-        subject.code.should == 404
+        expect(subject.code).to eq(404)
       end
     end
 
     context "key" do
       it "gets the key" do
-        subject.key.should == "OrderId"
+        expect(subject.key).to eq("OrderId")
       end
     end
 
     context "message" do
       it "gets the message" do
-        subject.message.should == "I'm smarter than the average bear, Boo Boo"
+        expect(subject.message).to eq("I'm smarter than the average bear, Boo Boo")
       end
     end
 
     context "target" do
       it "gets the target" do
-        subject.target.should == "SalesOrder"
+        expect(subject.target).to eq("SalesOrder")
       end
     end
 
     context "type" do
       it "gets the type" do
-        subject.type.should == "Validation"
+        expect(subject.type).to eq("Validation")
       end
     end
   end

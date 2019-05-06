@@ -6,15 +6,15 @@ module ShipCompliant
 
     context "shipments" do
       it "returns the shipments as an array" do
-        subject.shipments.should == [
+        expect(subject.shipments).to eq([
           { key: 'SHIPMENT-KEY', is_committed: true }
-        ]
+        ])
       end
     end
 
     context "committed_shipments" do
       it "returns the shipment keys for committed shipments" do
-        subject.committed_shipments.should == ['SHIPMENT-KEY']
+        expect(subject.committed_shipments).to eq(['SHIPMENT-KEY'])
       end
     end
 

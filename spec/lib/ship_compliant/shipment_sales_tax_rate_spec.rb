@@ -12,7 +12,7 @@ module ShipCompliant
           product_3
         ])
 
-        shipment.taxes_for_product('product-2').should == product_2
+        expect(shipment.taxes_for_product('product-2')).to eq(product_2)
       end
     end
 

@@ -23,7 +23,7 @@ module ShipCompliant
     end
 
     it "inherits from Savon::Client" do
-      ShipCompliant.client.should be_kind_of(Savon::Client)
+      expect(ShipCompliant.client).to be_kind_of(Savon::Client)
     end
 
     it "uses wsdl from configuration" do
@@ -31,12 +31,12 @@ module ShipCompliant
         c.wsdl = 'http://example.com'
       end
 
-      ShipCompliant.client(configuration: :default).globals[:wsdl].should == 'http://example.com'
+      expect(ShipCompliant.client.globals[:wsdl]).to eq('http://example.com')
     end
 
     it "uses log value from configuration" do
       # configuration is defined in spec_helper.rb
-      ShipCompliant.client(configuration: :default).globals[:log].should == false
+      expect(ShipCompliant.client.globals[:log]).to be_falsey
     end
 
     context "call" do
@@ -62,8 +62,8 @@ module ShipCompliant
       end
 
       it "the response's result directly" do
-        ShipCompliant.client.stub(:savon_call) do
-          stub(to_hash: {
+        allow(ShipCompliant.client).to receive(:savon_call) do
+          double(to_hash: {
             a_method_response: {
               a_method_result: {
                 response_status: 'Success'
@@ -73,18 +73,18 @@ module ShipCompliant
         end
 
         result = ShipCompliant.client.call(:a_method, {})
-        result.should == {
+        expect(result).to eq({
           response_status: 'Success'
-        }
+        })
       end
     end
 
     context "wsdl=" do
       it "changes the default wsdl" do
         ShipCompliant.configuration = nil
-        ShipCompliant.client.globals[:wsdl].should == 'https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL'
-        ShipCompliant.set_wsdl('http://ws.example.com?WSDL', configuration: :default)
-        ShipCompliant.client.globals[:wsdl].should == 'http://ws.example.com?WSDL'
+        expect(ShipCompliant.client.globals[:wsdl]).to eq('https://ws-dev.shipcompliant.com/services/1.2/coreservice.asmx?WSDL')
+        ShipCompliant.wsdl = 'http://ws.example.com?WSDL'
+        expect(ShipCompliant.client.globals[:wsdl]).to eq('http://ws.example.com?WSDL')
       end
     end
 

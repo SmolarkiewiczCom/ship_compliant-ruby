@@ -28,27 +28,27 @@ module ShipCompliant
     context "success?" do
       it "returns true for successful response status" do
         result = FauxResult.new(success_message)
-        result.success?.should be_true
+        expect(result.success?).to be_truthy
       end
 
       it "returns false for failed response status" do
         result = FauxResult.new(failure_message)
-        result.success?.should be_false
+        expect(result.success?).to be_falsey
       end
     end
 
     context "failure?" do
       it "returns opposite of success?" do
         result = FauxResult.new({})
-        result.stub(:success?) { false }
-        result.failure?.should be_true
+        allow(result).to receive(:success?) { false }
+        expect(result.failure?).to be_truthy
       end
     end
 
     context "errors" do
       it "returns an array of errors" do
         result = FauxResult.new(failure_message)
-        result.errors.should == [
+        expect(result.errors).to eq([
           ErrorResult.new({
               code: "404",
               key: "OrderId",
@@ -56,7 +56,7 @@ module ShipCompliant
               target: "SalesOrder",
               type: "Validation"
           })
-        ]
+        ])
       end
 
       it "doesn't break when errors is already an array" do
@@ -68,23 +68,23 @@ module ShipCompliant
           ]
         })
 
-        result.errors.should == [
+        expect(result.errors).to eq([
           ErrorResult.new(code: '404'),
           ErrorResult.new(code: '500')
-        ]
+        ])
       end
 
       it "returns an empty array for successful response" do
         result = FauxResult.new(success_message)
-        result.errors.should == []
+        expect(result.errors).to eq([])
       end
     end
 
     context "errors_count" do
       it "counts the number of errors" do
         result = FauxResult.new({})
-        result.stub(:errors) { [1, 2, 3 ] }
-        result.errors_count.should == 3
+        allow(result).to receive(:errors) { [1, 2, 3 ] }
+        expect(result.errors_count).to eq(3)
       end
     end
 

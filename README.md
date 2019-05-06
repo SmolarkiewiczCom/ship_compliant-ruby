@@ -52,11 +52,11 @@ TODO: Coming soon...
 [core_service_path]: https://shipcompliant.desk.com/customer/portal/articles/1451976-api-coreservice-v1-2?b_id=2759
 
 <!-- Status Badges -->
-[Coverage Status]: https://coveralls.io/repos/ShipCompliant/ship_compliant-ruby/badge.png?branch=master
+[Coverage Status]: https://coveralls.io/repos/ShipCompliant/ship_compliant-ruby/badge.svg?branch=master
 [coveralls_status]: https://coveralls.io/r/ShipCompliant/ship_compliant-ruby?branch=master
 
-[Build Status]: https://travis-ci.org/ShipCompliant/ship_compliant-ruby.png?branch=master
+[Build Status]: https://travis-ci.org/ShipCompliant/ship_compliant-ruby.svg?branch=master
 [travis_status]: https://travis-ci.org/ShipCompliant/ship_compliant-ruby
 
-[Code Climate]: https://codeclimate.com/github/ShipCompliant/ship_compliant-ruby.png
+[Code Climate]: https://codeclimate.com/github/ShipCompliant/ship_compliant-ruby.svg
 [code_gpa]: https://codeclimate.com/github/ShipCompliant/ship_compliant-ruby

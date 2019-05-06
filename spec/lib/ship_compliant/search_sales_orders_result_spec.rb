@@ -22,7 +22,7 @@ module ShipCompliant
         response[:count_sales_orders_returned] = '5'
         result = SearchSalesOrdersResult.new(response)
 
-        result.length.should == 5
+        expect(result.length).to eq(5)
       end
     end
 
@@ -31,50 +31,50 @@ module ShipCompliant
         response[:count_more_sales_orders_available] = '8'
         result = SearchSalesOrdersResult.new(response)
 
-        result.remaining_orders_length.should == 8
+        expect(result.remaining_orders_length).to eq(8)
       end
     end
 
     context "paging_cookie" do
       it "gets the paging cookie" do
         result = SearchSalesOrdersResult.new(response)
-        result.paging_cookie.should == 'paging-cookie'
+        expect(result.paging_cookie).to eq('paging-cookie')
       end
     end
 
     context "paging_cookie_expires" do
       it "gets the expiration date" do
         result = SearchSalesOrdersResult.new(response)
-        result.paging_cookie_expires.should == Date.new(2014, 1, 1)
+        expect(result.paging_cookie_expires).to eq(Date.new(2014, 1, 1))
       end
     end
 
     context "summaries" do
       it "returns an array of SearchSalesOrderSummary" do
         result = SearchSalesOrdersResult.new(response)
-        result.summaries[0].should be_kind_of(SearchSalesOrderSummary)
+        expect(result.summaries[0]).to be_kind_of(SearchSalesOrderSummary)
       end
 
       it "returns empty array when blank" do
         result = SearchSalesOrdersResult.new({})
-        result.summaries.should == []
+        expect(result.summaries).to eq([])
       end
     end
 
     context "parse!" do
       it "adds missing sales_orders summaries" do
         result = SearchSalesOrdersResult.new({})
-        result.raw.should == {
+        expect(result.raw).to eq({
           sales_orders: {
             sales_order_summary: [{}]
           }
-        }
+        })
       end
 
       it "converts single order summary to an array" do
         result = SearchSalesOrdersResult.new(response)
 
-        result.raw.should == {
+        expect(result.raw).to eq({
           paging_cookie: 'paging-cookie',
           paging_cookie_expires: Date.new(2014, 1, 1),
           sales_orders: {
@@ -82,7 +82,7 @@ module ShipCompliant
               shipments: {}
             ]
           }
-        }
+        })
       end
 
       it "converts fields to integers" do
@@ -99,7 +99,7 @@ module ShipCompliant
 
         result = SearchSalesOrdersResult.new(response)
 
-        result.raw.should ==  {
+        expect(result.raw).to eq({
           paging_cookie: 'paging-cookie',
           paging_cookie_expires: Date.new(2014, 1, 1),
           count_more_sales_orders_available: 10,
@@ -114,7 +114,7 @@ module ShipCompliant
               }
             ]
           }
-        }
+        })
       end
     end
   end

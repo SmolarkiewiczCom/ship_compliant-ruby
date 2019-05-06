@@ -26,14 +26,14 @@ module ShipCompliant
 
     context "product" do
       it "queries the client with product an update mode" do
-        AddUpdateProduct.stub(:add_update_product) { {} }
+        allow(AddUpdateProduct).to receive(:add_update_product) { {} }
         
         result = AddUpdateProduct.product({
           bottle_size_ml: 123,
           default_wholesale_case_price: 150
         }, options: { update_mode: 'DoWackaDo'})
 
-        result.should be_kind_of(AddUpdateProductResult)
+        expect(result).to be_kind_of(AddUpdateProductResult)
       end
 
       it "update mode defaults to ErrorOnExisting" do

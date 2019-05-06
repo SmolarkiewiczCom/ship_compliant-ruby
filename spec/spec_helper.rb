@@ -37,15 +37,15 @@ shared_examples_for "BaseResult" do
   context "success?" do
     it "returns true when the response was successful" do
       result = described_class.new({ response_status: 'Success' })
-      result.success?.should be_true
+      expect(result.success?).to be_truthy
     end
   end
 
   context "failure?" do
     it "returns the opposite of success?" do
       result = described_class.new({})
-      result.stub(:success?) { false }
-      result.failure?.should be_true
+      allow(result).to receive(:success?) { false }
+      expect(result.failure?).to be_truthy
     end
   end
 end

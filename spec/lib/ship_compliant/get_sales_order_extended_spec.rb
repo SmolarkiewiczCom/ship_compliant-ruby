@@ -30,9 +30,9 @@ module ShipCompliant
       end
 
       it "returns GetSalesOrderExtendedResult" do
-        ShipCompliant.client.stub(:call) { {} }
+        allow(ShipCompliant.client).to receive(:call) { {} }
         result = GetSalesOrderExtended.by_order_key('order-id')
-        result.should be_kind_of(GetSalesOrderExtendedResult)
+        expect(result).to be_kind_of(GetSalesOrderExtendedResult)
       end
     end
   end

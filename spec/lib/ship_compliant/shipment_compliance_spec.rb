@@ -5,21 +5,21 @@ module ShipCompliant
 
     context "compliant?" do
       it "check is a shipment was compliant" do
-        subject.compliant?.should be_true
+        expect(subject.compliant?).to be_truthy
       end
     end
 
     context "shipment_key" do
       it "returns the shipment key" do
-        subject.shipment_key.should == 'AN-ORDER-KEY'
+        expect(subject.shipment_key).to eq('AN-ORDER-KEY')
       end
     end
 
     context "rules" do
       it "returns an array of ComplianceRule" do
-        subject.rules.should == [
+        expect(subject.rules).to eq([
           ComplianceRule.new(compliance_description: "You're clear for take off ghost rider")
-        ]
+        ])
       end
 
       it "returns an empty array when none found" do
@@ -27,7 +27,7 @@ module ShipCompliant
           rules: nil
         })
 
-        shipment.rules.should == []
+        expect(shipment.rules).to eq([])
       end
     end
 

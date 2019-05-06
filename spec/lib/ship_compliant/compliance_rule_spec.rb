@@ -5,31 +5,31 @@ module ShipCompliant
 
     context "compliance_description" do
       it "gets the description" do
-        subject.compliance_description.should == 'Howdy Stranger'
+        expect(subject.compliance_description).to eq('Howdy Stranger')
       end
     end
 
     context "rule_description" do
       it "gets the rule" do
-        subject.rule_description.should == 'Must say hi to people you do not know.'
+        expect(subject.rule_description).to eq('Must say hi to people you do not know.')
       end
     end
 
     context "compliant?" do
       it "check this rule passed" do
-        subject.compliant?.should be_true
+        expect(subject.compliant?).to be_truthy
       end
     end
 
     context "license_relationship" do
       it "gets the relationship" do
-        subject.license_relationship.should == 'StrangerToFriend'
+        expect(subject.license_relationship).to eq('StrangerToFriend')
       end
     end
 
     context "rule_type" do
       it "gets the rule type" do
-        subject.rule_type.should == 'BeCourteous'
+        expect(subject.rule_type).to eq('BeCourteous')
       end
     end
 

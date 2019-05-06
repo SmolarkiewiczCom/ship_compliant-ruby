@@ -32,7 +32,7 @@ module ShipCompliant
         sales_order_key: 'ORDER-KEY'
       })
 
-      result.should be_kind_of(CommitSalesOrderResult)
+      expect(result).to be_kind_of(CommitSalesOrderResult)
     end
   end
 end

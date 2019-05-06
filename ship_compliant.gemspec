@@ -13,14 +13,14 @@ Gem::Specification.new do |s|
   s.homepage      = "http://baylorrae.github.io/ship_compliant-ruby"
   s.license       = "MIT"
 
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.2.2'
 
   s.files         = `git ls-files -z`.split("\x0")
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ["lib"]
 
-  s.add_dependency "activesupport", "~> 3.2", ">= 3.2.0"
+  s.add_dependency "activesupport", ">= 4.0.3"
   s.add_dependency "savon", "~> 2.3"
 
   s.add_development_dependency "bundler", "~> 1.5"
@@ -29,8 +29,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry", "~> 0.9"
 
   # TESTING
-  s.add_development_dependency "rspec", "~> 2.13"
+  s.add_development_dependency "rspec", "~> 3.3"
   s.add_development_dependency "cucumber", "~> 1.3"
   s.add_development_dependency "webmock", "~> 1.17"
   s.add_development_dependency "vcr", "~> 2.9"
+  s.add_development_dependency "dotenv", "~> 2.0"
 end
