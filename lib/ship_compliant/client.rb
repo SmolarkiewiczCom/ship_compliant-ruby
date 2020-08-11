@@ -4,13 +4,11 @@ module ShipCompliant
   end
 
   def self.ship_compliant_client
-    Thread.current[:ship_compliant] ||= {}
-    Thread.current[:ship_compliant][:client]
+    Thread.current[:ship_compliant_client]
   end
 
   def self.ship_compliant_client=(client)
-    Thread.current[:ship_compliant] ||= {}
-    Thread.current[:ship_compliant][:client] = client
+    Thread.current[:ship_compliant_client] = client
   end
 
   # Returns an instance of +Client+.

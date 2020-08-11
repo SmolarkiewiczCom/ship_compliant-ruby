@@ -8,8 +8,11 @@ module ShipCompliant
   end
 
   def self.configuration
-    Thread.current[:ship_compliant] ||= {}
-    Thread.current[:ship_compliant][:configuration] ||= Configuration.new
+    Thread.current[:ship_compliant_configuration] ||= Configuration.new
+  end
+
+  def self.configuration=(value)
+    Thread.current[:ship_compliant_configuration] = value
   end
 
   # Stores runtime configuration to authenticate user.
