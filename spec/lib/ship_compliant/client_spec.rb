@@ -20,6 +20,22 @@ module ShipCompliant
       expect(ShipCompliant.client.globals[:log]).to be_falsey
     end
 
+    it "don't share configuration between threads" do
+      ShipCompliant.configure do |c|
+        c.username = 'foo'
+      end
+
+      Thread.new do
+        ShipCompliant.configure do |c|
+          c.username = 'bar'
+        end
+
+        expect(ShipCompliant.configuration.username).to eq('bar')
+      end.join
+
+      expect(ShipCompliant.configuration.username).to eq('foo')
+    end
+
     context "call" do
       before { savon.mock! }
       after { savon.unmock! }
